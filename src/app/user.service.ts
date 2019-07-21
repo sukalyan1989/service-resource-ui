@@ -34,7 +34,7 @@ export class UserService {
   createUser(user: User) {
     this.http.post(this.hostname + "user/signup", user).subscribe(
       data => {
-        console.log(data);
+        alert("user Created");
       },
       err => {
         console.log(err);

@@ -1,6 +1,0 @@
-.navbar{background:red;color:#fff;text-align: center;padding:50px 0;}
-	.navbar-right{margin-right:0;color:#fff;}
-	.navbar .fa{color:#fff;}
-	.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{background-color:red!important;}
-	.nav > li > a:hover, .nav > li > a:focus {text-decoration: none;background-color: black;}
-	.navbar-default .navbar-brand{color:#fff;}

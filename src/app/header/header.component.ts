@@ -10,12 +10,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HeaderComponent implements OnInit ,OnDestroy{
   private authListenerSubs:Subscription
   userIsAuthenticated=false;
+  panelClass=""
   constructor(private user:UserService) { }
 
   ngOnInit() {
     this.authListenerSubs=this.user.getAuthStatusListener().subscribe(
       isAuthenticated =>{
-        this.userIsAuthenticated=isAuthenticated
+        this.userIsAuthenticated=isAuthenticated;
+        this.panelClass="col-md-11";
       }
     )
   }

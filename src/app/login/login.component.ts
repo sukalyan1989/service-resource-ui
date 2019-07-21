@@ -20,7 +20,7 @@ submit(f:FormGroup){
       password:f.value.password
     }
     this.user.login(auth)
-    console.log(f.value);
+    
   }
 
 }
