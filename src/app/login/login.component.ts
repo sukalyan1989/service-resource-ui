@@ -1,3 +1,5 @@
+import { UserService, AuthData } from './../user.service';
+import {  FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:UserService) { }
 
   ngOnInit() {
+
+  }
+submit(f:FormGroup){
+    var auth:AuthData={
+      email:f.value.email,
+      password:f.value.password
+    }
+    this.user.login(auth)
+    console.log(f.value);
   }
 
 }

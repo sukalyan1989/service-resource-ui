@@ -28,4 +28,5 @@ export interface Subscription{
     durationText:string,
     durationNumber?:Number,
     postId:string
+    userId:string
 }

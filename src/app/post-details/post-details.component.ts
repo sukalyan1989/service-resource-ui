@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { Subscription, SubscriptionService } from './../subscription.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { PostsService, Post } from './../posts.service';
@@ -11,13 +12,18 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-  constructor(private router:Router,private post:PostsService,private route:ActivatedRoute,private subscription:SubscriptionService) { }
+  constructor(
+    private router:Router,
+    private post:PostsService,
+    private route:ActivatedRoute,
+    private subscription:SubscriptionService,
+    private user:UserService) { }
   post$:Observable<Post>
   postId:string;
+
   ngOnInit() {
     this.route.params.subscribe(m=>{
       this.post$=this.post.getPostById(m['id'])
-
       this.postId=m['id']
     })
 
@@ -33,7 +39,8 @@ export class PostDetailsComponent implements OnInit {
       totalJobs:f.value['totalJobs'],
       durationText:f.value['durationText'],
       durationNumber:0,
-      postId:this.postId
+      postId:this.postId,
+      userId:this.user.getUserId()
 
     }
     this.subscription.createSubscription(subInfo).subscribe(data=>{

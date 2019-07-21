@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard';
 import { LoginComponent } from './login/login.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
@@ -8,7 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
-  {path:'job/:id',component:PostDetailsComponent},
+  {path:'job/:id',component:PostDetailsComponent,canActivate:[AuthGuard]},
   {path:'confirmation',component:ConfirmationComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent}
@@ -16,6 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[AuthGuard]
 })
 export class AppRoutingModule { }

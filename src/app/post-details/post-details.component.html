@@ -1,22 +1,20 @@
-<div class="container" *ngIf="(post$|async) as post;else loading">
-  <h1  #title>{{post.title}}</h1>
+<div class="container" *ngIf="(post$|async) as post">
+  <h1 #title>{{post.title}}</h1>
   <p>{{post.description}}</p>
   <h3>Price : {{post.price|currency}}</h3>
 </div>
-<ng-template>
-  <div #loading>Fetching data ..</div>
-</ng-template>
+
 <div class="container">
   <div class="panel panel-primary">
-      <div class="panel-body text-center">
-        <h2>Configure Your Resource</h2>
-      </div>
+    <div class="panel-body text-center">
+      <h2>Configure Your Resource</h2>
     </div>
+  </div>
 
   <form #f="ngForm" (ngSubmit)="submit(f)">
     <div class="form-group">
-        <label for="startDate">Start Date</label>
-        <input ngModel class="form-control" type="Date" name="startDate">
+      <label for="startDate">Start Date</label>
+      <input ngModel class="form-control" type="Date" name="startDate">
     </div>
     <div class="form-group">
       <label for="durationText">Duration</label>
@@ -31,16 +29,16 @@
       </select>
     </div>
     <div class="form-group">
-        <label for="location">location</label>
-        <select ngModel name="location" id="" class="form-control">
-          <option value="">Select</option>
-          <option value="Bangalore-India">Bangalore-India</option>
-          <option value="London-UK">London-UK</option>
-          <option value="Frankfurt-Germany">Frankfurt-Germany</option>
-          <option value="Mumbai-India">Mumbai-India</option>
-        </select>
-    
-      </div>
+      <label for="location">location</label>
+      <select ngModel name="location" id="" class="form-control">
+        <option value="">Select</option>
+        <option value="Bangalore-India">Bangalore-India</option>
+        <option value="London-UK">London-UK</option>
+        <option value="Frankfurt-Germany">Frankfurt-Germany</option>
+        <option value="Mumbai-India">Mumbai-India</option>
+      </select>
+
+    </div>
 
     <div class="form-group">
       <label for="level">Level</label>
@@ -51,13 +49,13 @@
         <option value="Consultant">Consultant</option>
         <option value="Architect">Architect</option>
       </select>
-  
+
     </div>
     <div class="form-group">
       <label for="totalJobs">Total Jobs</label>
       <select ngModel name="totalJobs" id="" class="form-control">
         <option value="">Select</option>
-        <option value="1">1</option>   
+        <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -68,10 +66,10 @@
         <option value="9">9</option>
         <option value="10">10</option>
       </select><br>
-  
+
     </div>
-        <div class="form-group">
-          <button class="btn btn-success center" type="submit">Submit</button>
-      </div>
+    <div class="form-group">
+      <button class="btn btn-success center" type="submit">Submit</button>
+    </div>
   </form>
 </div>
