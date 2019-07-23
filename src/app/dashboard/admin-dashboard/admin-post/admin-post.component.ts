@@ -18,17 +18,19 @@ export class AdminPostComponent implements OnInit {
 
   handleFileInput(files:FileList){
     this.fileToUpload=files.item(0)
+    console.log(this.fileToUpload)
   }
 
 
   submit(f:FormGroup){
    console.log(f.value)
-   let post:Post={
+   let post:object={
      title:f.value.title,
      description:f.value.description,
-     price:f.value.price,
-     imageUrl:"",
-     _id:""
+     price:f.value.price
+      
+     
+
    }
     this.post.createNewPost(post,this.fileToUpload).subscribe(
       data=>{

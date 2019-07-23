@@ -11,17 +11,17 @@ export class AdminDashboardService {
   hostname:string=environment.host_name
   constructor(private http:HttpClient) { }
 
-  createNewPost(post:Post,file:File):Observable<any>{
-    const formData:FormData = new FormData();
+  createNewPost(post:object,file:File):Observable<any>{
+    var formData:FormData = new FormData();
     formData.append('myFile',file)
-    formData.append('title',post.title)
-    formData.append('description',post.description)
-    formData.append('price',post.price.toString())
-    console.log(formData.getAll('myFile'))
-  return this.http.post(this.hostname+"posts",formData,{headers:new HttpHeaders({
-    "Content-Type": "application/x-www-form-urlencoded"
-  })
+    formData.append('title',post['title'])
+    formData.append('description',post['description'])
+    formData.append('price',post['price'].toString())
+    
+    
+  return this.http.post(this.hostname+"/posts",formData,{headers:new HttpHeaders({ })
 
 })
   }
 }
+
