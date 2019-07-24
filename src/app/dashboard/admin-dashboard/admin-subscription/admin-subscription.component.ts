@@ -1,4 +1,6 @@
+import { SubscriptionService, Subscription } from './../../../subscription.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin-subscription',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSubscriptionComponent implements OnInit {
 
-  constructor() { }
+  subs$:Observable<Subscription[]>
+  constructor(private sub:SubscriptionService) { }
 
   ngOnInit() {
+
+    this.subs$=this.sub.getSubList()
   }
 
 }
