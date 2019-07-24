@@ -1,14 +1,18 @@
 .my-btn {
-  background: red;
+  background: rgb(102, 95, 95);
   color: #fff;
   padding: 10px 20px;
   margin-top: 31px;
   position: absolute;
 }
 
-.head1{background:red;color:#fff;text-align: center;padding:50px 0;}
+.head1 {
+  color: #000;
+  text-align: center;
+  padding: 50px 0;
+}
 ul {
-  list-style: none
+  list-style: none;
 }
 
 .ctn {
@@ -25,7 +29,6 @@ ul {
   .my-btn {
     padding: 4px 11px;
     margin-top: 0;
-
   }
 
   .ctn {

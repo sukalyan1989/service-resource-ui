@@ -1,17 +1,15 @@
-<nav class="navbar navbar-default">
-    <button *ngIf="userIsAuthenticated" class="btn btn-default pull-right">log out</button>
+<!-- <nav class="navbar navbar-default">
+  <button *ngIf="userIsAuthenticated" class="btn btn-default pull-right">
+    log out
+  </button>
 </nav>
-<div class="container">
-
-    <div class="row">
-        <div *ngIf="userIsAuthenticated" class="col-md-1">
-            <div>
-               
-    
-            </div>
-        </div>
-        <div [class]="panelClass">
-                <router-outlet></router-outlet>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="userIsAuthenticated" class="col-lg-1">
+      <div></div>
     </div>
-</div>
+    <div [class]="panelClass"> -->
+      <router-outlet></router-outlet>
+    <!-- </div>
+  </div>
+</div> -->
