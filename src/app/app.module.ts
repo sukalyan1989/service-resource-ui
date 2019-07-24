@@ -14,6 +14,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin-post.component';
 import { LoginMethodComponent } from './login-method/login-method.component';
+import { AdminSubscriptionComponent } from './dashboard/admin-dashboard/admin-subscription/admin-subscription.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginMethodComponent } from './login-method/login-method.component';
     ConfirmationComponent,
     HeaderComponent,
     AdminPostComponent,
-    LoginMethodComponent
+    LoginMethodComponent,
+    AdminSubscriptionComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Observable, observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -18,6 +19,14 @@ export class SubscriptionService {
    return this.http.post<any>(this.hostname+"subscription",sub)
 
   }
+
+  getSubList():Observable<Subscription[]>{
+    return this.http.get<Subscription[]>(this.hostname+"subscription").pipe(map(m=>m["subscription"]))
+
+  }
+
+
+
 }
 export interface Subscription{
     jobTitle:string,
