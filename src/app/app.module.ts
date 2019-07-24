@@ -1,6 +1,7 @@
 import { AuthInterceptor } from './auth-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {CKEditorModule} from 'ng2-ckeditor'
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CKEditorModule,
     FormsModule
   ],
   providers: [{provide :HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],

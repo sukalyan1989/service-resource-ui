@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminPostComponent implements OnInit {
 
   constructor(private post:AdminDashboardService) { }
-
+  ckeditorContent;
   fileToUpload:File=null
   ngOnInit() {
   }
@@ -28,14 +28,17 @@ export class AdminPostComponent implements OnInit {
      title:f.value.title,
      description:f.value.description,
      price:f.value.price
-      
+     
      
 
    }
-    this.post.createNewPost(post,this.fileToUpload).subscribe(
+    this.post.createNewPost(post,this.fileToUpload,this.ckeditorContent).subscribe(
       data=>{
         console.log(data)
       },err=>console.log(err))
+  }
+  getData(e:Event){
+console.log(this.ckeditorContent)
   }
 
 }
