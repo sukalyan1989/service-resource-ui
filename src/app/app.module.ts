@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin-post.component';
+import { LoginMethodComponent } from './login-method/login-method.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin
     SignupComponent,
     ConfirmationComponent,
     HeaderComponent,
-    AdminPostComponent
+    AdminPostComponent,
+    LoginMethodComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,8 @@ export class PostsService {
 
 }
 export interface Post{
-  _id:string,
+  _id?:string,
+  details?:string
   title: string,
   description: string,
   imageUrl: string,

@@ -1,17 +1,11 @@
-
-
-
-
-
 <h3 class="text-center head1"> Subscribe Your Consultant </h3>
 <ul>
   <li *ngFor="let post of posts$|async" class="ctn">
     <div class="container">
-      <div class="col-md-2"><img [src]="'images/'+post.imageUrl" class="img-responsive"></div>
+      <div class="col-md-2"><img [src]="post.imageUrl" class="img-responsive"></div>
     <div class="col-md-4"><h3>{{post.title}}</h3><p>{{post.description}}</p></div>
     <div class="col-md-3"><h5>{{post.price|currency}}</h5></div>
     <div class="col-md-3"><button class="my-btn" (click)="handleClick(post)">Book Now</button></div>
     </div>
   </li>
 </ul>
-
