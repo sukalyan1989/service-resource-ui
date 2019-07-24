@@ -11,7 +11,7 @@ export class UserService {
   private token: string;
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
-  private userId
+  private user
   hostname: string;
   
   constructor(private http: HttpClient, private route: Router) {
@@ -28,7 +28,7 @@ export class UserService {
     return this.token;
   }
   getUserId(){
-    return this.userId
+    return this.user
   }
 
   createUser(user: User) {
@@ -52,7 +52,7 @@ export class UserService {
           this.authStatusListener.next(true);
           this.isAuthenticated = true;
           this.route.navigate(["/"]);
-          this.userId=data.user["_id"]
+          this.user=data.user;
        
           
         }

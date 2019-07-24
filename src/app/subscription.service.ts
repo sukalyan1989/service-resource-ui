@@ -2,7 +2,7 @@ import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Observable, observable } from 'rxjs';
-import {map} from 'rxjs/operators'
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +29,15 @@ export interface Subscription{
     durationNumber?:Number,
     postId:string
     userId:string
+    user:{
+      firstname:string
+      lastname?:string,
+      mobile?:string,
+      email:string
+    },
+    post:{
+      title:string,
+      price:number
+
+    }
 }
