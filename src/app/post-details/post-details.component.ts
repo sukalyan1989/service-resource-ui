@@ -20,11 +20,19 @@ export class PostDetailsComponent implements OnInit {
     private user:UserService) { }
   post$:Observable<Post>
   postId:string;
+  postName:string;
+  postPrice:number;
 
   ngOnInit() {
     this.route.params.subscribe(m=>{
       this.post$=this.post.getPostById(m['id'])
       this.postId=m['id']
+      this.post$.subscribe(m=>{
+        this.postName=m.title
+        this.postPrice=m.price
+      console.log(this.postName,this.postPrice)
+      })
+      
     })
 
   }
@@ -40,7 +48,16 @@ export class PostDetailsComponent implements OnInit {
       durationText:f.value['durationText'],
       durationNumber:0,
       postId:this.postId,
-      userId:this.user.getUserId()
+      userId:this.user.getUserId()._id,
+      user:{
+        firstname:this.user.getUserId().firstname,
+        lastname:this.user.getUserId().lastname,
+        email:this.user.getUserId().email
+      },
+      post:{
+        title:this.postName,
+        price:this.postPrice
+      }
 
     }
     this.subscription.createSubscription(subInfo).subscribe(data=>{

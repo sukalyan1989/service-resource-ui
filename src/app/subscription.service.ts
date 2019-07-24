@@ -29,13 +29,13 @@ export interface Subscription{
     durationNumber?:Number,
     postId:string
     userId:string
-    user:{
+    user?:{
       firstname:string
       lastname?:string,
       mobile?:string,
       email:string
     },
-    post:{
+    post?:{
       title:string,
       price:number
 
