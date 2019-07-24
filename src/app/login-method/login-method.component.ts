@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route ,ActivatedRoute} from '@angular/router';
+import { PostsService, Post } from '../posts.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login-method',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginMethodComponent implements OnInit {
 
-  constructor() { }
+  post$:Observable<Post>
+  constructor(private router : ActivatedRoute,private post:PostsService) { }
 
   ngOnInit() {
+    this.router.params.subscribe(data=>{
+      this.post$=this.post.getPostById(data["id"])
+    })
+
   }
 
 }

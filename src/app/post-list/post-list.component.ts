@@ -17,7 +17,8 @@ export class PostListComponent implements OnInit {
   }
   handleClick(post:Post){
 console.log(post)
-this.router.navigateByUrl('job/'+post._id)
-  }
+this.router.navigateByUrl('job/details/'+post._id)
+
+}
 
 }

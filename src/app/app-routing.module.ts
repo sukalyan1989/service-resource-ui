@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginMethodComponent } from './login-method/login-method.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'confirmation',component:ConfirmationComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'add-post',component:AdminPostComponent}
+  {path:'add-post',component:AdminPostComponent},
+  {path:'job/details/:id',component:LoginMethodComponent}
 ];  
 
 @NgModule({

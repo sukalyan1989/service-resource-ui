@@ -8,14 +8,75 @@
   <title>ServiceResourceUi</title>
   <base href="/">
   <script src="https://cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
 </head>
 
 <body>
-  <app-root></app-root>
+    <div class="topbanner">
+        <div class="row">
+        <div class="col-lg-4"><img class="img-responsive" src="./assets/logo.png"></div>
+        <div class="col-lg-8">
+         
+       <nav class="navbar navbar-expand-sm navbar-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/cloud-native-services">CLOUD NATIVE SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/partners">PARTNERS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/customers">CUSTOMERS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/events">EVENTS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.yobitel.com/training">TRAINING</a>
+                  </li>
+                  <li class="nav-item dropdown dmenu">
+                  <a class="nav-link dropdown-toggle" href="https://www.yobitel.com/company" id="navbardrop" data-toggle="dropdown">
+                   COMPANY
+                  </a>
+                  <div class="dropdown-menu sm-menu">
+                    <a class="dropdown-item" href="https://www.yobitel.com/about">ABOUT</a>
+                    <a class="dropdown-item" href="https://www.yobitel.com/contactus">CONTACT US</a>
+                    <a class="dropdown-item" href="https://www.yobitel.com/careers">CAREERS</a>
+                    <a class="dropdown-item" href="http://service-resource.herokuapp.com/">SUBSCRIBE</a>
+                  </div>
+                </li> 
+                </ul>
+              </div>
+            </nav>
+        </div>
+      </div>
+      </div>
+      
+      <app-root></app-root>
+
+
+      <div class="footer">
+        <div class="container-fluid">
+         <div class="col-lg-12" style="text-align: center;margin-bottom: 10px;"><span><b>Get In Touch : </b>Interested to know how yobitel help your business? Write to us at <a href="mailto:info@yobitel.com">info@yobitel.com</a></span></div>
+        <div class="col-lg-12"><h5>Copyright © 2019 Yobitel Communications Limited | All Rights Reserved</h5></div>
+       </div>
+      </div>
+      
+      
+      
+  
 </body>
 
 </html>
