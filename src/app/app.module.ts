@@ -15,6 +15,11 @@ import { HeaderComponent } from './header/header.component';
 import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin-post.component';
 import { LoginMethodComponent } from './login-method/login-method.component';
 import { AdminSubscriptionComponent } from './dashboard/admin-dashboard/admin-subscription/admin-subscription.component';
+import { UserSubscriptionComponent } from './user-subscription/user-subscription.component';
+import { ContactAdminComponent } from './contact-admin/contact-admin.component';
+import { UserViewSubscriptionComponent } from './user-view-subscription/user-view-subscription.component';
+import { UserDashboardContainerComponent } from './user-dashboard-container/user-dashboard-container.component';
+import { AdminDashboardContainerComponent } from './admin-dashboard-container/admin-dashboard-container.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,12 @@ import { AdminSubscriptionComponent } from './dashboard/admin-dashboard/admin-su
     HeaderComponent,
     AdminPostComponent,
     LoginMethodComponent,
-    AdminSubscriptionComponent
+    AdminSubscriptionComponent,
+    UserSubscriptionComponent,
+    ContactAdminComponent,
+    UserViewSubscriptionComponent,
+    UserDashboardContainerComponent,
+    AdminDashboardContainerComponent
   ],
   imports: [
     BrowserModule,
