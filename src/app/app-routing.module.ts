@@ -1,3 +1,5 @@
+import { UserDashboardContainerComponent } from './dashboard/user-dashboard/user-dashboard-container/user-dashboard-container.component';
+import { AdminDashboardContainerComponent } from './dashboard/admin-dashboard/admin-dashboard-container/admin-dashboard-container.component';
 import { AdminSubscriptionComponent } from './dashboard/admin-dashboard/admin-subscription/admin-subscription.component';
 import { AdminPostComponent } from './dashboard/admin-dashboard/admin-post/admin-post.component';
 import { AuthGuard } from './auth-guard';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
-  {path:'test',component:AdminSubscriptionComponent}
+  {path:'test',component:AdminSubscriptionComponent},
+  {path:'admin-dashboard',component:AdminDashboardContainerComponent},
+  {path:'user-dashboard',component:UserDashboardContainerComponent}
 ];                          
 
 @NgModule({

@@ -51,9 +51,15 @@ export class UserService {
         if (data.token) {
           this.authStatusListener.next(true);
           this.isAuthenticated = true;
-          this.route.navigate(["/"]);
+        //  this.route.navigate(["/"]);
          // this.userId=data.user["_id"]
           this.user=data.user;
+          if(this.user.isAdmin){
+            this.route.navigate(["/admin-dashboard"])
+          }
+          else{
+            this.route.navigate(["/user-dashboard"])
+          }
        
           
         }
@@ -71,4 +77,5 @@ export interface User {
   email: string;
   mobile?: number;
   password?: string;
+  isAdmin?:boolean
 }
