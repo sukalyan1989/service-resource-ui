@@ -1,3 +1,4 @@
+<!-- <loader></loader>
 <h3 class="text-center head1"> Subscribe Your Consultant </h3>
 <ul>
   <li *ngFor="let post of posts$|async" class="ctn">
@@ -10,4 +11,29 @@
       </div>
     </div>
   </li>
-</ul>
+</ul> -->
+<div class="container">
+    <h1 class="text-center"><span class="badge badge-secondary">Subscribe Your Consultant</span> </h1>
+    <div class="clearfix"></div>
+    <ul>
+      <li *ngFor="let post of posts$|async">
+          <div class="card mb-3" >
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img [src]="post.imageUrl"  class="card-img img-responsive" style="width:auto" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title " >{{post.title}}</h5>
+                    <p class="card-text">Price : {{post.price|currency}}</p>
+                    <p class="card-text"><small class="text-muted">{{post.description}}</small></p>
+                    <button class="btn btn-primary">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+      </li>
+    </ul>
+    
+</div>

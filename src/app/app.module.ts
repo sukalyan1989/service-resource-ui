@@ -1,7 +1,10 @@
+import { LoaderService } from './loader.service';
 import { AuthInterceptor } from './auth-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {CKEditorModule} from 'ng2-ckeditor'
+//import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +23,8 @@ import { ContactAdminComponent } from './dashboard/user-dashboard/contact-admin/
 import { UserViewSubscriptionComponent } from './dashboard/user-dashboard/user-view-subscription/user-view-subscription.component';
 import { UserDashboardContainerComponent } from './dashboard/user-dashboard/user-dashboard-container/user-dashboard-container.component';
 import { AdminDashboardContainerComponent } from './dashboard/admin-dashboard/admin-dashboard-container/admin-dashboard-container.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptor } from './loader-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,16 +42,20 @@ import { AdminDashboardContainerComponent } from './dashboard/admin-dashboard/ad
     ContactAdminComponent,
     UserViewSubscriptionComponent,
     UserDashboardContainerComponent,
-    AdminDashboardContainerComponent
+    AdminDashboardContainerComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+   // MatProgressSpinnerModule,
     HttpClientModule,
     CKEditorModule,
     FormsModule
   ],
-  providers: [{provide :HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],
+  providers: [LoaderService,{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    {provide :HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
