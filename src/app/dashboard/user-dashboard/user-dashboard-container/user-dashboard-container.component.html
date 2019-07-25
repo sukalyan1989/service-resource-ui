@@ -9,10 +9,10 @@
           <div class="subnavbar-inner">
             <div class="container">
               <ul class="mainnav">
-                <li><span>Add Resource</span></li>
-                <li><span>View Resource</span></li>
-                <li><span>My Account</span></li>
-                <li><span>Contact Admin</span></li>
+                <li><span (click)="setPageState('Add')">Add Resource</span></li>
+                <li><span (click)="setPageState('View')">View Resource</span></li>
+                <li><span (click)="setPageState('Account')">My Account</span></li>
+                <li><span (click)="setPageState('Contact')">Contact Admin</span></li>
               </ul>
             </div>
           </div>
@@ -26,4 +26,6 @@
     </div>
   </div>
 </div>
-<app-post-details></app-post-details>
+<app-post-details *ngIf="pageState=='Add'"></app-post-details>
+<app-user-subscription *ngIf="pageState=='View'"></app-user-subscription>
+<app-contact-admin *ngIf="pageState=='Contact'"></app-contact-admin>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route ,ActivatedRoute} from '@angular/router';
+import { Route ,ActivatedRoute, Router} from '@angular/router';
 import { PostsService, Post } from '../posts.service';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class LoginMethodComponent implements OnInit {
 
   post$:Observable<Post>
-  constructor(private router : ActivatedRoute,private post:PostsService) { }
+  constructor(private router : ActivatedRoute,private post:PostsService,private route : Router) { }
 
   ngOnInit() {
     this.router.params.subscribe(data=>{
@@ -19,5 +19,15 @@ export class LoginMethodComponent implements OnInit {
     })
 
   }
+
+  //activate when login selected
+  goWith(){
+    this.route.navigate(['login'])
+  
+  }
+  goWithOut(){
+   
+  }
+
 
 }

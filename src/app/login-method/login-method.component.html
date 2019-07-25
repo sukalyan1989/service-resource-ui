@@ -1,18 +1,18 @@
-<div class="container" *ngIf="(post$|async) as post">
+<div class="container" *ngIf="(post$|async) as post" style="padding: 20px">
   <div class="row">
     <div class="col-md-2">
       <img [src]="post.imageUrl" alt="" class="img-thumbnail">
     </div>
     <div class="col-md-6">
-      <h2>Name : {{post.title}}</h2>
+      <h2 class="display-4">{{post.title}}</h2>
     </div>
     <div class="col-md-4">
-   <h3> Price : {{post.price|currency}}</h3> 
+   <h4 class="display-4">  Price : {{post.price|currency}}</h4> 
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h3>Details:</h3>
+      <p class="lead">Details:</p>
       <p>{{post.description}}</p>
     </div>
       </div>
@@ -21,7 +21,7 @@
      
     </div>
       </div>
-      <button class="btn btn-primary">Continue Without Login</button><br><br>
-      <button class="btn btn-active">Continue To Login</button>
+      <button class="btn btn-primary"(click)="goWithout()">Continue Without Login</button><br><br>
+      <button class="btn btn-active"(click)="goWith()">Continue To Login</button>
 
 </div>

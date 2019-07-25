@@ -8,11 +8,14 @@ import { UserService, User } from 'src/app/user.service';
 })
 export class UserDashboardContainerComponent implements OnInit {
   currentUser:User
+  pageState="Add"
   constructor(private user:UserService) { }
 
   ngOnInit() {
     this.currentUser=this.user.getUser()
     
   }
-
+  setPageState(state:string){
+    this.pageState=state;
+  }
 }

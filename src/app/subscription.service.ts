@@ -25,6 +25,10 @@ export class SubscriptionService {
 
   }
 
+  getSubListByUser(id:string):Observable<Subscription[]>{
+    return this.http.get<Subscription[]>(this.hostname+"subscription/byUser/:id").pipe(map(m=>m["subscription"]))
+  }
+
 
 
 }

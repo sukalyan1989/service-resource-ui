@@ -1,3 +1,4 @@
+import { SubscriptionService } from './../../../subscription.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSubscriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sub:SubscriptionService) { }
 
   ngOnInit() {
+    this.sub.getSubListByUser
   }
+
 
 }

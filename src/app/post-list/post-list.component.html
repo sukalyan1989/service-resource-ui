@@ -27,7 +27,7 @@
                     <h5 class="card-title " >{{post.title}}</h5>
                     <p class="card-text">Price : {{post.price|currency}}</p>
                     <p class="card-text"><small class="text-muted">{{post.description}}</small></p>
-                    <button class="btn btn-primary">BOOK NOW</button>
+                    <button class="btn btn-danger" (click)="handleClick(post)">BOOK NOW</button>
                   </div>
                 </div>
               </div>
