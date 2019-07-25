@@ -19,22 +19,23 @@ export class PostDetailsComponent implements OnInit {
     private subscription:SubscriptionService,
     private user:UserService) { }
   post$:Observable<Post>
+  posts$:Observable<Post[]>
   postId:string;
   postName:string;
   postPrice:number;
 
   ngOnInit() {
-    this.route.params.subscribe(m=>{
-      this.post$=this.post.getPostById(m['id'])
-      this.postId=m['id']
-      this.post$.subscribe(m=>{
-        this.postName=m.title
-        this.postPrice=m.price
-      console.log(this.postName,this.postPrice)
-      })
-      
-    })
+  this.posts$=this.post.getAllPosts()
 
+  }
+
+  onSelectChange(e:Event){
+    let postid=e.target["value"]
+    this.post$=this.post.getPostById(postid)
+    this.post$.subscribe(data=>{
+this.postName=data.title;
+this.postPrice=data.price;
+    })
   }
   submit(f:FormGroup){
     

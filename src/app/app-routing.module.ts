@@ -15,7 +15,7 @@ import { AdminGuard } from './admin-guard';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
-  {path:'job/:id',component:PostDetailsComponent,canActivate:[AuthGuard]},
+ // {path:'job/:id',component:PostDetailsComponent,canActivate:[AuthGuard]},
   {path:'confirmation',component:ConfirmationComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},

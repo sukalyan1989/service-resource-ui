@@ -12,6 +12,7 @@ export class UserDashboardContainerComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser=this.user.getUser()
+    
   }
 
 }
