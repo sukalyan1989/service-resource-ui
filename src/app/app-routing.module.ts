@@ -11,6 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginMethodComponent } from './login-method/login-method.component';
+import { AdminGuard } from './admin-guard';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -21,13 +22,13 @@ const routes: Routes = [
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
   {path:'test',component:AdminSubscriptionComponent},
-  {path:'admin-dashboard',component:AdminDashboardContainerComponent},
-  {path:'user-dashboard',component:UserDashboardContainerComponent}
+  {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
+  {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]}
 ];                          
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers:[AuthGuard]
+  providers:[AuthGuard,AdminGuard]
 })
 export class AppRoutingModule { }

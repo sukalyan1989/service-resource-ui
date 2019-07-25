@@ -1,3 +1,28 @@
-<p>
-  user-dashboard-container works!
-</p>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Welcome {{ currentUser.firstname }}</h5>
+      </div>
+      <div class="col-md-7">
+        <div class="subnavbar">
+          <div class="subnavbar-inner">
+            <div class="container">
+              <ul class="mainnav">
+                <li><span>Add Resource</span></li>
+                <li><span>View Resource</span></li>
+                <li><span>My Account</span></li>
+                <li><span>Contact Admin</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="user">
+          <a href="#"><i class="fa fa-user"></i> Logout </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

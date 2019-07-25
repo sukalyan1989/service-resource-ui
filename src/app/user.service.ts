@@ -30,6 +30,9 @@ export class UserService {
   getUserId():User{
     return this.user
   }
+  getUser():User{
+    return this.user;
+  }
 
   createUser(user: User) {
     this.http.post(this.hostname + "user/signup", user).subscribe(
@@ -46,7 +49,7 @@ export class UserService {
     this.http
       .post<{ token: string; user: User }>(this.hostname + "user/login", auth)
       .subscribe(data => {
-    
+        console.log(data)
         this.token = data.token;
         if (data.token) {
           this.authStatusListener.next(true);
@@ -63,6 +66,8 @@ export class UserService {
        
           
         }
+      },(err)=>{
+        console.log(err)
       });
   }
 }
