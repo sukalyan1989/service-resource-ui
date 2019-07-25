@@ -1,5 +1,7 @@
-import { SubscriptionService } from './../../../subscription.service';
+import { UserService } from 'src/app/user.service';
+import { SubscriptionService, Subscription } from './../../../subscription.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-subscription',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-subscription.component.css']
 })
 export class UserSubscriptionComponent implements OnInit {
-
-  constructor(private sub:SubscriptionService) { }
+  sub$:Observable<Subscription[]>
+  constructor(private sub:SubscriptionService,private user:UserService) { }
 
   ngOnInit() {
-    this.sub.getSubListByUser
+  
+  this.sub$=  this.sub.getSubListByUser(this.user.getUser()._id)
+  console.log(this.user.getUser()._id)
   }
 
 
