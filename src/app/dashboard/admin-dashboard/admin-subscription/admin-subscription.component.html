@@ -1,15 +1,18 @@
 <h3 class="display-4 text-center">All Subscribers</h3><br>
 <table class="table">
-  <tr>
-    <th>Post Name</th>
-    <th>Location</th>
-    <th>Level</th>
-    <th>Start Date</th>
-    <th>Total Jobs</th>
-    <th>Duration</th>
-    <th>Created By </th>
-    <th>Action</th>
-  </tr>
+  <thead class="thead-dark">
+
+    <tr>
+      <th>Post Name</th>
+      <th>Location</th>
+      <th>Level</th>
+      <th>Start Date</th>
+      <th>Total Jobs</th>
+      <th>Duration</th>
+      <th>Created By </th>
+      <th>Action</th>
+    </tr>
+  </thead>
 
 
 
@@ -23,6 +26,6 @@
 <td>{{sub.totalJobs}}</td>
 <td>{{sub.durationText}}</td>
 <td>{{sub.user.email}}</td>
-<td><button class="btn btn-danger">CANCEL</button></td>
+<td><button  (click)="handleCancel(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">CANCEL</button><button class="btn btn-success"  (click)="handleApprove(sub._id)">APPROVE</button></td>
   </tr>
 </table>

@@ -28,7 +28,10 @@ export class SubscriptionService {
   getSubListByUser(id:string):Observable<Subscription[]>{
     return this.http.get<Subscription[]>(this.hostname+"subscription/byUser/"+id).pipe(map(m=>m["subscription"]))
   }
+updateSubStatus(id:string,status:string){
+  this.http.patch<{message:string}>(this.hostname+"subscription/"+id,{status:status}).subscribe(data=>alert(data.message))
 
+}
 
 
 }

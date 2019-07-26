@@ -16,5 +16,10 @@ export class AdminSubscriptionComponent implements OnInit {
 
     this.subs$=this.sub.getSubList()
   }
-
+handleCancel(id:string){
+  this.sub.updateSubStatus(id,'Cancelled')
+}
+handleApprove(id:string){
+  this.sub.updateSubStatus(id,'Active')
+}
 }

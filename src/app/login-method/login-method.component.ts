@@ -20,13 +20,16 @@ export class LoginMethodComponent implements OnInit {
 
   }
 
+
   //activate when login selected
   goWith(){
     this.route.navigate(['login'])
   
   }
+  //for without login case
   goWithOut(){
-   
+    window.location.href="https://www.yobitel.com/contactus"
+  
   }
 
 
