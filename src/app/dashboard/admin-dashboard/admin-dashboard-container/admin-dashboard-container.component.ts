@@ -17,7 +17,7 @@ export class AdminDashboardContainerComponent implements OnInit {
 
   }
   setPageState(state:string){
-this.pageState=state
+    this.pageState=state
   }
   LogOut(){
     this.user.logOut();

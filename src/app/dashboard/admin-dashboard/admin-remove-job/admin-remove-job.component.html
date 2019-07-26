@@ -1,0 +1,13 @@
+<div class="container">
+  <table class="table">
+    <tr><th>Job Name</th>
+    <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of allPosts$|async">
+      <td>
+        <h5>{{post.title}}</h5>
+        <p>{{post.description}}</p>
+      </td><td><button class="btn btn-danger" (click)="deletePost(post._id)">Delete Job</button></td>
+    </tr>
+  </table>
+</div>
