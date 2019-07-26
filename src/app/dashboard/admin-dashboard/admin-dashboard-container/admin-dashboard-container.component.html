@@ -9,11 +9,11 @@
             <div class="subnavbar-inner">
               <div class="container">
                 <ul class="mainnav">
-                  <li><span>ADD JOB</span></li>
-                  <li><span>MANAGE JOB</span></li>
-                  <li><span>VIEW SUBSCRIPTION</span></li>
-                  <li><span>MANAGE USER</span></li>
-                  <li><span>NOTIFICATION</span></li>
+                  <li><span (click)="setPageState('Add')">ADD JOB</span></li>
+                  <li><span (click)="setPageState('EditJob')">MANAGE JOB</span></li>
+                  <li><span (click)="setPageState('ViewSub')">VIEW SUBSCRIPTION</span></li>
+                  <li><span (click)="setPageState('EditUser')">MANAGE USER</span></li>
+                  <li><span (click)="setPageState('Notification')">NOTIFICATION</span></li>
                 </ul>
               </div>
             </div>
@@ -21,9 +21,11 @@
         </div>
         <div class="col-md-2">
           <div class="user">
-            <a href="#"><i class="fa fa-user"></i> Logout </a>
+            <button (click)="LogOut()" class="btn btn-danger"><i class="fa fa-user"></i> Logout </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <app-admin-post *ngIf="pageState=='Add'"></app-admin-post>
+ <app-admin-subscription *ngIf="pageState=='ViewSub'"></app-admin-subscription>

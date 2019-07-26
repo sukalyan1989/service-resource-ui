@@ -8,12 +8,19 @@ import { UserService, User } from 'src/app/user.service';
 })
 export class AdminDashboardContainerComponent implements OnInit {
 
+  pageState:string="Add"
   constructor(private user:UserService) { }
 
   currentUser:User
   ngOnInit() {
     this.currentUser=this.user.getUser();
 
+  }
+  setPageState(state:string){
+this.pageState=state
+  }
+  LogOut(){
+    this.user.logOut();
   }
 
 }

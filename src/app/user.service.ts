@@ -11,13 +11,19 @@ export class UserService {
   private token: string;
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
-  private user:User
+  private user:User|null
   hostname: string;
   
   constructor(private http: HttpClient, private route: Router) {
     this.hostname = environment.host_name;
   }
 
+  logOut(){
+    this.user=null;
+    this.isAuthenticated=false;
+    this.token=""
+    this.route.navigate(['/login'])
+  }
   getIsAuth() {
     return this.isAuthenticated;
   }
