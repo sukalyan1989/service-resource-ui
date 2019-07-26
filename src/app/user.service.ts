@@ -44,6 +44,7 @@ export class UserService {
     this.http.post(this.hostname + "user/signup", user).subscribe(
       data => {
         alert("user Created");
+        this.route.navigate(['/login'])
       },
       err => {
         console.log(err);

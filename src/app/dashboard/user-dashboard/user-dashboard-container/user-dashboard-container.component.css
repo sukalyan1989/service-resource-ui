@@ -49,8 +49,9 @@ margin-bottom: -3px;
 font-size: 20px;
 }
 
-.subnavbar .container > ul > li > a > span {
+.subnavbar .container > ul > li > span {
 display: block;
+cursor: pointer;
 
 }
 

@@ -18,4 +18,10 @@ export class UserDashboardContainerComponent implements OnInit {
   setPageState(state:string){
     this.pageState=state;
   }
+  getState(e:string){
+  this.pageState=e;
+  }
+  LogOut(){
+    this.user.logOut();
+  }
 }

@@ -2,7 +2,7 @@ import { UserService } from './../user.service';
 import { Subscription, SubscriptionService } from './../subscription.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { PostsService, Post } from './../posts.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 
@@ -12,6 +12,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
+  @Output()stateChange = new EventEmitter()
   constructor(
     private router:Router,
     private post:PostsService,
@@ -64,6 +65,7 @@ this.postPrice=data.price;
     }
     this.subscription.createSubscription(subInfo).subscribe(data=>{
       alert(data.message);
+      this.stateChange.emit('Confirmation');
      })
     //console.log(subInfo)
   }

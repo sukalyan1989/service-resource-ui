@@ -20,12 +20,13 @@
       </div>
       <div class="col-md-2">
         <div class="user">
-          <a href="#"><i class="fa fa-user"></i> Logout </a>
+        <button class="btn btn-danger" (click)="LogOut()"> <i class="fa fa-user"></i> Logout</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<app-post-details *ngIf="pageState=='Add'"></app-post-details>
+<app-post-details *ngIf="pageState=='Add'" (stateChange)=getState($event)></app-post-details>
 <app-user-subscription *ngIf="pageState=='View'"></app-user-subscription>
 <app-contact-admin *ngIf="pageState=='Contact'"></app-contact-admin>
+<app-confirmation *ngIf="pageState=='Confirmation'"></app-confirmation>
