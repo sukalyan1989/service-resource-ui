@@ -25,6 +25,7 @@ import { UserDashboardContainerComponent } from './dashboard/user-dashboard/user
 import { AdminDashboardContainerComponent } from './dashboard/admin-dashboard/admin-dashboard-container/admin-dashboard-container.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader-interceptor';
+import { AdminRemoveJobComponent } from './admin-remove-job/admin-remove-job.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LoaderInterceptor } from './loader-interceptor';
     UserViewSubscriptionComponent,
     UserDashboardContainerComponent,
     AdminDashboardContainerComponent,
-    LoaderComponent
+    LoaderComponent,
+    AdminRemoveJobComponent
   ],
   imports: [
     BrowserModule,
