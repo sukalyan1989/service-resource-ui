@@ -55,7 +55,7 @@ import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remov
     CKEditorModule,
     FormsModule
   ],
-  providers: [
+  providers: [LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

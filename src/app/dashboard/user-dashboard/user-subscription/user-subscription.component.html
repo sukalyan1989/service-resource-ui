@@ -10,6 +10,8 @@
   <th>Start Date</th>
   <th>Total Jobs</th>
   <th>Duration</th>
+  <th>Status</th>
+  <th>Action</th>
 </tr>
 <tr *ngFor="let sub of sub$|async">
   <td>{{sub.post.title}}</td>
@@ -18,7 +20,10 @@
   <td>{{sub.level}}</td>
   <td>{{sub.startDate|date}}</td>
   <td>{{sub.totalJobs}}</td>
+  <td>{{sub.status}}</td>
   <td>{{sub.durationText}}</td>
+
+  <td><button class="btn btn-primary">Payment</button></td>
 </tr>
 
   </table>

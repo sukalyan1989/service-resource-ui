@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { hostname } from 'os';
+
 
 @Injectable({
   providedIn: "root"
@@ -19,16 +19,19 @@ export class PostsService {
       .get<Post[]>(this.hostName + "posts")
       .pipe(map(data => data["posts"]));
   }
-  getPostById(id: string): Observable<Post> {
+
+
+  //get a single post Item
+    getPostById(id: string): Observable<Post> {
     return this.http
       .get<Post>(this.hostName + "posts/" + id)
       .pipe(map(data => data["post"]));
   }
 
-  deletePostById(id: string) {
-this.http.delete<{message:string}>(this.hostName+"posts/"+id).subscribe(data=>{
-  alert(data.message)
-},error=>console.log(error))
+
+//delete a post 
+  deletePostById(id: string):Observable<any> {
+   return   this.http.delete<{message:string}>(this.hostName+"posts/"+id)
   }
 }
 export interface Post {

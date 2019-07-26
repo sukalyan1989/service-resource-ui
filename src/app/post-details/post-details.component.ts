@@ -58,14 +58,14 @@ this.postPrice=data.price;
       post:{
         title:this.postName,
         price:this.postPrice
-      }
+      },
+      status:'Pending'
 
     }
     this.subscription.createSubscription(subInfo).subscribe(data=>{
       alert(data.message);
-      this.router.navigateByUrl('confirmation')
-    })
-    console.log(subInfo)
+     })
+    //console.log(subInfo)
   }
 
 }

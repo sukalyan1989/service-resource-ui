@@ -51,6 +51,6 @@ export interface Subscription{
     post?:{
       title:string,
       price:number
-
-    }
+    },
+    status?:string
 }
