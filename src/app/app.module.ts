@@ -26,6 +26,7 @@ import { AdminDashboardContainerComponent } from "./dashboard/admin-dashboard/ad
 import { LoaderComponent } from "./loader/loader.component";
 import { LoaderInterceptor } from "./loader-interceptor";
 import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remove-job/admin-remove-job.component";
+import { UserAccountComponent } from "./dashboard/user-dashboard/user-account/user-account.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remov
     UserDashboardContainerComponent,
     AdminDashboardContainerComponent,
     LoaderComponent,
-    AdminRemoveJobComponent
+    AdminRemoveJobComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remov
     CKEditorModule,
     FormsModule
   ],
-  providers: [LoaderService,
+  providers: [
+    LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

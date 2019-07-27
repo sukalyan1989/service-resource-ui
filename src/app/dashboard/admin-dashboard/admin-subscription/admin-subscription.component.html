@@ -10,6 +10,7 @@
       <th>Total Jobs</th>
       <th>Duration</th>
       <th>Created By </th>
+      <th>Status</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
 <td>{{sub.totalJobs}}</td>
 <td>{{sub.durationText}}</td>
 <td>{{sub.user.email}}</td>
+<td>{{sub.status}}</td>
 <td><button  (click)="handleCancel(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">CANCEL</button><button class="btn btn-success"  (click)="handleApprove(sub._id)">APPROVE</button></td>
   </tr>
 </table>
