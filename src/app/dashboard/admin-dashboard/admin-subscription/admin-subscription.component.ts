@@ -1,4 +1,4 @@
-import { SubscriptionService, Subscription } from './../../../subscription.service';
+import { SubscriptionService, Subscription } from '../../../services/subscription.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route ,ActivatedRoute, Router} from '@angular/router';
-import { PostsService, Post } from '../posts.service';
+import { PostsService, Post } from '../services/posts.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -19,18 +19,12 @@ export class LoginMethodComponent implements OnInit {
     })
 
   }
-
-
-  //activate when login selected
-  goWith(){
+  proceedToLogin(){
     this.route.navigate(['login'])
-  
   }
-  //for without login case
-  goWithOut(){
-    window.location.href="https://www.yobitel.com/contactus"
+
+
   
-  }
 
 
 }

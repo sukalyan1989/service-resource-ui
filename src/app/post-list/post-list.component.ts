@@ -1,5 +1,5 @@
-import { LoaderService } from './../loader.service';
-import { PostsService, Post } from './../posts.service';
+import { LoaderService } from '../services/loader.service';
+import { PostsService, Post } from '../services/posts.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';

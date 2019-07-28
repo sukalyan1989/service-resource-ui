@@ -1,4 +1,4 @@
-import { LoaderService } from "./loader.service";
+import { LoaderService } from "./services/loader.service";
 import { AuthInterceptor } from "./auth-interceptor";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -16,7 +16,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { ConfirmationComponent } from "./dashboard/user-dashboard/confirmation/confirmation.component";
 import { HeaderComponent } from "./header/header.component";
 import { AdminPostComponent } from "./dashboard/admin-dashboard/admin-post/admin-post.component";
-import { LoginMethodComponent } from "./login-method/login-method.component";
+import { LoginMethodComponent } from "./apply-now/login-method.component";
 import { AdminSubscriptionComponent } from "./dashboard/admin-dashboard/admin-subscription/admin-subscription.component";
 import { UserSubscriptionComponent } from "./dashboard/user-dashboard/user-subscription/user-subscription.component";
 import { ContactAdminComponent } from "./dashboard/user-dashboard/contact-admin/contact-admin.component";
@@ -27,6 +27,8 @@ import { LoaderComponent } from "./loader/loader.component";
 import { LoaderInterceptor } from "./loader-interceptor";
 import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remove-job/admin-remove-job.component";
 import { UserAccountComponent } from "./dashboard/user-dashboard/user-account/user-account.component";
+import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
+import { ChooseLoginComponent } from './choose-login/choose-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import { UserAccountComponent } from "./dashboard/user-dashboard/user-account/us
     AdminDashboardContainerComponent,
     LoaderComponent,
     AdminRemoveJobComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    UserProfileComponent,
+    ChooseLoginComponent
   ],
   imports: [
     BrowserModule,

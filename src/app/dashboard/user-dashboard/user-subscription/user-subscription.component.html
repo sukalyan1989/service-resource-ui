@@ -2,17 +2,20 @@
 
   <h1 class="display-4 text-center">My Resource</h1><br> 
   <table class="table">
-<tr>
-  <th>Job Name</th>
-  <th>Job Price</th>
-  <th>Location</th>
-  <th>Level</th>
-  <th>Start Date</th>
-  <th>Total Jobs</th>
-  <th>Duration</th>
-  <th>Status</th>
-  <!-- <th>Action</th> -->
-</tr>
+    <thead class="thead-dark">
+      <tr>
+        <th>Job Name</th>
+        <th>Job Price</th>
+        <th>Location</th>
+        <th>Level</th>
+        <th>Start Date</th>
+        <th>Total Jobs</th>
+        <th>Duration</th>
+        <th>Status</th>
+        <!-- <th>Action</th> -->
+      </tr>
+
+    </thead>
 <tr *ngFor="let sub of sub$|async">
   <td>{{sub.post.title}}</td>
   <td>{{sub.post.price|currency}}</td>

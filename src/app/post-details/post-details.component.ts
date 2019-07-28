@@ -1,7 +1,7 @@
-import { UserService } from './../user.service';
-import { Subscription, SubscriptionService } from './../subscription.service';
+import { UserService } from '../services/user.service';
+import { Subscription, SubscriptionService } from '../services/subscription.service';
 import { Router,ActivatedRoute } from '@angular/router';
-import { PostsService, Post } from './../posts.service';
+import { PostsService, Post } from '../services/posts.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';

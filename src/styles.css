@@ -59,3 +59,9 @@ ul li a {
 .footer span {
   font-size: 20px;
 }
+
+.center-element{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

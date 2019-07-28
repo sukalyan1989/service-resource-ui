@@ -1,3 +1,4 @@
+import { ChooseLoginComponent } from './choose-login/choose-login.component';
 import { UserDashboardContainerComponent } from './dashboard/user-dashboard/user-dashboard-container/user-dashboard-container.component';
 import { AdminDashboardContainerComponent } from './dashboard/admin-dashboard/admin-dashboard-container/admin-dashboard-container.component';
 import { AdminSubscriptionComponent } from './dashboard/admin-dashboard/admin-subscription/admin-subscription.component';
@@ -10,11 +11,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoginMethodComponent } from './login-method/login-method.component';
+import { LoginMethodComponent } from './apply-now/login-method.component';
 import { AdminGuard } from './admin-guard';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
+  {path:'choose-login',component:ChooseLoginComponent},
   {path:'job/:id',component:PostDetailsComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},

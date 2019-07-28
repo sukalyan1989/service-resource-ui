@@ -1,5 +1,5 @@
-import { UserService } from 'src/app/user.service';
-import { SubscriptionService, Subscription } from './../../../subscription.service';
+import { UserService } from 'src/app/services/user.service';
+import { SubscriptionService, Subscription } from '../../../services/subscription.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 

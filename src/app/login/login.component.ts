@@ -1,4 +1,4 @@
-import { UserService, AuthData } from './../user.service';
+import { UserService, AuthData } from '../services/user.service';
 import {  FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 

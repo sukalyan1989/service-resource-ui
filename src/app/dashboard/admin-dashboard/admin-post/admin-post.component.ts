@@ -1,4 +1,4 @@
-import { Post } from "./../../../posts.service";
+import { Post } from "../../../services/posts.service";
 import { AdminDashboardService } from "./../admin-dashboard.service";
 import { FormGroup } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";

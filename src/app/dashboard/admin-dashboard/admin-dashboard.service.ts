@@ -1,5 +1,5 @@
-import { SubscriptionService } from './../../subscription.service';
-import { Post } from "./../../posts.service";
+import { SubscriptionService } from '../../services/subscription.service';
+import { Post } from "../../services/posts.service";
 import { HttpClient, HttpHandler, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment.prod";

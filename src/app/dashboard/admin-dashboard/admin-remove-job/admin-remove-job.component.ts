@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PostsService, Post } from 'src/app/posts.service';
+import { PostsService, Post } from 'src/app/services/posts.service';
 import { Observable } from 'rxjs';
 
 @Component({

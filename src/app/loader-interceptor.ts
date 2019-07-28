@@ -1,4 +1,4 @@
-import { LoaderService } from './loader.service';
+import { LoaderService } from './services/loader.service';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';

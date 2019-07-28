@@ -1,17 +1,4 @@
-<!-- <loader></loader>
-<h3 class="text-center head1"> Subscribe Your Consultant </h3>
-<ul>
-  <li *ngFor="let post of posts$|async" class="ctn">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-2"><img [src]="post.imageUrl" class="img-responsive"></div>
-      <div class="col-lg-4"><h3>{{post.title}}</h3><p>{{post.description}}</p></div>
-      <div class="col-lg-3"><h5>{{post.price|currency}}</h5></div>
-      <div class="col-lg-3"><button class="my-btn" (click)="handleClick(post)">Book Now</button></div>
-      </div>
-    </div>
-  </li>
-</ul> -->
+
 <div class="container">
     <h1 class="text-center"><span class="badge badge-secondary">Subscribe Your Consultant</span> </h1>
     <div class="clearfix"></div>
@@ -22,13 +9,15 @@
                 <div class="col-md-4">
                   <img [src]="post.imageUrl"  class="card-img img-responsive" style="width:auto" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                   <div class="card-body">
                     <h5 class="card-title " >{{post.title}}</h5>
                     <p class="card-text">Price : {{post.price|currency}}</p>
                     <p class="card-text"><small class="text-muted">{{post.description}}</small></p>
-                    <button class="btn btn-danger" (click)="handleClick(post)">BOOK NOW</button>
                   </div>
+                </div>
+                <div class="col-md-2 center-element">
+                    <button class="btn btn-danger " (click)="handleClick(post)">BOOK NOW</button>
                 </div>
               </div>
             </div>

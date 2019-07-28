@@ -1,4 +1,4 @@
-<div class="login-form" >
+<!-- <div class="login-form" >
     <form #f="ngForm" (ngSubmit)="submit(f)">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
@@ -11,9 +11,42 @@
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
         <div class="clearfix text-center">
-            <!-- <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label> -->
+            
             <a href="#" class="">Forgot Password?</a>
         </div>        
     </form>
     <p class="text-center"><a routerLink="/signup">Create an Account</a></p>
-</div>
+</div> -->
+<div class="login-form" >
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+            <h2 class="text-center">Sign in or Register To Apply</h2>   
+            <div class="form-group"><a routerLink="/signup" class="my-btn">Sign Up</a><br>OR</div>
+                            
+            <div class="form-group">
+             <label class="control-label">Email Address</label>
+                <input ngModel type="email" name="email" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+             <label class="control-label">Passwords</label>
+                <input type="password" ngModel name="password" class="form-control" placeholder="Password" required="required">
+            </div>
+             <div class="clearfix text-center">
+                <!-- <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label> -->
+                <a href="#" class="">Forgot Password?</a>
+            </div> 
+          <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+            </div>
+             <div class="col-md-6">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Continue Without Sign In</button>
+            </div>
+            </div>
+            </div>
+                  
+        </form>
+        <!--p class="text-center"><a routerLink="/signup">Create an Account</a></p>-->
+    </div>
