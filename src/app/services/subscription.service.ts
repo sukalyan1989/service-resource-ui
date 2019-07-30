@@ -37,7 +37,7 @@ updateSubStatus(id:string,status:string){
 }
 export interface Subscription{
     itemId?:string,
-    jobTitle:string,
+    jobTitle?:string,
     location:string,
     level:string,
     startDate:Date,

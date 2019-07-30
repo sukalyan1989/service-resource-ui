@@ -5,6 +5,7 @@ import { PostsService, Post } from '../services/posts.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-post-details',
@@ -18,7 +19,8 @@ export class PostDetailsComponent implements OnInit {
     private post:PostsService,
     private route:ActivatedRoute,
     private subscription:SubscriptionService,
-    private user:UserService) { }
+    private user:UserService,
+    private cart:CartService) { }
   post$:Observable<Post>
   posts$:Observable<Post[]>
   postId:string;
@@ -38,36 +40,53 @@ this.postName=data.title;
 this.postPrice=data.price;
     })
   }
-  submit(f:FormGroup){
+  // submit(f:FormGroup){
     
-    confirm("Are you sure to submit this data ?")
+  //   confirm("Are you sure to submit this data ?")
+  //   let subInfo:Subscription={
+  //     jobTitle:"",
+  //     location:f.value['location'],
+  //     level:f.value['level'],
+  //     startDate:f.value['startDate'],
+  //     totalJobs:f.value['totalJobs'],
+  //     durationText:f.value['durationText'],
+  //     durationNumber:0,
+  //     postId:this.postId,
+  //     userId:this.user.getUserId()._id,
+  //     user:{
+  //       firstname:this.user.getUserId().firstname,
+  //       lastname:this.user.getUserId().lastname,
+  //       email:this.user.getUserId().email
+  //     },
+  //     post:{
+  //       title:this.postName,
+  //       price:this.postPrice
+  //     },
+  //     status:'Pending'
+
+  //   }
+  //   this.subscription.createSubscription(subInfo).subscribe(data=>{
+  //     alert(data.message);
+  //     this.stateChange.emit('Confirmation');
+  //    })
+   
+  // }
+  submit(f:FormGroup){
     let subInfo:Subscription={
-      jobTitle:"",
-      location:f.value['location'],
-      level:f.value['level'],
-      startDate:f.value['startDate'],
-      totalJobs:f.value['totalJobs'],
-      durationText:f.value['durationText'],
-      durationNumber:0,
-      postId:this.postId,
-      userId:this.user.getUserId()._id,
-      user:{
-        firstname:this.user.getUserId().firstname,
-        lastname:this.user.getUserId().lastname,
-        email:this.user.getUserId().email
-      },
-      post:{
-        title:this.postName,
-        price:this.postPrice
-      },
-      status:'Pending'
+       jobTitle:"",
+       location:f.value['location'],
+       level:f.value['level'],
+       startDate:f.value['startDate'],
+       totalJobs:f.value['totalJobs'],
+       durationText:f.value['durationText'],
+       durationNumber:0,
+       postId:this.postId,
+       userId:this.user.getUserId()._id,
 
     }
-    this.subscription.createSubscription(subInfo).subscribe(data=>{
-      alert(data.message);
-      this.stateChange.emit('Confirmation');
-     })
-    //console.log(subInfo)
+    this.cart.addCartItems(subInfo)
+    this.router.navigate(['/test'])
+
   }
 
 }

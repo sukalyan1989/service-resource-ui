@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Subscription } from './subscription.service';
+import { Subject, Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private cartItems:Subscription[]
-  private totalItems:number=this.cartItems.length
-  private totalAmount:number
-  constructor() { 
+  private cartItems:Subscription[]=[]
+  totalItems:number=this.cartItems.length
+  totalAmount:number=0
 
-    
+  
 
-  }
+  constructor() { }
 
-  getTotalItems():number{
-    return this.totalItems
+  getTotalItems(){
+   
   }
   getTotalAmount(){
 
@@ -27,12 +27,20 @@ export class CartService {
     return this.cartItems
   }
 
-  addCartItems(){
-
+  addCartItems(item:Subscription){
+    this.cartItems.push(item);
+    
   }
 
   removeCartItems(){
 
   }
+
+}
+
+export interface CartState{
+  itemCount:number,
+  price:number
+
 
 }
