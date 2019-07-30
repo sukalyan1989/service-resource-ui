@@ -13,6 +13,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginMethodComponent } from './apply-now/login-method.component';
 import { AdminGuard } from './admin-guard';
+import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
-  {path:'test',component:AdminSubscriptionComponent},
+  {path:'test',component:CartComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]}
 ];                          

@@ -29,6 +29,7 @@ import { AdminRemoveJobComponent } from "./dashboard/admin-dashboard/admin-remov
 import { UserAccountComponent } from "./dashboard/user-dashboard/user-account/user-account.component";
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { ChooseLoginComponent } from './choose-login/choose-login.component';
+import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { ChooseLoginComponent } from './choose-login/choose-login.component';
     AdminRemoveJobComponent,
     UserAccountComponent,
     UserProfileComponent,
-    ChooseLoginComponent
+    ChooseLoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
