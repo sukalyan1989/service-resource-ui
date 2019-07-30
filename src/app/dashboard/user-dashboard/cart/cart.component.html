@@ -27,7 +27,7 @@
     <div class="col-md-4"><div class="card bg-light mb-3" style="max-width: 18rem;">
       <div class="card-header">Your Cart</div>
       <div class="card-body">
-        <h5 class="card-title">Number of Items :{{itemCount}} </h5>
+        <h5 class="card-title">Number of Items :{{cartState$|async}} </h5>
         <p class="card-text">Total Price <span>100</span></p>
         <button class="btn btn-primary">Proceed to Checkout</button>
       </div>

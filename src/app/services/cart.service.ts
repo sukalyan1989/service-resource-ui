@@ -10,6 +10,7 @@ export class CartService {
   private cartItems:Subscription[]=[]
   totalItems:number=this.cartItems.length
   totalAmount:number=0
+  private subject = new Subject<number>();
 
   
 
@@ -17,9 +18,9 @@ export class CartService {
 
   getTotalItems(){
    
+    return this.subject.asObservable();
   }
   getTotalAmount(){
-
 
   }
 
@@ -29,6 +30,7 @@ export class CartService {
 
   addCartItems(item:Subscription){
     this.cartItems.push(item);
+    this.subject.next(++this.totalAmount)
     
   }
 

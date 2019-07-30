@@ -15,15 +15,15 @@ export class CartComponent implements OnInit,OnChanges {
 
   }
   cartItems:Subscription[]=[] 
-  cartState$:Observable<Subscription>
+  cartState$
   itemCount=0
   ngOnInit() {
     this.cartItems=this.cart.getCartItems()
+  this.cartState$=this.cart.getTotalItems()
     
   }
   ngOnChanges(){
     
-    this.itemCount=this.cart.totalItems
   }
 
 }

@@ -18,5 +18,8 @@ export class UserSubscriptionComponent implements OnInit {
   console.log(this.user.getUser()._id)
   }
 
+  LogOut(){
+    this.user.logOut()
+  }
 
 }

@@ -14,6 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginMethodComponent } from './apply-now/login-method.component';
 import { AdminGuard } from './admin-guard';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
+import { UserSubscriptionComponent } from './dashboard/user-dashboard/user-subscription/user-subscription.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -25,7 +26,10 @@ const routes: Routes = [
   {path:'job/details/:id',component:LoginMethodComponent},
   {path:'test',component:CartComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
-  {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]}
+  {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]},
+  {path:'user-dashboard/add-resource',component:PostDetailsComponent,canActivate:[AuthGuard]},
+  {path:'user-dashboard/view-resource',component:UserSubscriptionComponent,canActivate:[AuthGuard]},
+
 ];                          
 
 @NgModule({

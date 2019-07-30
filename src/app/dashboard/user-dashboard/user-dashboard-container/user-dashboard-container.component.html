@@ -9,10 +9,10 @@
           <div class="subnavbar-inner">
             <div class="container">
               <ul class="mainnav">
-                <li><span (click)="setPageState('Add')">Add Resource</span></li>
-                <li><span (click)="setPageState('View')">View Resource</span></li>
-                <li><span (click)="setPageState('Account')">My Account</span></li>
-                <li><span (click)="setPageState('Contact')">Contact Admin</span></li>
+                <li><a [routerLink]="['/user-dashboard/add-resource/']"><span>Add Resource</span></a></li>
+                <li><a [routerLink]="['/user-dashboard/view-resource/']"><span>View Resource</span></a></li>
+                <li><a [routerLink]="['/user-dashboard/my-account/']"><span>My Account</span></a></li>
+                <li><a [routerLink]="['user-dashboard/contact-admin/']"><span>Contact Admin</span></a></li>
               </ul>
             </div>
           </div>
@@ -26,8 +26,3 @@
     </div>
   </div>
 </div>
-<app-post-details *ngIf="pageState=='Add'" (stateChange)=getState($event)></app-post-details>
-<app-user-subscription *ngIf="pageState=='View'"></app-user-subscription>
-<app-contact-admin *ngIf="pageState=='Contact'"></app-contact-admin>
-<app-confirmation *ngIf="pageState=='Confirmation'"></app-confirmation>
-<app-user-account *ngIf="pageState=='Account'"></app-user-account>
