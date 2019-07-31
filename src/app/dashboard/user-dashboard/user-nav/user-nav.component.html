@@ -1,0 +1,28 @@
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Welcome {{ currentUser.firstname }}</h5>
+      </div>
+      <div class="col-md-7">
+        <div class="subnavbar">
+          <div class="subnavbar-inner">
+            <div class="container">
+              <ul class="mainnav">
+                <li><a [routerLink]="['/user-dashboard/add-resource/']"><span>Add Resource</span></a></li>
+                <li><a [routerLink]="['/user-dashboard/view-resource/']"><span>View Resource</span></a></li>
+                <li><a [routerLink]="['/user-dashboard/my-account/']"><span>My Account</span></a></li>
+                <li><a [routerLink]="['user-dashboard/contact-admin/']"><span>Contact Admin</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="user">
+        <button class="btn btn-danger" (click)="LogOut()"> <i class="fa fa-user"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

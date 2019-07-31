@@ -30,6 +30,8 @@ import { UserAccountComponent } from "./dashboard/user-dashboard/user-account/us
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { ChooseLoginComponent } from './choose-login/choose-login.component';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
+import { AdminNavComponent } from './dashboard/admin-dashboard/admin-nav/admin-nav.component';
+import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,9 @@ import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
     UserAccountComponent,
     UserProfileComponent,
     ChooseLoginComponent,
-    CartComponent
+    CartComponent,
+    AdminNavComponent,
+    UserNavComponent
   ],
   imports: [
     BrowserModule,

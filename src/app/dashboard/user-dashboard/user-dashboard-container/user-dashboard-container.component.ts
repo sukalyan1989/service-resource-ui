@@ -7,20 +7,14 @@ import { UserService, User } from 'src/app/services/user.service';
   styleUrls: ['./user-dashboard-container.component.css']
 })
 export class UserDashboardContainerComponent implements OnInit {
-  currentUser:User
-  pageState="Add"
   constructor(private user:UserService) { }
-
+  
+  currentUser:User
   ngOnInit() {
     this.currentUser=this.user.getUser()
     
   }
-  setPageState(state:string){
-    this.pageState=state;
-  }
-  getState(e:string){
-  this.pageState=e;
-  }
+  
   LogOut(){
     this.user.logOut();
   }

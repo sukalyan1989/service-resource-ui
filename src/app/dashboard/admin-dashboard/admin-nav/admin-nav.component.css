@@ -1,0 +1,122 @@
+
+.subnavbar {
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.subnavbar-inner {
+height: 60px;}
+
+.subnavbar .container > ul {
+display: inline-block;
+height: 80px;
+padding: 0;
+margin: 0;
+}
+
+.subnavbar .container > ul > li {
+float: left;
+min-width: 90px;
+height: 44px;
+padding: 10px;
+margin-top: 10px;
+text-align: center;
+list-style: none;		
+border-left: 1px solid #d9d9d9;	
+}
+
+.subnavbar .container > ul > li > a {
+display: block;	
+height: 100%;
+padding: 0 6px;	
+font-size: 12px;
+font-weight: bold;
+color: #000;
+}
+
+.subnavbar .container > ul > li > a:hover {
+color: #888;
+text-decoration: none;
+}
+
+.subnavbar .container > ul > li > a > i {
+display: inline-block;
+
+width: 24px;
+height: 10px;
+margin-top: 11px;
+margin-bottom: -3px;
+font-size: 20px;
+}
+
+.subnavbar .container > ul > li > a {
+display: block;
+cursor: pointer;
+}
+
+.subnavbar .container > ul > li.active > a {
+
+border-bottom:3px solid #00455c;
+color: #383838;
+}
+
+.main-content h5{margin-top:20px;}
+.main-content{background:rgba(232, 165, 39, 1);margin:20px 0;}
+.main-content .user{margin-top:18px;text-align: center}
+.main-content .user a{color:#000; text-decoration: none;}
+
+/*---------------------Responsive Code ------------------------------*/
+@media (min-width:260px) and (max-width:575px){
+.topbanner{
+height: 145px;
+}
+}
+@media (min-width:260px) and (max-width:321px){
+
+.subnavbar{margin-bottom:0px!important;}
+.subnavbar .container > ul > li{
+height: 18px!important;
+padding: 0px!important;
+margin-top: 4px!important;
+font-size: 10px;
+}
+.main-content h5{margin-top:10px;    text-align: center;}
+.main-content .user {margin-top:0!important;margin-bottom:10px;}
+.navbar-toggler-icon{background:#fff;}
+.nav-link{padding: 5px;}
+}
+@media (min-width:322px) and (max-width:480px){
+
+.subnavbar{margin-bottom:0px!important;}
+.subnavbar .container > ul > li{
+height: 18px!important;
+padding: 0px!important;
+margin-top: 4px!important;
+font-size: 10px;
+}
+.subnavbar .container > ul{height:1px;}
+.main-content h5{margin-top:10px;    text-align: center;}
+.main-content .user {margin-top:0!important;margin-bottom:10px;}
+.navbar-toggler-icon{background:#fff;}
+.nav-link{padding: 5px;}
+}
+
+@media (min-width:576px) and (max-width:992px){
+.navbar-expand-sm .navbar-nav .nav-link{
+padding-right: 0; 
+padding-left: 0;
+}
+.nav-link{padding-top:20px; font-size: 12px;}
+}
+
+@media (min-width:576px) and (max-width:767px){
+.subnavbar .container > ul {font-size:14px;}
+.main-content h5{text-align: center;}
+.main-content .user {margin-top:0!important;margin-bottom:10px;}
+}
+
+@media (min-width:768px) and (max-width:992px){
+.subnavbar .container > ul {font-size:14px;}
+.main-content h5{font-size: 14px;}
+.subnavbar .container > ul > li{min-width: 0px;font-size: 10px;}
+}
