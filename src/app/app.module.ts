@@ -32,6 +32,7 @@ import { ChooseLoginComponent } from './choose-login/choose-login.component';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { AdminNavComponent } from './dashboard/admin-dashboard/admin-nav/admin-nav.component';
 import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.component';
+import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     ChooseLoginComponent,
     CartComponent,
     AdminNavComponent,
-    UserNavComponent
+    UserNavComponent,
+    AdminAddManagerComponent
   ],
   imports: [
     BrowserModule,
