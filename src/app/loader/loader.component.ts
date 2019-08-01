@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoaderService } from '../services/loader.service';
+import { HttpStatus } from '../services/loader.service';
 
 @Component({
   selector: 'loader',
@@ -8,10 +8,11 @@ import { LoaderService } from '../services/loader.service';
 })
 export class LoaderComponent implements OnInit {
 
-  constructor(private loaderService: LoaderService){}
-  color = 'primary';
-  mode = 'indeterminate';
-  value = 50;
+  HTTPActivity: boolean;
+  constructor(private httpstatus: HttpStatus){
+    this.httpstatus.getHttpStatus().subscribe((status:boolean)=>{this.HTTPActivity=status,console.log(status)})
+  }
+  
   ngOnInit() {
     
   }

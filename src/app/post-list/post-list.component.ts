@@ -1,4 +1,4 @@
-import { LoaderService } from '../services/loader.service';
+
 import { PostsService, Post } from '../services/posts.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class PostListComponent implements OnInit {
 
-  constructor(private post:PostsService,private router :Router,private loadin:LoaderService) { }
+  constructor(private post:PostsService,private router :Router) { }
   posts$:Observable<Post[]>
   ngOnInit() {
    this.posts$ = this.post.getAllPosts() 

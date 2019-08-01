@@ -1,4 +1,4 @@
-import { LoaderService } from "./services/loader.service";
+import { HttpStatus,HTTPListener } from "./services/loader.service";
 import { AuthInterceptor } from "./auth-interceptor";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -32,6 +32,7 @@ import { ChooseLoginComponent } from './choose-login/choose-login.component';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { AdminNavComponent } from './dashboard/admin-dashboard/admin-nav/admin-nav.component';
 import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.component';
+const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.c
     FormsModule
   ],
   providers: [
-    LoaderService,
+    ...RxJS_Services,
+    {provide:HTTP_INTERCEPTORS,useClass:HTTPListener,multi:true},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
