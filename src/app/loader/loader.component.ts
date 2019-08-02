@@ -10,7 +10,7 @@ export class LoaderComponent implements OnInit {
 
   HTTPActivity: boolean;
   constructor(private httpstatus: HttpStatus){
-    this.httpstatus.getHttpStatus().subscribe((status:boolean)=>{this.HTTPActivity=status,console.log(status)})
+    this.httpstatus.getHttpStatus().subscribe((status:boolean)=>{this.HTTPActivity=status})
   }
   
   ngOnInit() {

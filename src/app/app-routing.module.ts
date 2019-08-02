@@ -1,3 +1,4 @@
+import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
 import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
 import { ChooseLoginComponent } from './choose-login/choose-login.component';
 import { UserDashboardContainerComponent } from './dashboard/user-dashboard/user-dashboard-container/user-dashboard-container.component';
@@ -28,6 +29,8 @@ const routes: Routes = [
   {path:'test',component:CartComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/add-manager',component:AdminAddManagerComponent,canActivate:[AuthGuard,AdminGuard]},
+  {path:'admin-dashboard/edit-subscription/:id',component:AdminEditSubscriptionComponent,canActivate:[AuthGuard,AdminGuard]},
+  {path:'admin-dashboard/view-subscription',component:AdminSubscriptionComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/add-resource',component:PostDetailsComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/view-resource',component:UserSubscriptionComponent,canActivate:[AuthGuard]},

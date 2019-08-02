@@ -20,18 +20,35 @@ export class SubscriptionService {
 
   }
 
+
+  //get all subscriptions
   getSubList():Observable<Subscription[]>{
     return this.http.get<Subscription[]>(this.hostname+"subscription").pipe(map(m=>m["subscription"]))
 
   }
 
+  //get subscriptions only by particular user
   getSubListByUser(id:string):Observable<Subscription[]>{
     return this.http.get<Subscription[]>(this.hostname+"subscription/byUser/"+id).pipe(map(m=>m["subscription"]))
   }
+
+  //Update Subscription Status
 updateSubStatus(id:string,status:string){
   this.http.patch<{message:string}>(this.hostname+"subscription/"+id,{status:status}).subscribe(data=>alert(data.message))
 
 }
+
+updateSubManager(id:string,mId:string){
+  this.http.patch<{message:string}>(this.hostname+"subscription/"+id,{assignedManager:mId}).subscribe(data=>alert(data.message),err=>console.log(err))
+
+}
+
+
+//get subscription information by ID
+getSubById(id:string):Observable<Subscription>{
+ return this.http.get<Subscription>(this.hostname+"subscription/"+id).pipe(map(m=>m["subscription"]))
+}
+
 
 
 }

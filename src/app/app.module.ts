@@ -33,6 +33,7 @@ import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { AdminNavComponent } from './dashboard/admin-dashboard/admin-nav/admin-nav.component';
 import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.component';
 import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
+import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     CartComponent,
     AdminNavComponent,
     UserNavComponent,
-    AdminAddManagerComponent
+    AdminAddManagerComponent,
+    AdminEditSubscriptionComponent
   ],
   imports: [
     BrowserModule,
