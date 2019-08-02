@@ -4,6 +4,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CKEditorModule } from "ng2-ckeditor";
+import {ReactiveFormsModule} from '@angular/forms'
 //import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
@@ -34,6 +35,7 @@ import { AdminNavComponent } from './dashboard/admin-dashboard/admin-nav/admin-n
 import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.component';
 import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
 import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
+import { AddToCartComponent } from './dashboard/user-dashboard/add-to-cart/add-to-cart.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -61,12 +63,14 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     AdminNavComponent,
     UserNavComponent,
     AdminAddManagerComponent,
-    AdminEditSubscriptionComponent
+    AdminEditSubscriptionComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     // MatProgressSpinnerModule,
     HttpClientModule,
     CKEditorModule,

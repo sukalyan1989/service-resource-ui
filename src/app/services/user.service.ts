@@ -126,6 +126,16 @@ export class UserService {
       userId:userId
     }
   }
+
+//update user cart
+
+UpdateCart(item:object[]){
+return  this.http.patch(this.hostname + "user/cart/"+this.getUserId()._id,item)
+}
+
+
+
+
 }
 export interface AuthData {
   email: string;
