@@ -1,4 +1,10 @@
 
+.badge-secondary
+{
+background:#fff;
+color:#000;
+padding:60px 0;
+}
 .my-btn {
   background: rgb(102, 95, 95);
   color: #fff;

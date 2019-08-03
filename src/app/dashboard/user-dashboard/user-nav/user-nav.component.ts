@@ -1,5 +1,6 @@
 import { UserService, User } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'user-nav',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserNavComponent implements OnInit {
 
-  constructor(private user:UserService) { }
+  constructor(private user:UserService,private route : Router) { }
 
   currentUser:User
   ngOnInit() {
@@ -17,6 +18,9 @@ export class UserNavComponent implements OnInit {
   }
   LogOut(){
     this.user.logOut();
+  }
+  toCart(){
+    this.route.navigate(['user-dashboard/cart/'])
   }
 
 }

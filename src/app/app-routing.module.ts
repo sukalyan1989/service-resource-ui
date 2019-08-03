@@ -17,6 +17,7 @@ import { LoginMethodComponent } from './apply-now/login-method.component';
 import { AdminGuard } from './admin-guard';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { UserSubscriptionComponent } from './dashboard/user-dashboard/user-subscription/user-subscription.component';
+import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -26,14 +27,16 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
-  {path:'test',component:CartComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/add-manager',component:AdminAddManagerComponent,canActivate:[AuthGuard,AdminGuard]},
+  {path:'admin-dashboard/add-post',component:AdminPostComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/edit-subscription/:id',component:AdminEditSubscriptionComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/view-subscription',component:AdminSubscriptionComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'user-dashboard',component:UserDashboardContainerComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/add-resource',component:PostDetailsComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/view-resource',component:UserSubscriptionComponent,canActivate:[AuthGuard]},
+  {path:'user-dashboard/edit-profile',component:UserProfileComponent,canActivate:[AuthGuard]},
+  {path:'user-dashboard/cart',component:CartComponent,canActivate:[AuthGuard]}
 
 ];                          
 

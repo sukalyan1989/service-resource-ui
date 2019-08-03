@@ -84,8 +84,8 @@ this.postPrice=data.price;
        userId:this.user.getUserId()._id,
 
     }
-    this.cart.addCartItems(subInfo)
-    this.router.navigate(['/test'])
+    // this.cart.addCartItems(subInfo)
+    // this.router.navigate(['/test'])
 
   }
 

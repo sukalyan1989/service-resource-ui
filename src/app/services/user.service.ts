@@ -89,7 +89,7 @@ export class UserService {
             this.route.navigate(["/admin-dashboard"])
           }
           else{
-            this.route.navigate(["/user-dashboard"])
+            this.route.navigate(["/user-dashboard/edit-profile"])
           }
        
           
@@ -142,6 +142,7 @@ export interface AuthData {
   password: string;
 }
 export interface User {
+  cart?:[]
   _id?:string
   firstname: string;
   lastname: string;

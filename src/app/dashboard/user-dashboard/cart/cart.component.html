@@ -1,18 +1,25 @@
+<user-nav></user-nav>
 <div class="container-fluid" style="padding:20px">
-  <div class="row">
+  <div class="row"> 
     <div class="col-md-8">
       <h3>Here are your items</h3>
-      <div *ngFor="let item of cartItems">
+      <div *ngFor="let item of (cartItems$|async);let i = index">
           <div class="card mb-3" style="max-width: 540px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img src="..." class="card-img" alt="...">
+                  <img [src]="item.post.imageUrl" class="card-img" alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">{{item.post.title}}</h5>
+                    <p class="card-text">
+                     Location : {{item.location}} <br>
+                     Start Date : {{item.startDate}}<br>
+                     Duration : {{item.durationText}} <br>
+                     Level : {{item.level}} <br>
+                     Total Jobs : {{item.totalJobs}}
+                    </p>
+                    <p class="card-text"><button class="btn btn-danger" (click)="removeItem(i)">Remove Item</button></p>
                   </div>
                 </div>
               </div>
@@ -27,8 +34,8 @@
     <div class="col-md-4"><div class="card bg-light mb-3" style="max-width: 18rem;">
       <div class="card-header">Your Cart</div>
       <div class="card-body">
-        <h5 class="card-title">Number of Items :{{cartState$|async}} </h5>
-        <p class="card-text">Total Price <span>100</span></p>
+        <h5 class="card-title">Number of Items :{{itemCount||'...'}} </h5>
+        <p class="card-text">Total Price <span>{{((totalPrice)?totalPrice:0|currency)}}</span></p>
         <button class="btn btn-primary">Proceed to Checkout</button>
       </div>
     </div></div>

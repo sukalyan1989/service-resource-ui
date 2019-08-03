@@ -1,88 +1,87 @@
 <form [formGroup]="master">
-
   <div formArrayName="items">
-    
     <div *ngFor="let item of master['controls'].items['controls'];let i=index">
-    
       <div [formGroupName]="i">
-       <!-- form stays here -->
-     <table class="table">
-       <thead class="thead-dark"> 
-         <tr>
-           <th>Select Job</th>
-           <th>Select Start Date</th>
-           <th>Select Duration</th>
-           <th>Select Location</th>
-           <th>Select Level</th>
-           <th>Select Total Jobs</th>
-           <th></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>
-             <select class="form-control" formControlName="post">
-               <option *ngFor="let post of Post$|async" value="{{post._id}}">{{post.title}}</option>
-             </select>
-            </td>
-          <td>
-              <input  class="form-control" type="Date" formControlName="startDate">
-          </td>
-           <td>
-             <select  formControlName="durationText" id="" class="form-control">
-               <option value="">Select</option>
-               <option value="1 Month Trail">1 Month Trail</option>
-               <option value="3 Months">3 Months</option>
-               <option value="6 Months">6 Months</option>
-               <option value="6 Months Rolling">6 Months Rolling</option>
-               <option value="12 Months">12 Months</option>
-               <option value="12 Months Rolling">12 Months Rolling</option>
-             </select>
-           </td>
-           <td>
+        <!-- form stays here -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Select Job</th>
+              <th>Select Start Date</th>
+              <th>Select Duration</th>
+              <th>Select Location</th>
+              <th>Select Level</th>
+              <th>Select Total Jobs</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input formControlName="id" style="display:none">
+                <select class="form-control" formControlName="post">
+                  <option *ngFor="let post of Post$|async" value="{{post._id}}">{{post.title}}</option>
+                </select>
+              </td>
+              <td>
+                <input class="form-control" type="Date" formControlName="startDate">
+              </td>
+              <td>
+                <select formControlName="durationText" id="" class="form-control">
+                  <option value="">Select</option>
+                  <option value="1 Month Trail">1 Month Trail</option>
+                  <option value="3 Months">3 Months</option>
+                  <option value="6 Months">6 Months</option>
+                  <option value="6 Months Rolling">6 Months Rolling</option>
+                  <option value="12 Months">12 Months</option>
+                  <option value="12 Months Rolling">12 Months Rolling</option>
+                </select>
+              </td>
+              <td>
 
-             <select  formControlName="location" id="" class="form-control">
-               <option value="">Select</option>
-               <option value="Bangalore-India">Bangalore-India</option>
-               <option value="London-UK">London-UK</option>
-               <option value="Frankfurt-Germany">Frankfurt-Germany</option>
-               <option value="Mumbai-India">Mumbai-India</option>
-             </select>
-            </td>
-            <td>
-              
-              <select  formControlName="level" id="" class="form-control">
-                <option value="">Select</option>
-               <option value="Mid-Term">Mid-Term</option>
-               <option value="Junior">Junior</option>
-               <option value="Consultant">Consultant</option>
-               <option value="Architect">Architect</option>
-             </select>
-            </td>
-           <td>
-             <select  formControlName="totalJobs" id="" class="form-control">
-               <option value="">Select</option>
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-               <option value="6">6</option>
-               <option value="7">7</option>
-               <option value="8">8</option>
-               <option value="9">9</option>
-               <option value="10">10</option>
-             </select>
-             
-           </td>
-           <td>
-              <button class="btn btn-danger" (click)="removeItems(i)"><i class="fa fa-trash-o" aria-hidden="true"></i> Remove</button>
-           </td>
-          </tr>
-       </tbody>
-      </table>
-       
-     <!-- Form ends here -->
+                <select formControlName="location" id="" class="form-control">
+                  <option value="">Select</option>
+                  <option value="Bangalore-India">Bangalore-India</option>
+                  <option value="London-UK">London-UK</option>
+                  <option value="Frankfurt-Germany">Frankfurt-Germany</option>
+                  <option value="Mumbai-India">Mumbai-India</option>
+                </select>
+              </td>
+              <td>
+
+                <select formControlName="level" id="" class="form-control">
+                  <option value="">Select</option>
+                  <option value="Mid-Term">Mid-Term</option>
+                  <option value="Junior">Junior</option>
+                  <option value="Consultant">Consultant</option>
+                  <option value="Architect">Architect</option>
+                </select>
+              </td>
+              <td>
+                <select formControlName="totalJobs" id="" class="form-control">
+                  <option value="">Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="removeItems(i)"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                  Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Form ends here -->
       </div>
 
 
@@ -90,8 +89,17 @@
 
   </div>
   <br><br>
-  <button type="submit" class="btn btn-active"(click)="onSubmit(master)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart </button>
-  
-</form>
-<button class="btn btn-primary" (click)="addItems()"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+  <div class="text-center">
+    
+    <button type="submit" class="btn btn-primary" (click)="onSubmit(master)"> <i class="fa fa-cart-plus"
+        aria-hidden="true"></i> Add To Cart </button>
+  </div>
 
+</form><br><br>
+
+
+<div class="text-center">
+
+  <button class="btn btn-primary" (click)="addItems()"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+</div>
+<br><br>

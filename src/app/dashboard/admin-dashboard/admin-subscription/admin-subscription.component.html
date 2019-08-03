@@ -11,6 +11,7 @@
       <th>Total Jobs</th>
       <th>Duration</th>
       <th>Created By </th>
+      <th>Assgined Manager</th>
       <th>Status</th>
       <th>Action</th>
     </tr>
@@ -28,7 +29,9 @@
 <td>{{sub.totalJobs}}</td>
 <td>{{sub.durationText}}</td>
 <td>{{sub.user.email}}</td>
+<td>{{(sub.assignedManager)?sub.assignedManager.firstName:'N/A'}}</td>
 <td>{{sub.status}}</td>
 <td><button  (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
   </tr>
+  
 </table>
