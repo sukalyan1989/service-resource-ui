@@ -5,6 +5,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Observable } from "rxjs";
 import { UserService } from "src/app/services/user.service";
+import { Router } from '@angular/router';
 @Component({
   selector: "add-to-cart",
   templateUrl: "./add-to-cart.component.html",
@@ -15,7 +16,8 @@ export class AddToCartComponent implements OnInit {
     private fb: FormBuilder,
     private post: PostsService,
     private user: UserService,
-    private cart: CartService
+    private cart: CartService,
+    private router :Router
   ) {}
 
   Post$: Observable<Post[]>;
@@ -46,6 +48,7 @@ export class AddToCartComponent implements OnInit {
       this.user.UpdateCart(items).subscribe(
         d => {
           alert(d["message"]);
+          this.router.navigate(['user-dashboard/cart'])
         },
         err => console.log(err)
       );

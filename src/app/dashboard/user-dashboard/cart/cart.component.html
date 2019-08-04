@@ -1,10 +1,19 @@
 <user-nav></user-nav>
+
 <div class="container-fluid" style="padding:20px">
-  <div class="row"> 
-    <div class="col-md-8">
-      <h3>Here are your items</h3>
+  <div class="row">
+    <div class="col-md-12">
+        <h3> Confirmation Page</h3>
+        <p>Thank you for subscription.Confirmation messages will be sent to your registered email shortly. 
+            Please wait for the updates from our business executives to activate your subscription within one business working day.</p>
+            <i>Any assistance required, please reach us at subscribe.jobs@yobitel.com</i> <br><br>
+           
+    </div>
+    <br>
+    <!-- <div class="col-md-8">
+      <h3> Checkout Page</h3>
       <div *ngFor="let item of (cartItems$|async);let i = index">
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card mb-3" >
               <div class="row no-gutters">
                 <div class="col-md-4">
                   <img [src]="item.post.imageUrl" class="card-img" alt="...">
@@ -25,13 +34,38 @@
               </div>
             </div>
       </div>
-    </div>
+    </div> -->
+
+    <table class="table table-primary table-bordered">
+      <thead><tr>
+        <th>Job Title</th>
+        <th>Location</th>
+        <th>Level</th>
+        <th>Duration</th>
+        <th>Total Jobs</th>
+        <th>Subscription</th>
+        <th>Start Date</th>
+        <th>Action</th>
+      </tr></thead>
+      <tbody>
+        <tr *ngFor="let item of (cartItems$|async);let i = index">
+          <td>{{item.post.title}}</td>
+          <td>{{item.location}}</td>
+          <td>{{item.level}}</td>
+          <td>{{item.durationText}}</td>
+          <td>{{item.totalJobs}}</td>
+          <td>{{item.post.price}}</td>
+          <td>{{item.startDate}}</td>
+          <td><button class="btn btn-danger" (click)="removeItem(i)">Remove Item</button></td>
+        </tr>
+      </tbody>
+    </table>
 
 
 
 
 
-    <div class="col-md-4"><div class="card bg-light mb-3" style="max-width: 18rem;">
+    <!-- <div class="col-md-4"><div class="card bg-light mb-3" style="max-width: 18rem;">
       <div class="card-header">Your Cart</div>
       <div class="card-body">
         <h5 class="card-title">Number of Items :{{itemCount||'...'}} </h5>
@@ -40,4 +74,12 @@
       </div>
     </div></div>
   </div>
+</div> -->
+<div class="col-md-8">
+ <a class="btn btn-primary" [routerLink]="['/user-dashboard/add-resource']">Add More Job</a>
+  
+</div>
+<div class="col-md-4">
+    <p class="card-text"><strong>Total Price : </strong> <span>{{((totalPrice)?(totalPrice |currency):0)}}</span></p>
+    <button class="btn btn-primary">Proceed to Checkout</button>
 </div>
