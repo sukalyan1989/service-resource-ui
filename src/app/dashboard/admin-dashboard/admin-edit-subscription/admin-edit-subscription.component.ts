@@ -11,7 +11,7 @@ import { Manager, ManagerService } from 'src/app/services/manager.service';
 })
 export class AdminEditSubscriptionComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute , private sub:SubscriptionService,private manager:ManagerService) { }
+  constructor(private r:Router,private route: ActivatedRoute , private sub:SubscriptionService,private manager:ManagerService) { }
 
   subId:string
   Subscription$:Observable<Subscription>
@@ -23,13 +23,26 @@ this.route.params.subscribe(id=>{
   this.subId=id["id"];
  this.Subscription$=this.sub.getSubById(id["id"])
  this.Managers$=this.manager.getManagers();
-this.Subscription$.subscribe(m=>console.log(m))
-})}
+
+})
+}
  
 assignManager(){
-  console.log(this.subId)
-  this.sub.updateSubManager(this.subId,this.mId)
+  
+  this.sub.updateSubManager(this.subId,this.mId).subscribe(m=>{
+    this.r.navigate(['admin-dashboard/view-subscription'])
+  })
 
+}
+refresh(){
+ 
+   this.Subscription$=this.sub.getSubById(this.subId)
+   this.Managers$=this.manager.getManagers();
+  }
+cancelManager(){
+  this.sub.updateSubManager(this.subId,null).subscribe(m=>{
+    this.r.navigate(['admin-dashboard/view-subscription'])
+  })
 }
 
 }

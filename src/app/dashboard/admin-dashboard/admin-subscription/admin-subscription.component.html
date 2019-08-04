@@ -1,4 +1,5 @@
 <admin-nav></admin-nav>
+<loader></loader>
 <h3 class="display-4 text-center">All Subscribers</h3><br>
 <table class="table">
   <thead class="thead-dark">
@@ -29,7 +30,7 @@
 <td>{{sub.totalJobs}}</td>
 <td>{{sub.durationText}}</td>
 <td>{{sub.user.email}}</td>
-<td>{{(sub.assignedManager)?sub.assignedManager.firstName:'N/A'}}</td>
+<td>{{(sub.assignedManager)?sub.assignedManager.firstName + ' '+sub.assignedManager.lastName:'N/A'}}</td>
 <td>{{sub.status}}</td>
 <td><button  (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
   </tr>

@@ -39,7 +39,7 @@ updateSubStatus(id:string,status:string){
 }
 
 updateSubManager(id:string,mId:string){
-  this.http.patch<{message:string}>(this.hostname+"subscription/"+id,{assignedManager:mId}).subscribe(data=>alert(data.message),err=>console.log(err))
+ return this.http.patch<{message:string}>(this.hostname+"subscription/"+id,{assignedManager:mId})
 
 }
 

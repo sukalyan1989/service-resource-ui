@@ -17,6 +17,7 @@ export class AdminSubscriptionComponent implements OnInit {
 
   ngOnInit() {
     this.subs$ = this.sub.getSubList();
+   // this.sub.getSubList().subscribe(m=>console.log(m))
   }
   handleEdit(id: string) {
     this.router.navigate(["admin-dashboard/edit-subscription/" + id]);
