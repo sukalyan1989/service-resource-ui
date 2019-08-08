@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
+import { EmailService } from './email.service';
 
 @Injectable({
   providedIn: "root"
@@ -15,7 +16,7 @@ export class UserService {
   private user:User|null
   hostname: string;
   
-  constructor(private http: HttpClient, private route: Router) {
+  constructor(private http: HttpClient, private route: Router , private mail:EmailService) {
     this.hostname = environment.host_name;
   }
 
@@ -57,11 +58,32 @@ export class UserService {
   createUser(user: User) {
     this.http.post(this.hostname + "user/signup", user).subscribe(
       data => {
-        alert("user Created");
-        this.route.navigate(['/login'])
+        this.mail.sendEmail({
+          to:'sukalyan89@hotmail.com',
+          subject:'New User Registered',
+          text:'The Following user has Registered ',
+          html:`<table>
+          <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          </tr>
+          <tr>
+          <td>${user.firstname}</td>
+          <td>${user.lastname}</td>
+          <td>${user.email}</td>
+          </tr>
+          </table>`
+        }).subscribe(m=>{
+          alert("Sign Up Successful");
+          this.route.navigate(['/login'])
+        },(err)=>console.log(err))
+
+
       },
       err => {
         console.log(err);
+        alert("Something went wrong. Please try again later")
       }
     );
   }
