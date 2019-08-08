@@ -18,11 +18,12 @@ import { AdminGuard } from './admin-guard';
 import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { UserSubscriptionComponent } from './dashboard/user-dashboard/user-subscription/user-subscription.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
+import { UserAccountComponent } from './dashboard/user-dashboard/user-account/user-account.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
   {path:'choose-login',component:ChooseLoginComponent},
-  {path:'job/:id',component:PostDetailsComponent},
+  // {path:'job/:id',component:PostDetailsComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'add-post',component:AdminPostComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path:'user-dashboard/add-resource',component:PostDetailsComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/view-resource',component:UserSubscriptionComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/edit-profile',component:UserProfileComponent,canActivate:[AuthGuard]},
-  {path:'user-dashboard/cart',component:CartComponent,canActivate:[AuthGuard]}
+  {path:'user-dashboard/cart',component:CartComponent,canActivate:[AuthGuard]},
+  {path:'test',component:UserAccountComponent}
 
 ];                          
 

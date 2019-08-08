@@ -54,7 +54,7 @@ export class CartComponent implements OnInit, OnDestroy {
       let jobCount = parseInt(m['totalJobs'])
       let duration = parseInt(m['durationText'])
       duration = (duration===1)?0:duration
-    return duration*price*jobCount
+    return price*jobCount
     })
     arr.forEach(m=>grandTotal+=m)
    return grandTotal

@@ -81,5 +81,6 @@
 </div>
 <div class="col-md-4">
     <p class="card-text"><strong>Total Price : </strong> <span>{{((totalPrice)?(totalPrice |currency):0)}}</span></p>
-    <button class="btn btn-primary">Proceed to Checkout</button>
+    <!-- <button class="btn btn-primary">Proceed to Checkout</button> -->
+    <app-user-account [totalAmount]="(totalPrice)?totalPrice:0"></app-user-account>
 </div>
