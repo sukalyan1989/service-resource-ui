@@ -44,13 +44,14 @@
    Assigned Manager :{{(sub.assignedManager!=null)?sub.assignedManager.firstName: 'Not Assigned'}} 
  </td>
 
-   <td>
-     Select Manager :<select  name="" id="" [(ngModel)]="mId" >
+   <td colspan="2">
+     Select Manager :<select class="form-control"  name="" id="" [(ngModel)]="mId" (change)="selectedManagerChanged(mId)" >
        <option value="">Select</option>
 <option *ngFor="let manager of (Managers$|async)" value={{manager._id}}>
   {{manager.firstName}} {{manager.lastName}}
 </option>
      </select>
+     <span *ngIf="ManagerCount$|async as count" style="color:red"> Currently Assigned in {{count.count}} Projects</span>
 
  </td>
 <td>

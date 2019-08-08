@@ -36,6 +36,7 @@ import { UserNavComponent } from './dashboard/user-dashboard/user-nav/user-nav.c
 import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
 import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
 import { AddToCartComponent } from './dashboard/user-dashboard/add-to-cart/add-to-cart.component';
+import { AdminViewAccountComponent } from './dashboard/admin-dashboard/admin-view-account/admin-view-account.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     UserNavComponent,
     AdminAddManagerComponent,
     AdminEditSubscriptionComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    AdminViewAccountComponent
   ],
   imports: [
     BrowserModule,

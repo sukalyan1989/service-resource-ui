@@ -25,6 +25,10 @@ export class ManagerService {
    return this.http.get<Manager[]>(this.hostName+"managers").pipe(map(data=>data["managers"]))
 
   }
+  getManagerAssignedJobCount(id:string){
+    return this.http.get<number>(this.hostName+"managers/count/"+id)
+
+  }
 }
 
 export interface Manager{

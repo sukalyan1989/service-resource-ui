@@ -17,6 +17,7 @@ export class AdminEditSubscriptionComponent implements OnInit {
   Subscription$:Observable<Subscription>
   Managers$:Observable<Manager[]>
   mId:string
+  ManagerCount$:Observable<number>
 
   ngOnInit() {
 this.route.params.subscribe(id=>{
@@ -43,6 +44,9 @@ cancelManager(){
   this.sub.updateSubManager(this.subId,null).subscribe(m=>{
     this.r.navigate(['admin-dashboard/view-subscription'])
   })
+}
+selectedManagerChanged(id:string){
+this.ManagerCount$=this.manager.getManagerAssignedJobCount(id)
 }
 
 }
