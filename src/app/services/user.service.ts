@@ -155,6 +155,10 @@ UpdateCart(item:object[]){
 return  this.http.patch(this.hostname + "user/cart/"+this.getUserId()._id,item)
 }
 
+UpdateProfile(item:object){
+return  this.http.patch(this.hostname + "user/info/"+this.getUserId()._id,item)
+}
+
 
 
 
@@ -171,5 +175,12 @@ export interface User {
   email: string;
   mobile?: number;
   password?: string;
-  isAdmin?:boolean
+  isAdmin?:boolean;
+  fullName?:string,
+  companyName?:string,
+  address?:string,
+  city?:string,
+  phone?:number,
+  state:string,
+  zip?:string
 }
