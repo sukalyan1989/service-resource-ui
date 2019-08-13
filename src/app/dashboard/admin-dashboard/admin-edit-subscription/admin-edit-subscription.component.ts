@@ -49,4 +49,8 @@ selectedManagerChanged(id:string){
 this.ManagerCount$=this.manager.getManagerAssignedJobCount(id)
 }
 
+viewProfile(){
+ this.r.navigate(['',])
+}
+
 }

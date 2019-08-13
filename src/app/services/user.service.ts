@@ -181,6 +181,6 @@ export interface User {
   address?:string,
   city?:string,
   phone?:number,
-  state:string,
+  state?:string,
   zip?:string
 }
