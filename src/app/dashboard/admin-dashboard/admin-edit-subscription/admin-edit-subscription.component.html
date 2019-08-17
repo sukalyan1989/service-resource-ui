@@ -16,9 +16,9 @@
     <th>Total Jobs</th>
   </tr>
   <tr>
-    <td>{{sub.post.title}}</td>
+    <td>{{sub.Post.title}}</td>
     <td>{{sub.location}}</td>
-    <td>{{sub.post.price|currency}}</td>
+    <td>{{sub.Post.price|currency}}</td>
     <td>{{sub.durationText}}</td>
     <td>{{sub.level}}</td>
     <td>{{sub.totalJobs}}</td>
@@ -32,9 +32,9 @@
   <th>Action</th>
 </tr>
 <tr>
-  <td>{{sub.user.firstname}}</td>
-  <td>{{sub.user.lastname}}</td>
-  <td colspan="2">{{sub.user.email}}</td>
+  <td>{{sub.User.firstname}}</td>
+  <td>{{sub.User.lastname}}</td>
+  <td colspan="2">{{sub.User.email}}</td>
   <td>{{sub.startDate|date}}</td>
   <td><button class="btn btn-active" (click)="viewProfile()">View Profile</button></td>
 

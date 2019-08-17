@@ -2,6 +2,24 @@
 <div class="container" style="padding: 20px">
 
   <h1 class="display-4 text-center">My Resource</h1><br> 
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Search" (keyup)="onKey($event)">
+      </div>
+      </div>
+      <div class="col-md-3">
+          <div class="form-group">
+            <button class="btn btn-primary"(click)="SearchByTitle()">Search by Job Name</button>
+          </div>
+    </div>
+      <div class="col-md-3">
+          <div class="form-group">
+            <button class="btn btn-primary" (click)="SearchByStatus()">Search by Status</button>
+          </div>
+    </div>
+  </div>
+
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -17,17 +35,19 @@
       </tr>
 
     </thead>
-<tr *ngFor="let sub of sub$|async">
-  <td>{{sub.post.title}}</td>
-  <td>{{sub.post.price|currency}}</td>
+<tr *ngFor="let sub of sub$|async|myfilter:{title:searchStr}">
+  <td>{{sub.Post.title}}</td>
+  <td>{{sub.Post.price|currency}}</td>
   <td>{{sub.location}}</td>
   <td>{{sub.level}}</td>
   <td>{{sub.startDate|date}}</td>
   <td>{{sub.totalJobs}}</td>
   <td>{{sub.durationText}}</td>
   <td>{{sub.status}}</td>
-  <td colspan="2"><button class="btn btn-primary btn-sm" style="margin-bottom: 2px">Renew</button>
-    <button class="btn btn-danger btn-sm ">Cancel</button></td>
+  <td colspan="2"><button *ngIf="sub.status!='Cancelled'" class="btn btn-primary btn-sm" style="margin-bottom: 2px" (click)="renewSub(sub)">Renew</button>
+    <button *ngIf="sub.status!='Cancelled'" class="btn btn-danger btn-sm" (click)="cancelSub(sub)">Cancel</button>
+    <button class="btn btn-active btn-sm">Details</button>
+  </td>
 </tr>
 
   </table>

@@ -27,6 +27,14 @@ export class SubscriptionService {
 
   }
 
+  //subscription searched items 
+  getSubSearch(uid:string,PostTitle:string,status:string):Observable<Subscription[]>{
+    return this.http.post<Subscription[]>(this.hostname+"subscription/Search/id",{id:uid,status:status,PostTitle:PostTitle}).pipe(map(m=>m["subscription"]))
+  }
+
+
+
+
   //get subscriptions only by particular user
   getSubListByUser(id:string):Observable<Subscription[]>{
     return this.http.get<Subscription[]>(this.hostname+"subscription/byUser/"+id).pipe(map(m=>m["subscription"]))
@@ -49,6 +57,14 @@ getSubById(id:string):Observable<Subscription>{
  return this.http.get<Subscription>(this.hostname+"subscription/"+id).pipe(map(m=>m["subscription"]))
 }
 
+//use this to cancel a Subscription
+cancelSubscription(subId:string,objId:string){
+ return  this.http.post(this.hostname+"stripe/cancel",{subId:subId,id:objId})
+}
+
+renewSubscription(subId:string,ext:number){
+return  this.http.post(this.hostname+"stripe/update",{subId:subId,extension:ext})
+}
 
 
 }

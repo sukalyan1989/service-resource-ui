@@ -11,7 +11,7 @@ import { subscribeOn } from "rxjs/operators";
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.css"]
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit {
   cartItems$: Observable<any[]>;
   items: any[] = [];
   itemCount;
@@ -43,9 +43,14 @@ export class CartComponent implements OnInit, OnDestroy {
       this.refresh();
     });
   }
+  clearCart(){
+    this.cart.removeItem([]).subscribe(k=>{
+      this.refresh();
+    })
+  }
+
   ngOnInit() {}
-  ngOnChanges() {}
-  ngOnDestroy() {}
+  
 
   calculateTotal(){
     let grandTotal=0;
