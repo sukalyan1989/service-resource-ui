@@ -1,0 +1,27 @@
+<user-nav></user-nav>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+<tr>
+  <th>Date From</th>
+  <th>Date To</th>
+  <th>Amount Paid</th>
+  <th>Paid By</th>
+  <th>Download Invoice</th>
+</tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sub of (subDetails$|async)">
+        <td>{{sub.lines.data[0].period.start*1000|date}}</td>
+        <td>{{sub.lines.data[0].period.end*1000|date}}</td>
+        
+        <td>{{sub.amount_paid/100|currency}}</td>
+        <td>{{sub.customer_email}}</td>
+
+        <td><a href="{{sub.invoice_pdf}}" class="btn btn-danger btn-sm">Download</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+

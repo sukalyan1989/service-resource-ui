@@ -66,6 +66,10 @@ renewSubscription(subId:string,ext:number){
 return  this.http.post(this.hostname+"stripe/update",{subId:subId,extension:ext})
 }
 
+getSubscriptionDetails(subId:string){
+  return this.http.get(this.hostname+"stripe/subscription/"+subId).pipe(map(m=>m['item'].data))
+}
+
 
 }
 export interface Subscription{

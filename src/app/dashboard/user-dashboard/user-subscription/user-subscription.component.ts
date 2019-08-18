@@ -1,4 +1,5 @@
-import { subscribeOn } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 import { UserService } from 'src/app/services/user.service';
 import { SubscriptionService, Subscription } from '../../../services/subscription.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 export class UserSubscriptionComponent implements OnInit {
   sub$:Observable<Subscription[]>
   searchStr:string='';
-  constructor(private sub:SubscriptionService,private user:UserService) {
+  constructor(private sub:SubscriptionService,private user:UserService , private router:Router) {
 
    }
 
@@ -53,5 +54,8 @@ export class UserSubscriptionComponent implements OnInit {
     if(this.searchStr==null){
       this.sub$=  this.sub.getSubListByUser(this.user.getUser()._id)
     }
+    }
+  navToDetails(sub:Subscription){
+    this.router.navigate(['user-dashboard/view-resource/'+sub['stripeSubId']])
   }
 }

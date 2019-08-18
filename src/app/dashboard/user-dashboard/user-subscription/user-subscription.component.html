@@ -3,12 +3,12 @@
 
   <h1 class="display-4 text-center">My Resource</h1><br> 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Search" (keyup)="onKey($event)">
+        <input class="form-control" type="text" placeholder="Search By Job Name.." (keyup)="onKey($event)">
       </div>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
           <div class="form-group">
             <button class="btn btn-primary"(click)="SearchByTitle()">Search by Job Name</button>
           </div>
@@ -17,7 +17,7 @@
           <div class="form-group">
             <button class="btn btn-primary" (click)="SearchByStatus()">Search by Status</button>
           </div>
-    </div>
+    </div> -->
   </div>
 
   <table class="table">
@@ -46,7 +46,7 @@
   <td>{{sub.status}}</td>
   <td colspan="2"><button *ngIf="sub.status!='Cancelled'" class="btn btn-primary btn-sm" style="margin-bottom: 2px" (click)="renewSub(sub)">Renew</button>
     <button *ngIf="sub.status!='Cancelled'" class="btn btn-danger btn-sm" (click)="cancelSub(sub)">Cancel</button>
-    <button class="btn btn-active btn-sm">Details</button>
+    <button class="btn btn-active btn-sm" (click)="navToDetails(sub)">Details</button>
   </td>
 </tr>
 

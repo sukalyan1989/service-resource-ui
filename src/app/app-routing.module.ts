@@ -19,6 +19,7 @@ import { CartComponent } from './dashboard/user-dashboard/cart/cart.component';
 import { UserSubscriptionComponent } from './dashboard/user-dashboard/user-subscription/user-subscription.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { UserAccountComponent } from './dashboard/user-dashboard/user-account/user-account.component';
+import { UserSubscriptionDetailsComponent } from './dashboard/user-dashboard/user-subscription-details/user-subscription-details.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:'user-dashboard/view-resource',component:UserSubscriptionComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/edit-profile',component:UserProfileComponent,canActivate:[AuthGuard]},
   {path:'user-dashboard/cart',component:CartComponent,canActivate:[AuthGuard]},
+  {path:'user-dashboard/view-resource/:id',component:UserSubscriptionDetailsComponent,canActivate:[AuthGuard]},
   {path:'test',component:UserAccountComponent}
 
 ];                          
