@@ -93,15 +93,12 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label class="col-md-4 control-label">State/Province/Region</label>
+            <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
             <div class="col-md-8 inputGroupContainer">
 
-              <select class="selectpicker form-control" formControlName="state">
-                <option>Select States</option>
-              </select>
+              <input id="state" placeholder="State" class="form-control" required="true" type="text" formControlName="state">
             </div>
           </div>
-
         </div>
       </div>
 
@@ -112,20 +109,18 @@
             <div class="col-md-8 inputGroupContainer">
               <div class="input-group"><span class="input-group-addon"><i
                     class="glyphicon glyphicon-home"></i></span><input id="postcode" 
-                  placeholder="Postal Code/ZIP" class="form-control" required="true" formControlName="zip" type="text" [value]="currentUser.zip?currentUser.zip:null">
+                  placeholder="Postal Code/ZIP" class="form-control" required="true" formControlName="zip" type="text">
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label class="col-md-4 control-label">Country</label>
+            <label class="col-md-4 control-label">Country <i class="fa fa-check" *ngIf="currentUser.country" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
             <div class="col-md-8 inputGroupContainer">
               <div class="input-group">
                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                <select class="selectpicker form-control">
-                  <option>A really long option to push the menu over the edget</option>
-                </select>
+                <input id="country" placeholder="Country Name" class="form-control" required="true" type="text" formControlName="country">
               </div>
             </div>
           </div>

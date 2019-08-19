@@ -1,7 +1,8 @@
 import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'src/app/services/subscription.service';
-
+import { EmailService } from 'src/app/services/email.service';
+import {environment} from 'src/environments/environment.prod';
 @Component({
   selector: 'app-user-account',
   templateUrl: './user-account.component.html',
@@ -12,7 +13,7 @@ export class UserAccountComponent implements OnInit {
   @Input() cartItems:Subscription[]
   @Input() totalAmount:number;
   @Output() cartClean = new EventEmitter();
-  constructor(private user:UserService) { }
+  constructor(private user:UserService, private mail:EmailService) { }
 
   ngOnInit() {
   }
@@ -41,6 +42,7 @@ export class UserAccountComponent implements OnInit {
         }).then(data=>{
           alert('success');
           this.cartClean.emit();
+
       }).catch(err=>console.log(err))
       }
     });
@@ -52,6 +54,30 @@ export class UserAccountComponent implements OnInit {
     });
 
   }
+
+
+  // SendEmailToAdmin(){
+  //   this.mail.sendEmail({
+  //     to:environment.admin_email,
+  //     subject:'New User Registered',
+  //     text:'The Following user has Registered ',
+  //     html:`
+  //     <p>Hi Admin,
+
+      
+  //       A subscriber ${this.user.getUser().fullName} has subscribed the following service.
+  //     </p>
+  //     <table>
+  //     <tr>
+  //     <th>First Name</th>
+  //     <th>Last Name</th>
+  //     <th>Email</th>
+  //     </tr>
+
+  //     </table>
+  //   <p>N.B: This is system generated message.Please do not reply at this emailid.</p>`
+  //   }).toPromise()
+  // }
 
 
 }

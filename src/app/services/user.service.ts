@@ -59,10 +59,15 @@ export class UserService {
     this.http.post(this.hostname + "user/signup", user).subscribe(
       data => {
         this.mail.sendEmail({
-          to:'sukalyan89@hotmail.com',
+          to:environment.admin_email,
           subject:'New User Registered',
           text:'The Following user has Registered ',
-          html:`<table>
+          html:`
+          <p>Hi Admin,
+
+          A new member has been signed up at this system.
+          </p>
+          <table>
           <tr>
           <th>First Name</th>
           <th>Last Name</th>
@@ -73,7 +78,8 @@ export class UserService {
           <td>${user.lastname}</td>
           <td>${user.email}</td>
           </tr>
-          </table>`
+          </table>
+        <p>N.B: This is system generated message.Please do not reply at this emailid.</p>`
         }).subscribe(m=>{
           alert("Sign Up Successful");
           this.route.navigate(['/login'])
@@ -159,7 +165,11 @@ UpdateProfile(item:object){
 return  this.http.patch(this.hostname + "user/info/"+this.getUserId()._id,item)
 }
 
+//get user by ID:
 
+GetUserById(id:string){
+ return this.http.get<User>(this.hostname+"user/"+id)
+}
 
 
 }
@@ -182,5 +192,6 @@ export interface User {
   city?:string,
   phone?:number,
   state?:string,
-  zip?:string
+  zip?:string,
+  country?:string
 }
