@@ -5,6 +5,9 @@
   background-size: cover;
   height: 100px;
 }
+.content{
+  min-height: 500px;
+}
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -21,6 +24,11 @@ ul li a {
 }
 .nav-link {
   padding: 2rem 1rem;
+}
+.footer{
+  width: 100%;
+  bottom: 0;
+  position: relative;
 }
 
 @media (min-width: 260px) and (max-width: 575px) {

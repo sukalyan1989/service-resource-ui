@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./admin-subscription.component.css"]
 })
 export class AdminSubscriptionComponent implements OnInit {
+  searchStr:string=""
   subs$: Observable<Subscription[]>;
   constructor(private sub: SubscriptionService, private router: Router) {}
 

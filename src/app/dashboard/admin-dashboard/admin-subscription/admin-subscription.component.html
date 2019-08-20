@@ -1,6 +1,9 @@
 <admin-nav></admin-nav>
 <loader></loader>
 <h3 class="display-4 text-center">All Subscribers</h3><br>
+<div class="text-center">
+    <input class="form-control" placeholder="Search by Job Name" [(ngModel)]="searchStr"><br>
+</div>
 <table class="table">
   <thead class="thead-dark">
 
@@ -21,7 +24,7 @@
 
 
 
-  <tr *ngFor="let sub of subs$|async">
+  <tr *ngFor="let sub of subs$|async|myfilter:{title:searchStr}">
 <td>{{sub.Post.title}}</td>
 <td>{{sub.location}}</td>
 
