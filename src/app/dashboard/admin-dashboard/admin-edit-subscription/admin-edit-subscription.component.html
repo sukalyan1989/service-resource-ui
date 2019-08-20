@@ -36,9 +36,10 @@
   <td>{{sub.User.lastname}}</td>
   <td colspan="2">{{sub.User.email}}</td>
   <td>{{sub.startDate|date}}</td>
-  <td><button class="btn btn-active" (click)="viewProfile()">View Profile</button></td>
+  <td><button class="btn btn-active" (click)="viewProfile(sub.User._id)">{{(showDetails?'Hide Profile':'Show Profile')}}</button></td>
 
 </tr>
+<app-admin-user-details *ngIf="showDetails" [Uid]="currentUid"></app-admin-user-details>
   <tr><th colspan="6" class="bg-danger">Assign Manager</th></tr>
  <tr><td>
    Assigned Manager :{{(sub.assignedManager!=null)?sub.assignedManager.firstName: 'Not Assigned'}} 

@@ -18,6 +18,8 @@ export class AdminEditSubscriptionComponent implements OnInit {
   Managers$:Observable<Manager[]>
   mId:string
   ManagerCount$:Observable<number>
+  showDetails:boolean
+  currentUid:string
 
   ngOnInit() {
 this.route.params.subscribe(id=>{
@@ -49,8 +51,9 @@ selectedManagerChanged(id:string){
 this.ManagerCount$=this.manager.getManagerAssignedJobCount(id)
 }
 
-viewProfile(){
- this.r.navigate(['',])
+viewProfile(id:string){
+ this.showDetails=!this.showDetails;
+ this.currentUid=id;
 }
 
 }
