@@ -1,7 +1,8 @@
+import { map } from 'rxjs/operators';
 import { environment } from "../../environments/environment.prod";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { Subject, Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { EmailService } from './email.service';
 
@@ -164,6 +165,13 @@ return  this.http.patch(this.hostname + "user/cart/"+this.getUserId()._id,item)
 UpdateProfile(item:object){
 return  this.http.patch(this.hostname + "user/info/"+this.getUserId()._id,item)
 }
+
+//get all users 
+GetAllUsers():Observable<User[]>{
+  return this.http.get<User[]>(this.hostname+"user/list/all").pipe(map(m=>m['items']))
+}
+
+
 
 //get user by ID:
 

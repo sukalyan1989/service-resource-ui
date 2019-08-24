@@ -1,4 +1,7 @@
 <div class="col-md-12" *ngIf="SelectedUser$ | async as user">
+  <div class="text-center">
+    <h1>Invoice Details</h1>
+  </div>
   <table class="table">
     <thead>
       <tr style="background-color:#dddddd">
@@ -37,4 +40,48 @@
       </tr>
     </tbody>
   </table>
+  <h2 class="bg-secondary" style="padding:10px">Subscriptions</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let sub of CurrentUserSubscriptions$|async">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Item</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            Job Name
+          </td>
+          <td>
+            {{sub.Post.title}}
+          </td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td>{{sub.location}}</td>
+        </tr>
+        <tr>
+          <td>Duration</td>
+          <td>{{sub.durationText}}</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>{{sub.level}}</td>
+        </tr>
+        <tr>
+          <td>Total Jobs</td>
+          <td>{{sub.totalJobs}}</td>
+        </tr>
+        <tr>
+          <td>Created Date</td>
+          <td>{{sub.creationDate|date}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
 </div>

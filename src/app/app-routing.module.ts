@@ -1,3 +1,4 @@
+import { AdminViewAccountComponent } from './dashboard/admin-dashboard/admin-view-account/admin-view-account.component';
 import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
 import { AdminAddManagerComponent } from './dashboard/admin-dashboard/admin-add-manager/admin-add-manager.component';
 import { ChooseLoginComponent } from './choose-login/choose-login.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
+  {path:'admin-dashboard/account',component:AdminViewAccountComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/add-manager',component:AdminAddManagerComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/add-post',component:AdminPostComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/edit-subscription/:id',component:AdminEditSubscriptionComponent,canActivate:[AuthGuard,AdminGuard]},

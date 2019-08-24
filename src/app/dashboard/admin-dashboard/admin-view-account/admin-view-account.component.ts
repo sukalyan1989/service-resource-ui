@@ -1,4 +1,6 @@
+import { UserService, User } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin-view-account',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-view-account.component.css']
 })
 export class AdminViewAccountComponent implements OnInit {
-
-  constructor() { }
+  DetailsView:boolean =false
+  currentUid:string
+  UserList$:Observable<User[]>
+  constructor(private user:UserService) { 
+  this.UserList$=this.user.GetAllUsers();
+  }
 
   ngOnInit() {
+  }
+  Details(id:string){
+    console.log(id,this.DetailsView)
+    this.currentUid=id;
+    this.DetailsView=!this.DetailsView
   }
 
 }

@@ -1,3 +1,46 @@
-<p>
-  admin-view-account works!
-</p>
+<admin-nav></admin-nav>
+<loader></loader>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-7">
+      <div class="text-center">
+        <h1>All Users</h1>
+      </div>
+  
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              First Name
+            </th>
+            <th>
+              Last Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of UserList$|async">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="Details(user._id)">Details</button>
+            </td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">  
+          <app-admin-user-details *ngIf="DetailsView" [Uid]="currentUid"></app-admin-user-details>
+    </div>
+  </div>
+</div>
