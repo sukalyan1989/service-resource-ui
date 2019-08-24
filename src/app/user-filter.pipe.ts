@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'myfilter',
-  pure:false
+  name: 'userFilter'
 })
-export class MyfilterPipe implements PipeTransform {
+export class UserFilterPipe implements PipeTransform {
 
   transform(items: any[], filter: Object): any {
     if(!items||!filter){
@@ -12,7 +11,8 @@ export class MyfilterPipe implements PipeTransform {
     }
     // filter items array, items which match and return true will be
     // kept, false will be filtered out
-    return items.filter(item => item.Post.title.toLowerCase().indexOf(filter['title'].toLowerCase()) !== -1);
+    return items.filter(item => item.firstname.toLowerCase().indexOf(filter['title'].toLowerCase()) !== -1);
   }
+
 
 }

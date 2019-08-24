@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CKEditorModule } from "ng2-ckeditor";
 import {ReactiveFormsModule} from '@angular/forms'
-//import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
@@ -40,6 +40,7 @@ import { AdminViewAccountComponent } from './dashboard/admin-dashboard/admin-vie
 import { AdminUserDetailsComponent } from './dashboard/admin-dashboard/admin-user-details/admin-user-details.component';
 import { MyfilterPipe } from './myfilter.pipe';
 import { UserSubscriptionDetailsComponent } from './dashboard/user-dashboard/user-subscription-details/user-subscription-details.component';
+import { UserFilterPipe } from './user-filter.pipe';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     AdminViewAccountComponent,
     AdminUserDetailsComponent,
     MyfilterPipe,
-    UserSubscriptionDetailsComponent
+    UserSubscriptionDetailsComponent,
+    UserFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     // MatProgressSpinnerModule,
     HttpClientModule,
     CKEditorModule,
-    FormsModule
+    FormsModule,
+  
   ],
   providers: [
     ...RxJS_Services,

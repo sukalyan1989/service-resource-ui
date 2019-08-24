@@ -1,6 +1,6 @@
 <div class="col-md-12" *ngIf="SelectedUser$ | async as user">
   <div class="text-center">
-    <h1>Invoice Details</h1>
+    <h1>Details</h1>
   </div>
   <table class="table">
     <thead>
@@ -51,37 +51,90 @@
           </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>
-            Job Name
-          </td>
-          <td>
-            {{sub.Post.title}}
-          </td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td>{{sub.location}}</td>
-        </tr>
-        <tr>
-          <td>Duration</td>
-          <td>{{sub.durationText}}</td>
-        </tr>
-        <tr>
-          <td>Level</td>
-          <td>{{sub.level}}</td>
-        </tr>
-        <tr>
-          <td>Total Jobs</td>
-          <td>{{sub.totalJobs}}</td>
-        </tr>
-        <tr>
-          <td>Created Date</td>
-          <td>{{sub.creationDate|date}}</td>
-        </tr>
+          <tr>
+            <td>
+              Job Name
+            </td>
+            <td>
+              {{sub.Post.title}}
+            </td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>{{sub.location}}</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>{{sub.durationText}}</td>
+          </tr>
+          <tr>
+            <td>Level</td>
+            <td>{{sub.level}}</td>
+          </tr>
+          <tr>
+            <td>Total Jobs</td>
+            <td>{{sub.totalJobs}}</td>
+          </tr>
+          <tr>
+            <td>Created Date</td>
+            <td>{{sub.creationDate|date}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button (click)="handleGetInvoiceClick(sub.stripeSubId)" type="button" class="btn btn-info btn-sm"
+                data-toggle="modal" data-target="#myModal">Get Invoices</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </li>
   </ul>
 
+</div>
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Invoices</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <!-- Invoice Starts Here -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Date From</th>
+              <th>Date To</th>
+              <th>Amount Paid</th>
+              <th>Paid By</th>
+              <th>Download Invoice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sub of (CurrentSubscriptionInvoices$|async)">
+              <td>{{sub.lines.data[0].period.start*1000|date}}</td>
+              <td>{{sub.lines.data[0].period.end*1000|date}}</td>
+
+              <td>{{sub.amount_paid/100|currency}}</td>
+              <td>{{sub.customer_email}}</td>
+
+              <td><a href="{{sub.invoice_pdf}}" class="btn btn-danger btn-sm">Download</a></td>
+
+            </tr>
+          </tbody>
+        </table>
+        <!-- Invoice Ends Here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>

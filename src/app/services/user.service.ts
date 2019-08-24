@@ -1,4 +1,4 @@
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { environment } from "../../environments/environment.prod";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -168,7 +168,7 @@ return  this.http.patch(this.hostname + "user/info/"+this.getUserId()._id,item)
 
 //get all users 
 GetAllUsers():Observable<User[]>{
-  return this.http.get<User[]>(this.hostname+"user/list/all").pipe(map(m=>m['items']))
+  return this.http.get<User[]>(this.hostname+"user/list/all").pipe(map(m=>m['items'].filter(i=>i.isAdmin==false)))
 }
 
 

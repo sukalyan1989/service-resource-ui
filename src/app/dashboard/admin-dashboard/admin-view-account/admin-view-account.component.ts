@@ -11,6 +11,7 @@ export class AdminViewAccountComponent implements OnInit {
   DetailsView:boolean =false
   currentUid:string
   UserList$:Observable<User[]>
+  searchStr:string=""
   constructor(private user:UserService) { 
   this.UserList$=this.user.GetAllUsers();
   }
@@ -22,5 +23,6 @@ export class AdminViewAccountComponent implements OnInit {
     this.currentUid=id;
     this.DetailsView=!this.DetailsView
   }
+  
 
 }

@@ -12,6 +12,7 @@ export class AdminUserDetailsComponent implements OnInit {
   @Input()Uid:string
   SelectedUser$:Observable<User>
   CurrentUserSubscriptions$:Observable<Subscription[]>
+  CurrentSubscriptionInvoices$:Observable<any>
   constructor(private user:UserService,private sub:SubscriptionService) {
   }
   
@@ -20,6 +21,9 @@ export class AdminUserDetailsComponent implements OnInit {
     this.SelectedUser$= this.user.GetUserById(this.Uid)
     this.CurrentUserSubscriptions$=this.sub.getSubListByUser(this.Uid)
     
+  }
+  handleGetInvoiceClick(subId:string){
+    this.CurrentSubscriptionInvoices$=this.sub.getSubscriptionDetails(subId);
   }
 
 }
