@@ -27,8 +27,11 @@ export class UserSubscriptionComponent implements OnInit {
   LogOut(){
     this.user.logOut()
   }
+
+  //cancel subscription
   cancelSub(sub:Subscription){
   this.sub.cancelSubscription(sub['stripeSubId'],sub['_id']).subscribe(m=>{
+    console.log(sub['stripeSubId'],sub['_id'])
     alert('Subscription Cancelled');
     this.refresh();
   })
