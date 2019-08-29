@@ -55,7 +55,7 @@ export class UserSubscriptionComponent implements OnInit {
   onKey(e){
     this.searchStr=e.target.value
     if(this.searchStr==null){
-      this.sub$=  this.sub.getSubListByUser(this.user.getUser()._id)
+      this.sub$=this.sub.getSubListByUser(this.user.getUser()._id)
     }
     }
   navToDetails(sub:Subscription){
