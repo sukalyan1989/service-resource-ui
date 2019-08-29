@@ -47,6 +47,7 @@
           <th>Total Jobs</th>
           <th>Subscription</th>
           <th>Start Date</th>
+          <th>Price</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -59,6 +60,7 @@
           <td>{{item.totalJobs}}</td>
           <td>{{item.post.price}}</td>
           <td>{{item.startDate}}</td>
+          <td>{{item.post.price|currency}} X {{item.totalJobs}} = {{(item.post.price*item.totalJobs)|currency}}</td>
           <td><button class="btn btn-danger" (click)="removeItem(i)">Remove Item</button></td>
         </tr>
       </tbody>
@@ -83,7 +85,10 @@
 
     </div>
     <div class="col-md-4">
-      <p class="card-text"><strong>Total Price : </strong> <span>{{((totalPrice)?(totalPrice |currency):0)}}</span></p>
+      <p class="card-text">
+             
+        <strong>Total Price : </strong> <span>{{((totalPrice)?(totalPrice |currency):0)}}</span>
+      </p>
       <!-- <button class="btn btn-primary">Proceed to Checkout</button> -->
       <app-user-account [totalAmount]="(totalPrice)?totalPrice:0" [cartItems]="items" (cartClean)="clearCart()">
       </app-user-account>
