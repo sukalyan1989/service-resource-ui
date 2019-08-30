@@ -1,4 +1,3 @@
-
 .badge-secondary
 {
 background:#fff;
@@ -460,21 +459,17 @@ ul {
     width: 40px;
     height: 40px;
     transition: all .2s ease-out, color .2s ease-out;
-  }
-  
+  }  
   .s004 form .inner-form .input-field .btn-search:hover, .s004 form .inner-form .input-field .btn-search:focus {
     outline: 0;
     box-shadow: none;
-  }
-  
+  }  
   .s004 form .inner-form .input-field .btn-search:hover svg, .s004 form .inner-form .input-field .btn-search:focus svg {
     fill: #000;
-  }
-  
+  }  
   .s004 form .suggestion-wrap {
     padding: 0 15px;
-  }
-  
+  }  
   .s004 form .suggestion-wrap span {
     font-size: 14px;
     font-family: 'Helvetica', sans-serif;
@@ -486,4 +481,19 @@ ul {
     margin-right: 10px;
     margin-bottom: 10px;
   }
-  
+  .usebtn{
+    color: #fff;
+    background-color: #ffc000;
+    border-color: #ffc000;
+   padding:10px 20px;
+       position: relative;
+    top: 30%;
+       text-decoration: none;
+}
+.card-title {
+    font-weight: bold!important;
+    font-size: 20px!important;
+}
+.card{
+	border-top:1px solid rgba(0,0,0,.125)!important;
+}
