@@ -1,0 +1,14 @@
+thead{    
+	background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.usebtn{
+      color: #fff;
+    background-color: #ffc000;
+    border-color: #ffc000;
+    padding: 10px 20px;
+    text-decoration: none;
+
+}
