@@ -2,15 +2,14 @@
 <loader></loader>
 <div class="container">
   <div class="row">
-
     <div class="col-md-7">
       <div class="text-center">
         <h1>All Users</h1>
         <input type="text" [(ngModel)]="searchStr" class="form-control" placeholder="Search by First Name..">
       </div>
-  
+  <div class="table-responsive">
       <table class="table">
-        <thead>
+        <thead class="table-dark">
           <tr>
             <th>
               First Name
@@ -32,7 +31,7 @@
             <td>{{user.lastname}}</td>
             <td>{{user.email}}</td>
             <td>
-              <button class="btn btn-primary" (click)="Details(user._id)">Details</button>
+              <button class="usebtn" (click)="Details(user._id)">Details</button>
             </td>
           </tr>
           
@@ -40,6 +39,7 @@
         </tbody>
       </table>
     </div>
+  </div>
     <div class="col-md-5">  
           <app-admin-user-details *ngIf="DetailsView" [Uid]="currentUid"></app-admin-user-details>
     </div>

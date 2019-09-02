@@ -2,3 +2,9 @@
     max-width: 1000px;
     margin: 1.75rem auto;
 }
+.usebtn{
+    color: #fff;
+    background-color: #ffc000;
+    border-color: #ffc000;
+    padding: 10px 30px;
+}

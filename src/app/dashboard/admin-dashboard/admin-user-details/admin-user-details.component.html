@@ -2,6 +2,7 @@
   <div class="text-center">
     <h1>Details</h1>
   </div>
+  <div class="table-responsive">
   <table class="table">
     <thead>
       <tr style="background-color:#dddddd">
@@ -40,9 +41,11 @@
       </tr>
     </tbody>
   </table>
+</div>
   <h2 class="bg-secondary" style="padding:10px">Subscriptions</h2>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let sub of CurrentUserSubscriptions$|async">
+      <div class="table-responsive">
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -87,6 +90,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
     </li>
   </ul>
 
@@ -106,6 +110,7 @@
       </div>
       <div class="modal-body">
         <!-- Invoice Starts Here -->
+        <div class="table-responsive">
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -124,11 +129,12 @@
               <td>{{sub.amount_paid/100|currency}}</td>
               <td>{{sub.customer_email}}</td>
 
-              <td><a href="{{sub.invoice_pdf}}" class="btn btn-danger btn-sm">Download</a></td>
+              <td><a href="{{sub.invoice_pdf}}" class="usebtn">Download</a></td>
 
             </tr>
           </tbody>
         </table>
+      </div>
         <!-- Invoice Ends Here -->
       </div>
       <div class="modal-footer">
