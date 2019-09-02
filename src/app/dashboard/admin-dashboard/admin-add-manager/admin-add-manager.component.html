@@ -1,7 +1,8 @@
 <admin-nav></admin-nav>
 <div class="container">
-    <form #f = "ngForm" (ngSubmit)="submit(f)">
-        <div class="form-group">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    <form #f = "ngForm" (ngSubmit)="submit(f)" class="form1">
+        <h3 class="text-center display-4">Add Manager Details</h3>
+        <div class="form-group">                    
           <label for="firstName">First Name</label>
           <input ngModel name="firstName" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
         </div>
@@ -13,7 +14,6 @@
           <label for="position">Position </label>
           <input ngModel name="position" type="text" class="form-control" id="position" placeholder="Position">
         </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="usebtn">Submit</button>
       </form>
 </div>
