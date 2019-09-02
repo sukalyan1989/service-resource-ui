@@ -60,10 +60,12 @@ border-bottom:3px solid #00455c;
 color: #383838;
 }
 
+  .main-content h3{margin-top:20px;}  
 .main-content h5{margin-top:20px;}
-.main-content{background:rgba(232, 165, 39, 1);margin:20px 0;}
+.main-content{background:#ffc000/*rgba(232, 165, 39, 1)*/;margin:20px 0;}
 .main-content .user{margin-top:18px;text-align: center}
 .main-content .user a{color:#000; text-decoration: none;}
+
 
 /*---------------------Responsive Code ------------------------------*/
 @media (min-width:260px) and (max-width:575px){

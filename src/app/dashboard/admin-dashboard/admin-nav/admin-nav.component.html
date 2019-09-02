@@ -1,32 +1,29 @@
-<div class="container">
-  <div class="main-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2">
-          <h5><i class="fa fa-dashboard"></i> {{ currentUser.firstname }}</h5>
-        </div>
-        <div class="col-md-8">
-          <div class="subnavbar">
-            <div class="subnavbar-inner">
-              <div class="container">
-                <ul class="mainnav">
-                  <li><a [routerLink]="['/admin-dashboard/add-post']">ADD JOB</a></li>
-                  <li><a [routerLink]="['/admin-dashboard/view-subscription']">VIEW SUBSCRIPTION</a></li>
-                  <li><a [routerLink]="['/admin-dashboard/add-manager']">ADD MANAGER</a></li>
-                  <!-- <li><a [routerLink]="['/admin-dashboard/notification']">NOTIFICATION</a></li> -->
-                  <li><a [routerLink]="['/admin-dashboard/account']">ALL MEMBERS</a></li>
-                </ul> 
-              </div>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <h5><i class="fa fa-dashboard"></i> {{ currentUser.firstname }}</h5>
+      </div>
+      <div class="col-md-8">
+        <div class="subnavbar">
+          <div class="subnavbar-inner">
+            <div class="container">
+              <ul class="mainnav">
+                <li><a [routerLink]="['/admin-dashboard/add-post']">ADD JOB</a></li>
+                <li><a [routerLink]="['/admin-dashboard/view-subscription']">VIEW SUBSCRIPTION</a></li>
+                <li><a [routerLink]="['/admin-dashboard/add-manager']">ADD MANAGER</a></li>
+                <!-- <li><a [routerLink]="['/admin-dashboard/notification']">NOTIFICATION</a></li> -->
+                <li><a [routerLink]="['/admin-dashboard/account']">ALL MEMBERS</a></li>
+              </ul> 
             </div>
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="user">
-            <button (click)="LogOut()" class="btn btn-danger"><i class="fa fa-user"></i> Logout </button>
-          </div>
+      </div>
+      <div class="col-md-2">
+        <div class="user">
+          <button (click)="LogOut()" class="btn btn-danger"><i class="fa fa-user"></i> Logout </button>
         </div>
       </div>
     </div>
   </div>
-
 </div>
