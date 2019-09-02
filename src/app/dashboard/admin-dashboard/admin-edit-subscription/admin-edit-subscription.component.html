@@ -4,10 +4,11 @@
   <div class="text-center">
     <h3 class="display-4">Subscription Details</h3>
   </div>
-  
+  <br>
+  <div class="table-responsive">
   <table *ngIf="Subscription$ | async as sub" class="table">
     <tr>
-      <th colspan="6" class="bg-danger">Job Information</th>
+      <th colspan="6" class="thead-dark">Job Information</th>
     </tr>
     <tr>
       <th>Job Title</th>
@@ -26,7 +27,7 @@
       <td>{{ sub.totalJobs }}</td>
     </tr>
     <tr>
-      <th colspan="6" class="bg-danger">Subscriber Information</th>
+      <th colspan="6" class="thead-dark">Subscriber Information</th>
     </tr>
     <tr>
       <th>First Name</th>
@@ -41,7 +42,7 @@
       <td colspan="2">{{ sub.User.email }}</td>
       <td>{{ sub.startDate | date }}</td>
       <td>
-        <button class="btn btn-active" (click)="viewProfile(sub.User._id)">
+        <button class="usebtn btn-active" (click)="viewProfile(sub.User._id)">
           {{ showDetails ? "Hide Profile" : "Show Profile" }}
         </button>
       </td>
@@ -55,19 +56,18 @@
       </td>
     </tr>
     <tr>
-      <th colspan="6" class="bg-danger">Assign Manager</th>
+      <th colspan="6" class="thead-dark">Assign Manager</th>
     </tr>
     <tr>
       <td>
-        Assigned Manager :{{
+       <b>Assigned Manager :</b>{{
           sub.assignedManager != null
             ? sub.assignedManager.firstName
             : "Not Assigned"
         }}
       </td>
 
-      <td colspan="2">
-        Select Manager :<select
+      <td colspan="2"><b>Select Manager :</b><select
           class="form-control"
           name=""
           id=""
@@ -88,7 +88,7 @@
       </td>
       <td>
         <button
-          class="btn btn-primary"
+          class="usebtn"
           (click)="assignManager()"
           [disabled]="!mId"
         >
@@ -96,8 +96,9 @@
         </button>
       </td>
       <td>
-        <button class="btn btn-danger" (click)="cancelManager()">Cancel</button>
+        <button class="usebtn" (click)="cancelManager()">Cancel</button>
       </td>
     </tr>
   </table>
+</div>
 </div>
