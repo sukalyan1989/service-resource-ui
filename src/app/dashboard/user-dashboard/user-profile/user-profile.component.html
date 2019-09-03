@@ -1,14 +1,17 @@
 <user-nav></user-nav>
 <loader></loader>
 
-<div class="container-fluid">
-  <h3 class="display-4">Edit Your Profile</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12"><h3 class="display-4">Edit Your Profile</h3></div>
+	</div>
+	&nbsp;
   <form class="well form-horizontal" [formGroup]="profileForm">
     <fieldset>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="col-md-4 control-label">Full Name <i class="fa fa-check" *ngIf="currentUser.fullName" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+            <label class="col-md-4 control-label"><b>Full Name</b><i class="fa fa-check" *ngIf="currentUser.fullName" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
             <div class="col-md-8 inputGroupContainer">
               <div class="input-group"><span class="input-group-addon"><i
                     class="glyphicon glyphicon-user"></i></span><input id="fullName" placeholder="Full Name"
@@ -17,9 +20,15 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-6">
-          Upload Document for ID verification:<input type="file" name="myFile">
+ <div class="col-md-6">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Email</label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group"><span class="input-group-addon"><i
+                    class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
+                  class="form-control" required="true" disabled="true" type="text" formControlName="email" [value]="currentUser.email?currentUser.email:null"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -36,28 +45,34 @@
           </div>
         </div>
         <div class="col-md-6">
-          Upload Document for Company Regn verification:<input type="file" name="myFile">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Email</label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
-                  class="form-control" required="true" disabled="true" type="text" formControlName="email" [value]="currentUser.email?currentUser.email:null"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
           <div class="form-group">
             <label class="col-md-4 control-label">Phone Number <i class="fa fa-check" *ngIf="currentUser.phone" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
             <div class="col-md-8 inputGroupContainer">
               <div class="input-group"><span class="input-group-addon"><i
                     class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" placeholder="Phone Number"
                   class="form-control" required="true" formControlName="phone" type="text" [value]="currentUser.phone?currentUser.phone:null"></div>
+            </div>
+          </div>
+       </div>
+      </div>
+
+<div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="col-md-4 control-label">City <i class="fa fa-check" *ngIf="currentUser.city" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group"><span class="input-group-addon"></span><input id="city" placeholder="City" class="form-control"
+                  required="true" formControlName="city" type="text" [value]="currentUser.city?currentUser.city:null"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+            <div class="col-md-8 inputGroupContainer">
+
+              <input id="state" placeholder="State" class="form-control" required="true" type="text" formControlName="state">
             </div>
           </div>
         </div>
@@ -80,27 +95,7 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">City <i class="fa fa-check" *ngIf="currentUser.city" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"></span><input id="city" placeholder="City" class="form-control"
-                  required="true" formControlName="city" type="text" [value]="currentUser.city?currentUser.city:null"></div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-
-              <input id="state" placeholder="State" class="form-control" required="true" type="text" formControlName="state">
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="row">
         <div class="col-md-6">
@@ -126,12 +121,22 @@
           </div>
         </div>
       </div>
-
+   
+      <div class="row">
+       <div class="col-md-6">
+          Upload Document for ID verification:<input type="file" name="myFile">
+        </div>
+         <div class="col-md-6">
+          Upload Document for Company Regn verification:<input type="file" name="myFile">
+        </div>
+    </div>
+       <br>
+       <div class="row">
       <div class="col-md-8" style="text-align: center">
 
-        <button class="btn btn-primary" type="submit" (click)="formSubmit(profileForm)">Save</button>
+        <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
       </div>
-      <br>
+   </div>
 
     </fieldset>
   </form>
