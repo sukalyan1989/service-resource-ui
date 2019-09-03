@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit {
 
   constructor(private post:PostsService,private router :Router) { }
   posts$:Observable<Post[]>
+  searchStr:string=''
   ngOnInit() {
    this.posts$ = this.post.getAllPosts() 
   }

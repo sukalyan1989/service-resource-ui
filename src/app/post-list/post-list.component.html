@@ -5,16 +5,16 @@
   <div class="container">
   <div class="tagline-container"><h1>Looking for Exprienced Tech Support? Get best candidates here</h1></div>
 &nbsp;
-<form>
+
 <div class="inner-form">
 <div class="input-field first-wrap">
-<input id="search" type="text" placeholder="DevOps Engineer" />
+<input id="search" [(ngModel)]="searchStr" type="text" placeholder="DevOps Engineer" />
 </div>          
 <div class="input-field third-wrap">
 <button class="btn-search" type="button">Search</button>
 </div>
 </div>
-</form>
+
 </div>
 </div>
 
@@ -30,8 +30,8 @@
 <h1 class="text-center"><span class="badge badge-secondary">Subscribe Your Consultant</span> </h1>
 <div class="clearfix"></div>
 <ul>
-<li *ngFor="let post of posts$|async">
-<div class="card mb-3" >
+<li *ngFor="let post of posts$|async|postFilter:{title:searchStr}">
+<div class="card mb-3">
 <div class="row no-gutters">
  <div class="col-md-4">
    <img [src]="post.imageUrl"  class="card-img img-responsive" alt="...">
