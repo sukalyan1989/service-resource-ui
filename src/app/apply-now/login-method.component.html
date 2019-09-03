@@ -27,37 +27,60 @@
     </div>
     <div class="col-md-3"> 
       <div class="user">
-  <a href="#" ><i class="fa fa-user"></i> Your Account </a>           
+  <a routerLink="/signup" ><i class="fa fa-user"></i> Your Account </a>           
            </div>  
   </div>         
   </div>
   </div>
   </div>
+  
+  
 <div class="container" *ngIf="(post$|async) as post" style="padding: 20px">
-  <div class="row">
-    <div class="col-md-2">
-      <img [src]="post.imageUrl" alt="" class="img-thumbnail">
-    </div>
-    <div class="col-md-6">
-      <h2 class="display-4">{{post.title}}</h2>
-    </div>
-    <div class="col-md-4">
-   <h4 class="display-4">  Price  {{post.price|currency}}</h4> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p class="lead">Details:</p>
-      <p>{{post.description}}</p>
-    </div>
-      </div>
-  <div class="row">
-    <div class="col-md-12" [innerHTML]="post.details">
-     
-    </div>
-      </div>
-      <div class="text-center">
-        <button class="btn btn-danger" (click)="proceedToLogin()">Apply Now</button>
-      </div>
 
+<div class="row">
+<div class="col-md-4">
+<div class="company-logo-container">
+<div class="company-logo-link engagement-metric"><img [src]="post.imageUrl" alt="" class="company-logo"></div>
 </div>
+<div class="job-summary">
+  <h5><b>Job Id : </b>102345abcd</h5>
+<h5><b>Price : </b>{{post.price|currency}} / Month</h5>
+</div>
+</div>
+<div class="col-md-8">
+<h2 class="brand-font">{{post.title}}</h2>
+<h5><b>Short Description</b></h5><p>{{post.description}}</p>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center"><button class="btn usebtn" (click)="proceedToLogin()">Apply Now</button></div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="desc"[innerHTML]="post.details"></div>
+    <button class="btn usebtn" (click)="proceedToLogin()">Apply Now</button></div>
+</div>    
+</div>
+
+<div class="row related-jobs-row">
+                        <div class="related-links-row-container col-xs-12 col-lg-12">
+        <div class="related-links-container reset-to-row">
+            <div class="related-links-title">
+                <span class="brand-font">Related Jobs</span>
+            </div>
+            <div class="related-links">
+                <ul class="relatedJobsList">
+                        <li>Jobs in Manchester</li>
+                        <li>Accounts Specialist jobs</li>
+                        <li>Credit Control jobs</li>
+                        <li>Accounts Specialist jobs in Manchester</li>
+                        <li>Finance jobs in Manchester</li>
+                        <li>Credit Control jobs in Manchester</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+                </div>
