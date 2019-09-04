@@ -34,6 +34,8 @@ export class ManagerService {
 export interface Manager{
   firstName:string,
   lastName:string,
-  position:string
+  position:string,
+  email:string,
+  mobile:number
 
 }

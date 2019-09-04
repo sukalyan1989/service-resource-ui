@@ -18,7 +18,9 @@ export class AdminAddManagerComponent implements OnInit {
     let manag:Manager={
       firstName:f.value['firstName'],
       lastName:f.value["lastName"],
-      position:f.value['position']
+      position:f.value['position'],
+      email:f.value['email'],
+      mobile:f.value['mobile']
     }
     this.manager.addManager(manag)
   }
