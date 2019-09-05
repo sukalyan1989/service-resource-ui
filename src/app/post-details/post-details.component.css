@@ -1,4 +1,14 @@
 
+.company-logo img{	width:300px;}
+.btn1{	margin-left:36%;}
+
+@media (min-width: 260px) and (max-width: 767px) {
+.job-summary{    margin-top: 84px;	}
+.brand-font{margin-top: 50px;}
+
+}
+
+
 .subnavbar {
     margin-bottom: 0.5em;
     text-align: center;

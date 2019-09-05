@@ -31,7 +31,9 @@ export class AddToCartComponent implements OnInit {
       startDate: this.fb.control(""),
       durationText: this.fb.control(""),
       level: this.fb.control(""),
-      totalJobs: this.fb.control("")
+      totalJobs: this.fb.control(""),
+      inhouseFacility:this.fb.control(false),
+      hardwareEquipments:this.fb.control(false)
     })
   ]);
   master = this.fb.group({
@@ -52,6 +54,7 @@ export class AddToCartComponent implements OnInit {
         },
         err => console.log(err)
       );
+    //  console.log(items)
     });
   }
 
@@ -67,7 +70,9 @@ export class AddToCartComponent implements OnInit {
         startDate: this.fb.control(""),
         durationText: this.fb.control(""),
         level: this.fb.control(""),
-        totalJobs: this.fb.control("")
+        totalJobs: this.fb.control(""),
+        inhouseFacility:this.fb.control(""),
+        hardwareEquipments:this.fb.control("")
       })
     );
   }

@@ -93,5 +93,7 @@ export interface Subscription{
       title:string,
       price:number
     },
-    status?:string
+    status?:string,
+    inhouseFacility?:boolean,
+    hardwareEquipments?:boolean
 }

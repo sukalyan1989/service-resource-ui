@@ -67,19 +67,18 @@ ul {
       font-weight: bold;
       text-align: center;
   }
-  .s01 form {
+  .form1{
     width: 100%;
     max-width: 1290px;
   }
-  
-  .s01 form legend {
+  .inner-form legend {
     font-size: 30px;
     line-height: 1;
     color: #fff;
     margin-bottom: 60px;
   }
   
-  .s01 form .inner-form {
+  .inner-form {
     background: rgba(0, 0, 0, 0.5);
     padding: 16px 47px;
     display: -ms-flexbox;
@@ -92,12 +91,12 @@ ul {
         align-items: center;*/
   }
   
-  .s01 form .inner-form .input-field {
+  .inner-form .input-field {
     margin-right: 30px;
     /*height: 68px;*/
   }
   
-  .s01 form .inner-form .input-field input {
+  .inner-form .input-field input {
     height: 100%;
     background: #fff;
     border-radius: .5px;
@@ -108,42 +107,42 @@ ul {
     font-size: 20px;
   }
   
-  .s01 form .inner-form .input-field input.placeholder {
+  .inner-form .input-field input.placeholder {
     color: #9a9a9a;
     font-size: 20px;
   }
   
-  .s01 form .inner-form .input-field input:-moz-placeholder {
+  .inner-form .input-field input:-moz-placeholder {
     color: #9a9a9a;
     font-size: 20px;
   }
   
-  .s01 form .inner-form .input-field input::-webkit-input-placeholder {
+  .inner-form .input-field input::-webkit-input-placeholder {
     color: #9a9a9a;
     font-size: 20px;
   }
   
-  .s01 form .inner-form .input-field input:hover, .s01 form .inner-form .input-field input:focus {
+  .inner-form .input-field input:hover, .s01 form .inner-form .input-field input:focus {
     box-shadow: none;
     outline: 0;
   }
   
-  .s01 form .inner-form .input-field.first-wrap {
+  .inner-form .input-field.first-wrap {
     -ms-flex-positive: 1;
         flex-grow: 1;
   }
   
-  .s01 form .inner-form .input-field.second-wrap {
+  .inner-form .input-field.second-wrap {
     width: 32.77%;
     min-width: 180px;
   }
   
-  .s01 form .inner-form .input-field.third-wrap {
+  .inner-form .input-field.third-wrap {
     width: 180px;
     margin-right: 0;
   }
   
-  .s01 form .inner-form .input-field.third-wrap .btn-search {
+  .inner-form .input-field.third-wrap .btn-search {
     height: 100%;
     width: 100%;
     background: #ffc000;
@@ -156,57 +155,56 @@ ul {
     cursor: pointer;
   }
   
-  .s01 form .inner-form .input-field.third-wrap .btn-search:hover {
+  .inner-form .input-field.third-wrap .btn-search:hover {
     background: #000;
   }
   
   @media screen and (max-width: 992px) {
-    .s01 form legend {
+    .inner-form legend{
       font-size: 50px;
       text-align: center;
       margin-bottom: 50px;
     }
-    .s01 form .inner-form {
+  .inner-form {
       padding: 30px 35px;
     }
-    .s01 form .inner-form .input-field {
+  .inner-form .input-field {
       height: 50px;
     }
   }
   
   @media screen and (max-width: 767px) {
-    .s01 form legend {
+    .inner-form legend{
       font-size: 40px;
       margin-bottom: 40px;
     }
-    .s01 form .inner-form {
+  .inner-form {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
       padding: 20px;
     }
-    .s01 form .inner-form .input-field {
+  .inner-form .input-field {
       margin-right: 0;
     }
-    .s01 form .inner-form .input-field input {
+  .inner-form .input-field input {
       padding: 5px 15px;
       font-size: 16px;
     }
-    .s01 form .inner-form .input-field.first-wrap {
+  .inner-form .input-field.first-wrap {
       width: 100%;
       margin-bottom: 20px;
     }
-    .s01 form .inner-form .input-field.second-wrap {
+  .inner-form .input-field.second-wrap {
       width: calc(50% - 10px);
       min-width: auto;
     }
-    .s01 form .inner-form .input-field.third-wrap {
+  .inner-form .input-field.third-wrap {
       width: calc(50% - 10px);
     }
-    .s01 form .inner-form .input-field.third-wrap .btn-search {
+  .inner-form .input-field.third-wrap .btn-search {
       font-size: 16px;
     }
   }
-  
   
   /*-----------------------Related Jobs--------------------------*/
   .related-links-container {
@@ -497,3 +495,13 @@ ul {
 .card{
 	border-top:1px solid rgba(0,0,0,.125)!important;
 }
+.card-text{position:relative;top:30%;}
+
+@media (min-width: 260px) and (max-width: 767px) {
+  .navbar .navbar-expand-sm .navbar-light{display:none;}
+  .tagline-container h1{font-size: 30px;line-height: 38px;}
+  .card-body{padding:10px}
+  .card-title{margin-bottom:0;}
+  .usebtn{padding: 2px;top:0;}
+  }
+  
