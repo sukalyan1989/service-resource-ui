@@ -1,3 +1,10 @@
+<div class="col-md-12">
+  <div class="pull-right">
+    <button class="usebtn" (click)="addItems()">Add More Jobs</button>
+  </div>
+</div>
+
+
 <form [formGroup]="master">
   <div formArrayName="items">
     <div *ngFor="let item of master['controls'].items['controls'];let i=index">
@@ -79,7 +86,7 @@
                 <input formControlName="inhouseFacility" type="checkbox" class="form-control">
               </td>
               <td>
-                  <input formControlName="hardwareEquipments" type="checkbox" class="form-control">
+                <input formControlName="hardwareEquipments" type="checkbox" class="form-control">
               </td>
               <td>
                 <button class="btn btn-danger" (click)="removeItems(i)"><i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -98,16 +105,9 @@
   </div>
   <br><br>
   <div class="text-center">
-    
-    <button type="submit" class="btn btn-primary" (click)="onSubmit(master)"> <i class="fa fa-cart-plus"
+
+    <button type="submit" class="usebtn" (click)="onSubmit(master)"> <i class="fa fa-cart-plus"
         aria-hidden="true"></i>Proceed To Checkout</button>
   </div>
 
-</form><br><br>
-
-
-<div class="text-center">
-
-  <button class="btn btn-primary" (click)="addItems()">Add More Jobs</button>
-</div>
-<br><br>
+</form>

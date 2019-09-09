@@ -1,86 +1,98 @@
 <div class="main-content">
   <div class="container">
-  <div class="row">
-    <div class="col-md-3"><h3>Are you recruiting?</h3></div>
-    <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Are you recruiting?</h3>
+      </div>
+      <div class="col-md-6">
         <div class="s004">
-       <form>
-          <fieldset>       
-            <div class="inner-form">     
-              <div class="input-field"> 
-                <div class="choices" data-type="text" aria-haspopup="true" aria-expanded="false" dir="ltr">
-            <div class="choices__inner">           
-            <a [routerLink]="['/']"><input type="text" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="Type to search..."></a>  </div>
-              <div class="choices__list choices__list--dropdown" aria-expanded="false">
-            </div></div>
-                <button class="btn-search" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                  </svg>
-                </button>
+          <form>
+            <fieldset>
+              <div class="inner-form">
+                <div class="input-field">
+                  <div class="choices" data-type="text" aria-haspopup="true" aria-expanded="false" dir="ltr">
+                    <div class="choices__inner">
+                      <a [routerLink]="['/']"><input type="text" class="choices__input choices__input--cloned"
+                          autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox"
+                          aria-autocomplete="list" placeholder="Type to search..."></a> </div>
+                    <div class="choices__list choices__list--dropdown" aria-expanded="false">
+                    </div>
+                  </div>
+                  <button class="btn-search" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
-            
-          </fieldset>
-        </form>
-  </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="user">
+          <a routerLink="/signup"><i class="fa fa-user"></i> Your Account </a>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3"> 
-      <div class="user">
-  <a routerLink="/signup" ><i class="fa fa-user"></i> Your Account </a>           
-           </div>  
-  </div>         
   </div>
-  </div>
-  </div>
-  
-  
+</div>
+
 <div class="container" *ngIf="(post$|async) as post" style="padding: 20px">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="company-logo-container">
+        <img [src]="post.imageUrl" alt="" class="img-responsive company-logo" style="width: 300px">
+      </div>
 
-<div class="row">
-<div class="col-md-4">
-<div class="company-logo-container">
-<div class="company-logo-link engagement-metric"><img [src]="post.imageUrl" alt="" class="company-logo"></div>
-</div>
-<div class="job-summary">
-  <h5><b>Job Id : </b>102345abcd</h5>
-<h5><b>Price : </b>{{post.price|currency}} / Month</h5>
-</div>
-</div>
-<div class="col-md-8">
-<h2 class="brand-font">{{post.title}}</h2>
-<h5><b>Short Description</b></h5><p>{{post.description}}</p>
-</div>
-</div>
+    </div>
+    <div class="col-md-8">
+      <h2 class="brand-font">{{post.title}}</h2>
+      &nbsp;
+      <div class="job-summary">
+        <h5><b>Job Id : </b>102345abcd</h5>
+        <h5><b>Price : </b>{{post.price|currency}} / Month</h5>
+      </div>
+      &nbsp;
+      <h5><b>Short Description</b></h5>
+      <p>{{post.description}}</p>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-md-12 text-center"><button class="btn usebtn" (click)="proceedToLogin()">Apply Now</button></div>
-</div>
+  <div class="row">
+    <div class="col-md-12 text-center"><button class="usebtn" (click)="proceedToLogin()">Apply Now</button></div>
+  </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="desc"[innerHTML]="post.details"></div>
-    <button class="btn usebtn" (click)="proceedToLogin()">Apply Now</button></div>
-</div>    
+  <div class="row">
+    <div class="col-md-12">
+      <p class="desc" [innerHTML]="post.details"></p>
+      <button class="btn1 usebtn" (click)="proceedToLogin()">Apply Now</button>
+    </div>
+  </div>
 </div>
 
 <div class="row related-jobs-row">
-                        <div class="related-links-row-container col-xs-12 col-lg-12">
-        <div class="related-links-container reset-to-row">
-            <div class="related-links-title">
-                <span class="brand-font">Related Jobs</span>
-            </div>
-            <div class="related-links">
-                <ul class="relatedJobsList">
-                        <li>Jobs in Manchester</li>
-                        <li>Accounts Specialist jobs</li>
-                        <li>Credit Control jobs</li>
-                        <li>Accounts Specialist jobs in Manchester</li>
-                        <li>Finance jobs in Manchester</li>
-                        <li>Credit Control jobs in Manchester</li>
-                </ul>
-            </div>
-        </div>
+  <div class="related-links-row-container col-xs-12 col-lg-12">
+    <div class="related-links-container reset-to-row">
+      <div class="related-links-title">
+        <span class="brand-font">Related Jobs</span>
+      </div>
+      <div class="related-links">
+        <ul class="relatedJobsList">
+          <li>Jobs in Manchester</li>
+          <li>Accounts Specialist jobs</li>
+          <li>Credit Control jobs</li>
+          <li>Accounts Specialist jobs in Manchester</li>
+          <li>Finance jobs in Manchester</li>
+          <li>Credit Control jobs in Manchester</li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-                </div>
+</div>

@@ -121,3 +121,11 @@ padding-left: 0;
 .main-content h5{font-size: 14px;}
 .subnavbar .container > ul > li{min-width: 0px;font-size: 10px;}
 }
+
+
+    @media (min-width: 260px) and (max-width: 480px) {
+    .subnavbar .container > ul > li > a {	font-size: 10px;	
+    
+    }
+    ul li a { margin-right: 4px;}
+    }

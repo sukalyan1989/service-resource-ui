@@ -1,3 +1,4 @@
+import { FileUploadService } from './../../../services/file-upload.service';
 import { UserService, User } from "src/app/services/user.service";
 import { FormBuilder } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
@@ -8,8 +9,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user-profile.component.css"]
 })
 export class UserProfileComponent implements OnInit {
+  selectedFile
   currentUser: User;
-  constructor(private fb: FormBuilder, private user: UserService) {
+  constructor(private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
     this.currentUser = {
       firstname: "",
       lastname: "",
@@ -70,5 +72,19 @@ export class UserProfileComponent implements OnInit {
       state: this.currentUser.state,
       country: this.currentUser.country
     });
+  }
+
+  addressDocSubmit(f:Object){
+    //console.log(f['value'].image)
+    const formData = new FormData();
+    formData.append('image',this.selectedFile)
+    formData.append('Uid',f['value'].Uid)
+    formData.append('docType',f['value'].docType)
+
+console.log(formData)
+    this.upload.uploadFile(formData).then(m=>console.log(m),err=>console.log(err))
+  }
+  fileSelect(e:Event){
+    this.selectedFile=e.target['files'][0]
   }
 }

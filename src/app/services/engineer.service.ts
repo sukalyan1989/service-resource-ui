@@ -1,0 +1,27 @@
+import { environment } from "../../environments/environment";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EngineerService {
+  hostName:string
+  constructor(private http: HttpClient) { 
+    this.hostName=environment.host_name
+  }
+
+   //add new manager to database
+   addEngineer(m:Engineer){
+    this.http.post(this.hostName+"engineer",m).subscribe(msg=>alert(msg['message']))
+  
+    }
+}
+export interface Engineer {
+  name: string,
+  email: string,
+  mobile: string|number,
+  engineerType: string
+}

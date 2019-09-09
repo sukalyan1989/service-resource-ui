@@ -2,9 +2,9 @@
 <loader></loader>
 <h3 class="display-4 text-center">All Subscriptions</h3><br>
 <div class="text-center">
-    <input class="form-control" placeholder="Search by Job Name" [(ngModel)]="searchStr"><br>
+  <input class="form-control" placeholder="Search by Job Name" [(ngModel)]="searchStr"><br>
 </div>
-<table class="table">
+<table class="table table-responsive">
   <thead class="thead-dark">
 
     <tr>
@@ -25,17 +25,17 @@
 
 
   <tr *ngFor="let sub of subs$|async|myfilter:{title:searchStr}">
-<td>{{sub.Post.title}}</td>
-<td>{{sub.location}}</td>
+    <td>{{sub.Post.title}}</td>
+    <td>{{sub.location}}</td>
 
-<td>{{sub.level}}    </td>
-<td>{{sub.startDate|date}}</td>
-<td>{{sub.totalJobs}}</td>
-<td>{{sub.durationText}}</td>
-<td>{{sub.User.email}}</td>
-<td>{{(sub.assignedManager)?sub.assignedManager.firstName + ' '+sub.assignedManager.lastName:'N/A'}}</td>
-<td>{{sub.status}}</td>
-<td><button  (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
+    <td>{{sub.level}} </td>
+    <td>{{sub.startDate|date}}</td>
+    <td>{{sub.totalJobs}}</td>
+    <td>{{sub.durationText}}</td>
+    <td>{{sub.User.email}}</td>
+    <td>{{(sub.assignedManager)?sub.assignedManager.firstName + ' '+sub.assignedManager.lastName:'N/A'}}</td>
+    <td>{{sub.status}}</td>
+    <td><button (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
   </tr>
-  
+
 </table>

@@ -20,7 +20,7 @@ export class UserAccountComponent implements OnInit {
   openCheckout() {
     console.log(this.cartItems)
     var handler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_GjzGGYCGp03Dfs4QhIi7c4d4001AfAMBOg',
+      key: 'pk_test_bZNVXGRaEAB6GXDBolbtUr0H00xmURjsd3',
       locale: 'auto',
       token:  (token: any) =>{
         // You can access the token ID with `token.id`.

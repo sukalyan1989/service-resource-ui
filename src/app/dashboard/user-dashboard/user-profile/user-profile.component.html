@@ -1,143 +1,178 @@
 <user-nav></user-nav>
-<loader></loader>
+<!-- <loader></loader> -->
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12"><h3 class="display-4">Edit Your Profile</h3></div>
-	</div>
-	&nbsp;
-  <form class="well form-horizontal" [formGroup]="profileForm">
-    <fieldset>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label"><b>Full Name</b><i class="fa fa-check" *ngIf="currentUser.fullName" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-user"></i></span><input id="fullName" placeholder="Full Name"
-                  class="form-control" required="true" type="text" formControlName="fullName" [value]="currentUser.fullName?currentUser.fullName:null">
-              </div>
-            </div>
-          </div>
-        </div>
- <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Email</label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
-                  class="form-control" required="true" disabled="true" type="text" formControlName="email" [value]="currentUser.email?currentUser.email:null"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Company Name <i class="fa fa-check" *ngIf="currentUser.companyName" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-envelope"></i></span><input id="companynm" 
-                  placeholder="Company Name" class="form-control" required="true" type="text"
-                  formControlName="companyName" [value]="currentUser.companyName?currentUser.companyName:null"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Phone Number <i class="fa fa-check" *ngIf="currentUser.phone" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" placeholder="Phone Number"
-                  class="form-control" required="true" formControlName="phone" type="text" [value]="currentUser.phone?currentUser.phone:null"></div>
-            </div>
-          </div>
-       </div>
-      </div>
-
-<div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">City <i class="fa fa-check" *ngIf="currentUser.city" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"></span><input id="city" placeholder="City" class="form-control"
-                  required="true" formControlName="city" type="text" [value]="currentUser.city?currentUser.city:null"></div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-
-              <input id="state" placeholder="State" class="form-control" required="true" type="text" formControlName="state">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-home"></i></span><input id="addressLine1" placeholder="Address Line 1"
-                  class="form-control" formControlName="address" type="text" [value]="currentUser.address?currentUser.address:null"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          Upload Document for Address verification:<input type="file" name="myFile">
-
-        </div>
-      </div>
-
-      
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Postal Code/ZIP <i class="fa fa-check" *ngIf="currentUser.zip" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group"><span class="input-group-addon"><i
-                    class="glyphicon glyphicon-home"></i></span><input id="postcode" 
-                  placeholder="Postal Code/ZIP" class="form-control" required="true" formControlName="zip" type="text">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-4 control-label">Country <i class="fa fa-check" *ngIf="currentUser.country" aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group">
-                <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                <input id="country" placeholder="Country Name" class="form-control" required="true" type="text" formControlName="country">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-   
-      <div class="row">
-       <div class="col-md-6">
-          Upload Document for ID verification:<input type="file" name="myFile">
-        </div>
-         <div class="col-md-6">
-          Upload Document for Company Regn verification:<input type="file" name="myFile">
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="display-4">Edit Your Profile</h3>
     </div>
-       <br>
-       <div class="row">
-      <div class="col-md-8" style="text-align: center">
+  </div>
+  &nbsp;
+  <div class="well">
 
-        <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
-      </div>
-   </div>
+    <form class="form-horizontal" [formGroup]="profileForm">
+      <fieldset>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label"><b>Full Name</b><i class="fa fa-check" *ngIf="currentUser.fullName"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-user"></i></span><input id="fullName" placeholder="Full Name"
+                    class="form-control" required="true" type="text" formControlName="fullName"
+                    [value]="currentUser.fullName?currentUser.fullName:null">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Email</label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
+                    class="form-control" required="true" disabled="true" type="text" formControlName="email"
+                    [value]="currentUser.email?currentUser.email:null"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    </fieldset>
-  </form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Company Name <i class="fa fa-check" *ngIf="currentUser.companyName"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-envelope"></i></span><input id="companynm" placeholder="Company Name"
+                    class="form-control" required="true" type="text" formControlName="companyName"
+                    [value]="currentUser.companyName?currentUser.companyName:null"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Phone Number <i class="fa fa-check" *ngIf="currentUser.phone"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" placeholder="Phone Number"
+                    class="form-control" required="true" formControlName="phone" type="text"
+                    [value]="currentUser.phone?currentUser.phone:null"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">City <i class="fa fa-check" *ngIf="currentUser.city"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"></span><input id="city" placeholder="City"
+                    class="form-control" required="true" formControlName="city" type="text"
+                    [value]="currentUser.city?currentUser.city:null"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+
+                <input id="state" placeholder="State" class="form-control" required="true" type="text"
+                  formControlName="state">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-home"></i></span><input id="addressLine1" placeholder="Address Line 1"
+                    class="form-control" formControlName="address" type="text"
+                    [value]="currentUser.address?currentUser.address:null"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Postal Code/ZIP <i class="fa fa-check" *ngIf="currentUser.zip"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-home"></i></span><input id="postcode" placeholder="Postal Code/ZIP"
+                    class="form-control" required="true" formControlName="zip" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Country <i class="fa fa-check" *ngIf="currentUser.country"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon" style="max-width: 100%;"><i
+                      class="glyphicon glyphicon-list"></i></span>
+                  <input id="country" placeholder="Country Name" class="form-control" required="true" type="text"
+                    formControlName="country">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        &nbsp;
+        <div class="row">
+          <form (ngSubmit)="addressDocSubmit(addressForm)" #addressForm="ngForm">
+            <div class="col-md-10">
+              <span style="font-weight:bold"> Upload Document for Address verification:</span> <input [ngModel]
+                type="file" name="image" (change)="fileSelect($event)"><button class="btn-primary"
+                type="submit">Upload</button>
+              <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
+              <input [ngModel]="'address_doc'" type="text" name="docType" style="display: none" />
+            </div>
+          </form>
+        </div>
+
+        &nbsp;
+        <div class="row">
+          <div class="col-md-10">
+            <span style="font-weight:bold"> Upload Document for ID verification:</span> <input type="file" name="image">
+          </div>
+        </div>
+        &nbsp;
+
+        <div class="row">
+          <div class="col-md-10">
+            <span style="font-weight:bold"> Upload Document for Company Regn verification:</span> <input type="file"
+              name="image">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8" style="text-align: center">
+
+            <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+
+  </div>
 </div>

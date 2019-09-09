@@ -42,6 +42,7 @@ import { MyfilterPipe } from './myfilter.pipe';
 import { UserSubscriptionDetailsComponent } from './dashboard/user-dashboard/user-subscription-details/user-subscription-details.component';
 import { UserFilterPipe } from './user-filter.pipe';
 import { PostFilterPipe } from './post-filter.pipe';
+import { AdminAddEngineerComponent } from './dashboard/admin-dashboard/admin-add-engineer/admin-add-engineer.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     MyfilterPipe,
     UserSubscriptionDetailsComponent,
     UserFilterPipe,
-    PostFilterPipe
+    PostFilterPipe,
+    AdminAddEngineerComponent
   ],
   imports: [
     BrowserModule,
