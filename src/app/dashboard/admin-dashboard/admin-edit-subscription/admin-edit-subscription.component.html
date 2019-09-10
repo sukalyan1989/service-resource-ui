@@ -10,6 +10,7 @@
     <tr>
       <th colspan="6" class="thead-dark">Job Information</th>
     </tr>
+   
     <tr>
       <th>Job Title</th>
       <th>Job Location</th>
@@ -72,31 +73,39 @@
           name=""
           id=""
           [(ngModel)]="mId"
-          (change)="selectedManagerChanged(mId)"
-        >
+          (change)="selectedManagerChanged(mId)">
           <option value="">Select</option>
-          <option
-            *ngFor="let manager of Managers$ | async"
-            value="{{ manager._id }}"
-          >
+          <option *ngFor="let manager of Managers$ | async" value="{{ manager._id }}">
             {{ manager.firstName }} {{ manager.lastName }}
           </option>
         </select>
         <span *ngIf="ManagerCount$ | async as count" style="color:red">
-          Currently Assigned in {{ count.count }} Projects</span
-        >
+          Currently Assigned in {{ count.count }} Projects</span>
       </td>
       <td>
-        <button
-          class="usebtn"
-          (click)="assignManager()"
-          [disabled]="!mId"
-        >
+        <button class="usebtn" (click)="assignManager()" [disabled]="!mId">
           Assign
         </button>
       </td>
       <td>
-        <button class="usebtn" (click)="cancelManager()">Cancel</button>
+        <!-- <button class="usebtn" (click)="cancelManager()">Cancel</button> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+      Engineer List: 
+      <form  #f = "ngForm" (ngSubmit)="submit(f)" class="form-group">
+        <select ngModel multiple class="form-control" name="assignedEngineers">
+          <option *ngFor="let Engineer of Engineers$|async" value="{{Engineer._id}}">{{Engineer.name}}</option>
+        </select >
+        <button class="usebtn" type="submit">Assign</button>
+      </form>
+      </td>
+      <td>
+        Engineers Assigned : 
+        <ul>
+          <li *ngFor="let x of sub.assginedEngineers">{{x.name}}</li>
+        </ul>
       </td>
     </tr>
   </table>
