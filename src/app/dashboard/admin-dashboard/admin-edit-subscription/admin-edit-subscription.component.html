@@ -10,7 +10,7 @@
     <tr>
       <th colspan="6" class="thead-dark">Job Information</th>
     </tr>
-   
+  
     <tr>
       <th>Job Title</th>
       <th>Job Location</th>
@@ -82,14 +82,14 @@
         <span *ngIf="ManagerCount$ | async as count" style="color:red">
           Currently Assigned in {{ count.count }} Projects</span>
       </td>
-      <td>
+      <td colspan="3">
         <button class="usebtn" (click)="assignManager()" [disabled]="!mId">
           Assign
         </button>
       </td>
-      <td>
-        <!-- <button class="usebtn" (click)="cancelManager()">Cancel</button> -->
-      </td>
+      <!-- <td>
+        <button class="usebtn" (click)="cancelManager()">Cancel</button>
+      </td> -->
     </tr>
     <tr>
       <td>
@@ -101,10 +101,10 @@
         <button class="usebtn" type="submit">Assign</button>
       </form>
       </td>
-      <td>
+      <td colspan="2">
         Engineers Assigned : 
-        <ul>
-          <li *ngFor="let x of sub.assginedEngineers">{{x.name}}</li>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let x of sub.assignedEngineers">{{x.name}}  <button class="btn btn-danger pull-right" (click)="cancelEngineer(x)">X</button> </li>
         </ul>
       </td>
     </tr>

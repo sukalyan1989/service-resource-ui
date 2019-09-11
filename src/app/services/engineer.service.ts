@@ -22,8 +22,15 @@ export class EngineerService {
   //get all manager 
   getAllEngineer():Observable<Engineer[]>{
    return this.http.get<Engineer[]>(this.hostName+"engineer").pipe(map(x=>x['items']))
-}}
+}
+
+//update engineer 
+ updateEngineer(id:string,status:string){
+   return this.http.patch(this.hostName+"engineer/"+id,{status:status}).toPromise()
+ }
+}
 export interface Engineer {
+  _id?:string,
   name: string,
   email: string,
   mobile: string|number,

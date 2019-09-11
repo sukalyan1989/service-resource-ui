@@ -1,9 +1,11 @@
+
 import { ActivatedRoute, Router, Route } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { SubscriptionService,Subscription } from 'src/app/services/subscription.service';
 import { Observable } from 'rxjs';
 import { Manager, ManagerService } from 'src/app/services/manager.service';
 import { Engineer, EngineerService } from 'src/app/services/engineer.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-admin-edit-subscription',
@@ -45,6 +47,7 @@ refresh(){
  
    this.Subscription$=this.sub.getSubById(this.subId)
    this.Managers$=this.manager.getManagers();
+   this.Engineers$=this.eng.getAllEngineer();
   }
 cancelManager(){
   this.sub.updateSubManager(this.subId,null).subscribe(m=>{
@@ -60,8 +63,31 @@ viewProfile(id:string){
  this.currentUid=id;
 }
 
+
+//assign selected engineers
 submit(f){
-  console.log(f)
+  console.log(f['value'])
+ let engArr=f['value'].assignedEngineers;
+  this.sub.updateSubEngineer(this.subId,f['value']).subscribe(data=>{
+     engArr.forEach(id => {
+    this.eng.updateEngineer(id,'hold')
+    });
+    this.refresh();
+  })
+  
+}
+
+cancelEngineer(x:Engineer){
+  console.log(x._id)
+this.sub.getSubById(this.subId).toPromise().then(data=>{
+  let engArray= data["assignedEngineers"]
+  let mappedEngArray=engArray.map(x=>x._id)
+  let reducedArray = _.remove(mappedEngArray,item=>item!=x._id)
+  this.sub.updateSubEngineer(this.subId,{assignedEngineers:reducedArray}).toPromise().then(data=>{
+    this.refresh();
+  })
+
+})
 }
 
 }

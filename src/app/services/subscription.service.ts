@@ -51,6 +51,13 @@ updateSubManager(id:string,mId:string){
 
 }
 
+//add engineers to subscription
+updateSubEngineer(id:string,engs:object){
+ return this.http.patch<{message:string}>(this.hostname+"subscription/"+id,engs)
+
+}
+
+
 
 //get subscription information by ID
 getSubById(id:string):Observable<Subscription>{

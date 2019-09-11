@@ -26,7 +26,7 @@ export class UserAccountComponent implements OnInit {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
         console.log(token)
-        fetch("https://service-resource.herokuapp.com/api/stripe/charge",{
+        fetch("https://service-resource-api.appspot.com/api/stripe/charge",{
           method:'POST',
           headers: {
             'Content-Type':'application/json',
