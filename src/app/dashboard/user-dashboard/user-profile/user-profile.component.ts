@@ -11,6 +11,7 @@ import { Component, OnInit } from "@angular/core";
 export class UserProfileComponent implements OnInit {
   selectedFile
   currentUser: User;
+  userFiles:object;
   constructor(private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
     this.currentUser = {
       firstname: "",
@@ -25,8 +26,13 @@ export class UserProfileComponent implements OnInit {
       state: "Loading..",
       country: "Loading.."
     };
+    this.userFiles={
+      idDoc:"",
+      comDoc:"",
+      addressDoc:""
+    }
     this.user.GetUserById(this.user.getUserId()._id).subscribe(m => {
-      console.log(m["user"]);
+      this.userFiles=m["user"];
       this.currentUser = m["user"];
       this.RefreshForm();
     });
@@ -73,16 +79,66 @@ export class UserProfileComponent implements OnInit {
       country: this.currentUser.country
     });
   }
-
+//file upload for address verification document
   addressDocSubmit(f:Object){
-    //console.log(f['value'].image)
+    
     const formData = new FormData();
     formData.append('image',this.selectedFile)
     formData.append('Uid',f['value'].Uid)
     formData.append('docType',f['value'].docType)
 
-console.log(formData)
-    this.upload.uploadFile(formData).then(m=>console.log(m),err=>console.log(err))
+
+    this.upload.uploadFile(formData).then(m=>{
+      
+      this.user.UpdateProfile({addressDoc:m['url']}).toPromise().then(m=>{
+        alert("Address Verification Document Uploaded Successfully")
+        this.userFiles['addressDoc']=m['url']
+        this.RefreshFiles();
+      })
+    },err=>console.log(err))
+  }
+
+
+
+  //file upload for ID document
+  idDocSubmit(f:Object){
+    
+    const formData = new FormData();
+    formData.append('image',this.selectedFile)
+    formData.append('Uid',f['value'].Uid)
+    formData.append('docType',f['value'].docType)
+
+
+    this.upload.uploadFile(formData).then(m=>{
+      
+      this.user.UpdateProfile({idDoc:m['url']}).toPromise().then(m=>{
+        alert("Identity Verification Document Uploaded Successfully")
+        this.userFiles['idDoc']=m['url']
+        this.RefreshFiles();
+      })
+    },err=>console.log(err))
+  }
+  comDocSubmit(f:Object){
+    const formData = new FormData();
+    formData.append('image',this.selectedFile)
+    formData.append('Uid',f['value'].Uid)
+    formData.append('docType',f['value'].docType)
+
+
+    this.upload.uploadFile(formData).then(m=>{
+      
+      this.user.UpdateProfile({comDoc:m['url']}).toPromise().then(m=>{
+        alert("Company Verification Document Uploaded Successfully")
+        this.userFiles['comDoc']=m['url']
+        this.RefreshFiles();
+      })
+    },err=>console.log(err))
+  }
+
+  RefreshFiles(){
+    this.user.GetUserById(this.user.getUserId()._id).toPromise().then(m => {
+      this.userFiles=m["user"];
+  });
   }
   fileSelect(e:Event){
     this.selectedFile=e.target['files'][0]

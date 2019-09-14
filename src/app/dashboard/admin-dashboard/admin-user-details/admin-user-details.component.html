@@ -39,6 +39,18 @@
         <td>Country Name</td>
         <td>{{ user.user.country }}</td>
       </tr>
+      <tr>
+        <td>Address Verification Document</td>
+        <td><a *ngIf="user.user.addressDoc" href="{{user.user.addressDoc}}" target="_blank">View File</a></td>
+      </tr>
+      <tr>
+        <td>Id Verification Document</td>
+        <td><a *ngIf="user.user.idDoc" href="{{user.user.idDoc}}" target="_blank">View File</a></td>
+      </tr>
+      <tr>
+        <td>Company Verification Document</td>
+        <td><a *ngIf="user.user.comDoc" href="{{user.user.comDoc}}" target="_blank">View File</a></td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -86,7 +98,7 @@
             <td>Assigned Engineers</td>
             <td>
               <ul>
-                <li *ngFor="let engg of sub.assignedEngineers">{{engg|json}}</li>
+                <li *ngFor="let engg of sub.assignedEngineers">{{engg.name}}</li>
               </ul>
             </td>
           </tr>

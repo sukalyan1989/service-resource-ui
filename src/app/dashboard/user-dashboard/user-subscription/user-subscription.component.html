@@ -27,10 +27,11 @@
         <th>Job Price</th>
         <th>Location</th>
         <th>Level</th>
-        <th>Start Date</th>
+        <!-- <th>Start Date</th> -->
         <th>Total Jobs</th>
         <th>Duration</th>
         <th>Manager</th>
+        <th>Engineers</th>
         <th>Status</th>
         <th colspan="2">Action</th>
       </tr>
@@ -41,7 +42,7 @@
       <td>{{sub.Post.price|currency}}</td>
       <td>{{sub.location}}</td>
       <td>{{sub.level}}</td>
-      <td>{{sub.startDate|date}}</td>
+      <!-- <td>{{sub.startDate|date}}</td> -->
       <td>{{sub.totalJobs}}</td>
       <td>{{sub.durationText}}</td>
       <td>
@@ -50,6 +51,11 @@
        
 
       </td>
+      <td><ul>
+        <li style="list-style-type: circle" *ngFor="let eng of sub.assignedEngineers">
+          {{eng.name}}
+        </li>
+      </ul></td>
       <td>{{sub.status}}</td>
       <td colspan="2"><button *ngIf="sub.status!='Cancelled'" class="btn btn-primary btn-sm" style="margin-bottom: 2px"
           (click)="renewSub(sub)">Renew</button>

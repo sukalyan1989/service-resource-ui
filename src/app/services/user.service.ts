@@ -201,5 +201,8 @@ export interface User {
   phone?:number,
   state?:string,
   zip?:string,
-  country?:string
+  country?:string,
+  idDoc?:string,
+  addressDoc?:string,
+  comDoc?:string
 }
