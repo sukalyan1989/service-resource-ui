@@ -11,7 +11,11 @@ import { Component, OnInit } from "@angular/core";
 export class UserProfileComponent implements OnInit {
   selectedFile
   currentUser: User;
-  userFiles:object;
+  userFiles:{
+    addressDoc:string,
+    idDoc:string,
+    comDoc:string
+  };
   constructor(private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
     this.currentUser = {
       firstname: "",
