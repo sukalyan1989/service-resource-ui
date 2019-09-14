@@ -80,6 +80,8 @@ getSubscriptionDetails(subId:string){
 
 }
 export interface Subscription{
+    _id?:string,
+    stripeSubId?:string,
     itemId?:string,
     jobTitle?:string,
     location:string,

@@ -1,7 +1,9 @@
+import { EmailService } from 'src/app/services/email.service';
 import { FileUploadService } from './../../../services/file-upload.service';
 import { UserService, User } from "src/app/services/user.service";
 import { FormBuilder } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: "app-user-profile",
@@ -16,7 +18,7 @@ export class UserProfileComponent implements OnInit {
     idDoc:string,
     comDoc:string
   };
-  constructor(private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
+  constructor(private email:EmailService, private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
     this.currentUser = {
       firstname: "",
       lastname: "",
@@ -98,6 +100,7 @@ export class UserProfileComponent implements OnInit {
         alert("Address Verification Document Uploaded Successfully")
         this.userFiles['addressDoc']=m['url']
         this.RefreshFiles();
+
       })
     },err=>console.log(err))
   }
@@ -116,9 +119,35 @@ export class UserProfileComponent implements OnInit {
     this.upload.uploadFile(formData).then(m=>{
       
       this.user.UpdateProfile({idDoc:m['url']}).toPromise().then(m=>{
-        alert("Identity Verification Document Uploaded Successfully")
         this.userFiles['idDoc']=m['url']
-        this.RefreshFiles();
+        this.email.sendEmail({
+          to:environment.admin_email,
+          subject:"A Member Named : "+this.currentUser.firstname+' '+this.currentUser.lastname+" Has uploaded document",
+          text:'',
+          html:`
+          <pre>          
+          Hi Admin,
+          
+          A subscriber  has uploaded their document.
+          Below is the Subscriber Details:
+          <br>
+          <br>
+          Name: ${this.currentUser.firstname} ${this.currentUser.lastname}
+          <br>
+          Email : ${this.currentUser.email}
+          <br>
+          Phone : ${this.currentUser.mobile}
+          
+          <br><b>N.B: This is system generated message.Please do not reply at this emailid.</b>
+          
+          </pre>
+          
+        `
+        }).toPromise().then(m=>{
+          this.RefreshFiles();
+          alert("Identity Verification Document Uploaded Successfully")
+        })
+        
       })
     },err=>console.log(err))
   }

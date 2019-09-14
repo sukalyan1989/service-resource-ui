@@ -10,7 +10,7 @@ margin-left: 0;}
 ul li a{
     margin-right: 17px;
 }
-
+.content{min-height:650px}
 
 .navbar-light .navbar-toggler,.navbar-light .navbar-nav .nav-link{
 	color:#000;/*rgba(232, 165, 39, 1)*/;
@@ -33,7 +33,7 @@ ul li a{
   width: 100%;
   bottom:0;
 }
-.footer h3{}
+
 .footer h5{
 	text-align: center;
 	font-size:10px;
@@ -106,7 +106,9 @@ ul li a{
 .main-content .user{margin-top:18px;text-align: center}
 .main-content .user a{color:#000; text-decoration: none;}
 
-
+@media (min-width: 260px) and (max-width: 767px) {
+.navbar,.navbar-nav{display:none}
+}
 /*---------------------Responsive Code ------------------------------*/
 @media (min-width:260px) and (max-width:575px){
 .topbanner{

@@ -4,38 +4,40 @@
 <div class="text-center">
   <input class="form-control" placeholder="Search by Job Name" [(ngModel)]="searchStr"><br>
 </div>
-<table class="table table1">
-  <thead class="thead-dark">
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
 
-    <tr>
-      <th>Post Name</th>
-      <th>Location</th>
-      <th>Level</th>
-      <th>Start Date</th>
-      <th>Total Jobs</th>
-      <th>Duration</th>
-      <th>Created By </th>
-      <th>Assgined Manager</th>
-      <th>Status</th>
-      <th>Action</th>
+      <tr>
+        <th>Post Name</th>
+        <th>Location</th>
+        <th>Level</th>
+        <th>Start Date</th>
+        <th>Total Jobs</th>
+        <th>Duration</th>
+        <th>Created By </th>
+        <th>Assgined Manager</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+
+
+
+    <tr *ngFor="let sub of subs$|async|myfilter:{title:searchStr}">
+      <td>{{sub.Post.title}}</td>
+      <td>{{sub.location}}</td>
+
+      <td>{{sub.level}} </td>
+      <td>{{sub.startDate|date}}</td>
+      <td>{{sub.totalJobs}}</td>
+      <td>{{sub.durationText}}</td>
+      <td>{{sub.User.email}}</td>
+      <td>{{(sub.assignedManager)?sub.assignedManager.firstName + ' '+sub.assignedManager.lastName:'N/A'}}</td>
+      <td>{{sub.status}}</td>
+      <td><button (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
     </tr>
-  </thead>
 
-
-
-
-  <tr *ngFor="let sub of subs$|async|myfilter:{title:searchStr}">
-    <td>{{sub.Post.title}}</td>
-    <td>{{sub.location}}</td>
-
-    <td>{{sub.level}} </td>
-    <td>{{sub.startDate|date}}</td>
-    <td>{{sub.totalJobs}}</td>
-    <td>{{sub.durationText}}</td>
-    <td>{{sub.User.email}}</td>
-    <td>{{(sub.assignedManager)?sub.assignedManager.firstName + ' '+sub.assignedManager.lastName:'N/A'}}</td>
-    <td>{{sub.status}}</td>
-    <td><button (click)="handleEdit(sub._id)" class="btn btn-danger m20" style="margin-right: 10px">EDIT</button></td>
-  </tr>
-
-</table>
+  </table>
+</div>

@@ -15,11 +15,12 @@
       <!-- <div class="form-group">
         <label for="Image">Insert Image Url</label>
         <input type="file" id="file" name="myFile" (change)="handleFileInput($event.target.files)">
-
       </div> -->
       <div class="form-group">
         <input type="text"ngModel name="imageUrl" class="form-control" placeholder="Insert Image Url" required="required">
+		<em>** Image Size must be 500px X 500px</em>
       </div>
+	  
       <div class="form-group">
         <ckeditor (change)="getData($event)" name="details" [(ngModel)]="ckeditorContent"></ckeditor>
       </div>

@@ -1,14 +1,27 @@
-thead{    
-	background: #000;
-    color: #fff;
-    text-align: center;
+thead {
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
-.usebtn{
-      color: #fff;
-    background-color: #ffc000;
-    border-color: #ffc000;
-    padding: 10px 20px;
-    text-decoration: none;
+.usebtn {
+  color: #fff;
+  background-color: #ffc000;
+  border-color: #ffc000;
+  padding: 10px 20px;
+  text-decoration: none;
 
+}
+
+.table1 {
+  width: 100%;
+  display: block;
+  overflow: scroll;
+}
+
+
+@media (min-width: 260px) and (max-width: 767px) {
+  .card-text {
+    padding: 20px 0;
+  }
 }

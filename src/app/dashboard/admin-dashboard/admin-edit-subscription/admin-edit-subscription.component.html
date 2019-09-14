@@ -6,108 +6,105 @@
   </div>
   <br>
   <div class="table-responsive">
-  <table *ngIf="Subscription$ | async as sub" class="table">
-    <tr>
-      <th colspan="6" class="thead-dark">Job Information</th>
-    </tr>
-  
-    <tr>
-      <th>Job Title</th>
-      <th>Job Location</th>
-      <th>Price</th>
-      <th>Duration</th>
-      <th>Level</th>
-      <th>Total Jobs</th>
-    </tr>
-    <tr>
-      <td>{{ sub.Post.title }}</td>
-      <td>{{ sub.location }}</td>
-      <td>{{ sub.Post.price | currency }}</td>
-      <td>{{ sub.durationText }}</td>
-      <td>{{ sub.level }}</td>
-      <td>{{ sub.totalJobs }}</td>
-    </tr>
-    <tr>
-      <th colspan="6" class="thead-dark">Subscriber Information</th>
-    </tr>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th colspan="2">Email</th>
-      <th>Start Date</th>
-      <th>Action</th>
-    </tr>
-    <tr>
-      <td>{{ sub.User.firstname }}</td>
-      <td>{{ sub.User.lastname }}</td>
-      <td colspan="2">{{ sub.User.email }}</td>
-      <td>{{ sub.startDate | date }}</td>
-      <td>
-        <button class="usebtn btn-active" (click)="viewProfile(sub.User._id)">
-          {{ showDetails ? "Hide Profile" : "Show Profile" }}
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="6">
-        <app-admin-user-details
-          *ngIf="showDetails"
-          [Uid]="currentUid"
-        ></app-admin-user-details>
-      </td>
-    </tr>
-    <tr>
-      <th colspan="6" class="thead-dark">Assign Manager</th>
-    </tr>
-    <tr>
-      <td>
-       <b>Assigned Manager :</b>{{
+    <table *ngIf="Subscription$ | async as sub" class="table">
+      <tr>
+        <th colspan="6" class="thead-dark">Job Information</th>
+      </tr>
+
+      <tr>
+        <th>Job Title</th>
+        <th>Job Location</th>
+        <th>Price</th>
+        <th>Duration</th>
+        <th>Level</th>
+        <th>Total Jobs</th>
+      </tr>
+      <tr>
+        <td>{{ sub.Post.title }}</td>
+        <td>{{ sub.location }}</td>
+        <td>{{ sub.Post.price | currency }}</td>
+        <td>{{ sub.durationText }}</td>
+        <td>{{ sub.level }}</td>
+        <td>{{ sub.totalJobs }}</td>
+      </tr>
+      <tr>
+        <th colspan="6" class="thead-dark">Subscriber Information</th>
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th colspan="2">Email</th>
+        <th>Start Date</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>{{ sub.User.firstname }}</td>
+        <td>{{ sub.User.lastname }}</td>
+        <td colspan="2">{{ sub.User.email }}</td>
+        <td>{{ sub.startDate | date }}</td>
+        <td>
+          <button class="usebtn btn-active" (click)="viewProfile(sub.User._id)">
+            {{ showDetails ? "Hide Profile" : "Show Profile" }}
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <app-admin-user-details *ngIf="showDetails" [Uid]="currentUid"></app-admin-user-details>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="6" class="thead-dark">Assign Manager</th>
+      </tr>
+      <tr>
+        <td>
+          <b>Assigned Manager :</b>{{
           sub.assignedManager != null
             ? sub.assignedManager.firstName
             : "Not Assigned"
         }}
-      </td>
+        </td>
 
-      <td colspan="2"><b>Select Manager :</b><select
-          class="form-control"
-          name=""
-          id=""
-          [(ngModel)]="mId"
-          (change)="selectedManagerChanged(mId)">
-          <option value="">Select</option>
-          <option *ngFor="let manager of Managers$ | async" value="{{ manager._id }}">
-            {{ manager.firstName }} {{ manager.lastName }}
-          </option>
-        </select>
-        <span *ngIf="ManagerCount$ | async as count" style="color:red">
-          Currently Assigned in {{ count.count }} Projects</span>
-      </td>
-      <td colspan="3">
-        <button class="usebtn" (click)="assignManager()" [disabled]="!mId">
-          Assign
-        </button>
-      </td>
-      <!-- <td>
+        <td colspan="2"><b>Select Manager :</b><select class="form-control" name="" id="" [(ngModel)]="mId"
+            (change)="selectedManagerChanged(mId)">
+            <option value="">Select</option>
+            <option *ngFor="let manager of Managers$ | async" value="{{ manager._id }}">
+              {{ manager.firstName }} {{ manager.lastName }}
+            </option>
+          </select>
+          <span *ngIf="ManagerCount$ | async as count" style="color:red">
+            Currently Assigned in {{ count.count }} Projects</span>
+        </td>
+        <td colspan="3">
+          <button class="usebtn" (click)="assignManager()" [disabled]="!mId">
+            Assign
+          </button>
+        </td>
+        <!-- <td>
         <button class="usebtn" (click)="cancelManager()">Cancel</button>
       </td> -->
-    </tr>
-    <tr>
-      <td>
-      Engineer List: 
-      <form  #f = "ngForm" (ngSubmit)="submit(f)" class="form-group">
-        <select ngModel multiple class="form-control" name="assignedEngineers">
-          <option *ngFor="let Engineer of Engineers$|async" value="{{Engineer._id}}">{{Engineer.name}}</option>
-        </select >
-        <button class="usebtn" type="submit">Assign</button>
-      </form>
-      </td>
-      <td colspan="2">
-        Engineers Assigned : 
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let x of sub.assignedEngineers">{{x.name}}  <button class="btn btn-danger pull-right" (click)="cancelEngineer(x)">X</button> </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</div>
+      </tr>
+      <tr>
+        <td>
+          Engineer List:
+          <form #f="ngForm" (ngSubmit)="submit(f)" class="form-group">
+            <select ngModel multiple class="form-control" name="assignedEngineers">
+              <option *ngFor="let Engineer of Engineers$|async" value="{{Engineer._id}}">{{Engineer.name}}</option>
+            </select>
+            <br>
+            <button class="usebtn" type="submit">Assign</button>
+          </form>
+        </td>
+        <td colspan="2">
+          Engineers Assigned :
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let x of sub.assignedEngineers">{{x.name}} <button
+                class="btn btn-danger pull-right" (click)="cancelEngineer(x)">X</button> </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <b>N.B.**** Press Ctrl+Click to select multiple resource and at once</b>
+  &nbsp;
 </div>

@@ -36,36 +36,36 @@
             </div>
       </div>
     </div> -->
-
-    <table class="table table-bordered table1">
-      <thead>
-        <tr>
-          <th>Job Title</th>
-          <th>Location</th>
-          <th>Level</th>
-          <th>Duration</th>
-          <th>Total Jobs</th>
-          <th>Subscription</th>
-          <th>Start Date</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of (cartItems$|async);let i = index">
-          <td>{{item.post.title}}</td>
-          <td>{{item.location}}</td>
-          <td>{{item.level}}</td>
-          <td>{{item.durationText}}</td>
-          <td>{{item.totalJobs}}</td>
-          <td>{{item.post.price}}</td>
-          <td>{{item.startDate}}</td>
-          <td>{{item.post.price|currency}} X {{item.totalJobs}} = {{(item.post.price*item.totalJobs)|currency}}</td>
-          <td><button class="btn btn-danger" (click)="removeItem(i)">Remove Item</button></td>
-        </tr>
-      </tbody>
-    </table>
-
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Location</th>
+            <th>Level</th>
+            <th>Duration</th>
+            <th>Total Jobs</th>
+            <th>Subscription</th>
+            <th>Start Date</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of (cartItems$|async);let i = index">
+            <td>{{item.post.title}}</td>
+            <td>{{item.location}}</td>
+            <td>{{item.level}}</td>
+            <td>{{item.durationText}}</td>
+            <td>{{item.totalJobs}}</td>
+            <td>{{item.post.price}}</td>
+            <td>{{item.startDate}}</td>
+            <td>{{item.post.price|currency}} X {{item.totalJobs}} = {{(item.post.price*item.totalJobs)|currency}}</td>
+            <td><button class="btn btn-danger" (click)="removeItem(i)">Remove Item</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
 

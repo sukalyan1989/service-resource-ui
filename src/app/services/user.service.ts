@@ -82,8 +82,25 @@ export class UserService {
           </table>
         <p>N.B: This is system generated message.Please do not reply at this emailid.</p>`
         }).subscribe(m=>{
-          alert("Sign Up Successful");
-          this.route.navigate(['/login'])
+          this.mail.sendEmail({
+            to: user.email,
+            subject:'Welcome To Yobitel.com',
+            text:'The Following user has Registered ',
+            html:`
+            <pre> 
+            Hello User,
+            Welcome to Yobitel Communication .
+            Thanks for Joining Us.
+
+
+            </pre>
+           
+          <p>N.B: This is system generated message.Please do not reply at this emailid.</p>`
+          }).toPromise().then(m=>{
+            alert('Sign Up Successful')
+            this.route.navigate(['/login'])
+          })
+
         },(err)=>console.log(err))
 
 

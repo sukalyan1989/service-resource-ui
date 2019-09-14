@@ -495,6 +495,7 @@ ul {
 .card{
 	border-top:1px solid rgba(0,0,0,.125)!important;
 }
+.card-img {width: 65%;margin-left: 6%;}
 .card-text{position:relative;top:30%;}
 
 @media (min-width: 260px) and (max-width: 767px) {
@@ -504,4 +505,3 @@ ul {
   .card-title{margin-bottom:0;}
   .usebtn{padding: 2px;top:0;}
   }
-  

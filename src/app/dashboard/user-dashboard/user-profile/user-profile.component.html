@@ -95,9 +95,9 @@
         <div class="row">
           <div class="col-md-10">
             <div class="form-group">
-              <label class="col-md-4 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address"
+              <label class="col-md-12 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address"
                   aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-              <div class="col-md-8 inputGroupContainer">
+              <div class="col-md-12 inputGroupContainer">
                 <div class="input-group"><span class="input-group-addon"><i
                       class="glyphicon glyphicon-home"></i></span><input id="addressLine1" placeholder="Address Line 1"
                     class="form-control" formControlName="address" type="text"
@@ -136,71 +136,68 @@
           </div>
         </div>
         &nbsp;
-        
+
         <div class="row">
           <div class="col-md-8" style="text-align: center">
-              
-              <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
-            </div>
-          </div>&nbsp;
-          
-        </fieldset>
-      </form>
-      <!-- ADDRESS VERIFICATION DOC -->
-      <div class="row">
-        <form (ngSubmit)="addressDocSubmit(addressForm)" #addressForm="ngForm">
-          <div class="col-md-10">
-            <span style="font-weight:bold"> Upload Document for Address verification:
-               <i class="fa fa-check" *ngIf="userFiles.addressDoc"
-              aria-hidden="true" style="color:green;font-size: 20px;"></i><br>
-            <a *ngIf="userFiles.addressDoc" href="{{userFiles.addressDoc}}" target="_blank">View File</a>
-            </span>
 
-            <input [ngModel] type="file" name="image" (change)="fileSelect($event)">
-            <button class="btn-primary" type="submit">Upload</button>
-            
-            
-            <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
-            <input [ngModel]="'address_doc'" type="text" name="docType" style="display: none" />
+            <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
           </div>
+        </div>&nbsp;
+
+      </fieldset>
+    </form>
+    <!-- ADDRESS VERIFICATION DOC -->
+    <div class="row">
+      <div class="col-md-10">
+        <form (ngSubmit)="addressDocSubmit(addressForm)" #addressForm="ngForm">
+          <span style="font-weight:bold"> Upload Document for Address verification:
+            <i class="fa fa-check" *ngIf="userFiles.addressDoc" aria-hidden="true"
+              style="color:green;font-size: 20px;"></i><br>
+            <a *ngIf="userFiles.addressDoc" href="{{userFiles.addressDoc}}" target="_blank">View File</a>
+          </span><br>
+          <input [ngModel] type="file" name="image" (change)="fileSelect($event)">
+          <button class="btn-primary" type="submit">Upload</button>
+          <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
+          <input [ngModel]="'address_doc'" type="text" name="docType" style="display: none" />
         </form>
       </div>
-      
-      &nbsp;
-      <!-- ID VERIFICATION DOC UPLOAD -->
-      <div class="row">
-        <div class="col-md-10">
-            <form (ngSubmit)="idDocSubmit(idForm)" #idForm="ngForm">
-              
-              <span style="font-weight:bold"> Upload Document for ID verification:
-                  <i class="fa fa-check" *ngIf="userFiles.idDoc"
-                  aria-hidden="true" style="color:green;font-size: 20px;"></i><br>
-                  <a *ngIf="userFiles.idDoc" href="{{userFiles.idDoc}}" target="_blank">View File</a>
-                </span><br> 
-              <input type="file" name="image" (change)="fileSelect($event)">
-              <button class="btn-primary" type="submit">Upload</button>
-              <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
-              <input [ngModel]="'id_doc'" type="text" name="docType" style="display: none" />
-            </form>
-          </div>
-        </div>
-        &nbsp;
-        <!-- COMPANY VERIFICATION DOC UPLOAD -->
-        <div class="row">
-          <div class="col-md-10">
-            <form (ngSubmit)="comDocSubmit(companyForm)" #companyForm="ngForm">
+    </div>
+
+    &nbsp;
+    <!-- ID VERIFICATION DOC UPLOAD -->
+    <div class="row">
+      <div class="col-md-10">
+        <form (ngSubmit)="idDocSubmit(idForm)" #idForm="ngForm">
+
+          <span style="font-weight:bold"> Upload Document for ID verification:
+            <i class="fa fa-check" *ngIf="userFiles.idDoc" aria-hidden="true"
+              style="color:green;font-size: 20px;"></i><br>
+            <a *ngIf="userFiles.idDoc" href="{{userFiles.idDoc}}" target="_blank">View File</a>
+          </span><br>
+          <input type="file" name="image" (change)="fileSelect($event)">
+          <button class="btn-primary" type="submit">Upload</button>
+          <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
+          <input [ngModel]="'id_doc'" type="text" name="docType" style="display: none" />
+        </form>
+      </div>
+    </div>
+    &nbsp;
+    <!-- COMPANY VERIFICATION DOC UPLOAD -->
+    <div class="row">
+      <div class="col-md-10">
+        <form (ngSubmit)="comDocSubmit(companyForm)" #companyForm="ngForm">
           <span style="font-weight:bold"> Upload Document for Company Regn verification:
-              <i class="fa fa-check" *ngIf="userFiles.comDoc"
-              aria-hidden="true" style="color:green;font-size: 20px;"></i><br>
-              <a *ngIf="userFiles.comDoc" href="{{userFiles.comDoc}}" target="_blank">View File</a>
-            </span> <br>
+            <i class="fa fa-check" *ngIf="userFiles.comDoc" aria-hidden="true"
+              style="color:green;font-size: 20px;"></i><br>
+            <a *ngIf="userFiles.comDoc" href="{{userFiles.comDoc}}" target="_blank">View File</a>
+          </span> <br>
           <input type="file" name="image" (change)="fileSelect($event)">
           <button class="btn-primary" type="submit">Upload</button>
           <input [ngModel]="currentUser._id" type="text" name="Uid" style="display: none" />
           <input [ngModel]="'com_doc'" type="text" name="docType" style="display: none" />
-          </form>
-        </div>
-      </div>&nbsp;
+        </form>
+      </div>
+    </div>&nbsp;
 
 
   </div>
