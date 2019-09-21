@@ -20,15 +20,14 @@ export class UserProfileComponent implements OnInit {
   };
   constructor(private email:EmailService, private fb: FormBuilder, private user: UserService , private upload:FileUploadService) {
     this.currentUser = {
-      firstname: "",
-      lastname: "",
-      fullName: "Loading..",
+      firstname: "Loading..",
+      lastname: "Loading..",
       companyName: "Loading..",
       email: "Loading..",
       address: "Loading..",
       city: "Loading..",
       zip: "Loading..",
-      phone: 0,
+      mobile: 0,
       state: "Loading..",
       country: "Loading.."
     };
@@ -45,13 +44,14 @@ export class UserProfileComponent implements OnInit {
   }
 
   profileForm = this.fb.group({
-    fullName: [""],
+    firstname: [""],
+    lastname:[""],
     companyName: [""],
     email: [""],
     address: [""],
     city: [""],
     zip: [""],
-    phone: [""],
+    mobile: [""],
     state: [""],
     country: [""]
   });
@@ -74,13 +74,14 @@ export class UserProfileComponent implements OnInit {
   }
   RefreshForm() {
     this.profileForm.patchValue({
-      fullName: this.currentUser.fullName,
+      lastname:this.currentUser.lastname,
+      firstname: this.currentUser.firstname,
       companyName: this.currentUser.companyName,
       email: this.currentUser.email,
       address: this.currentUser.address,
       city: this.currentUser.city,
       zip: this.currentUser.zip,
-      phone: this.currentUser.phone,
+      mobile: this.currentUser.mobile,
       state: this.currentUser.state,
       country: this.currentUser.country
     });

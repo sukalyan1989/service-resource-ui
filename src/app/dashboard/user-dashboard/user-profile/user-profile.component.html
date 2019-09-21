@@ -15,13 +15,13 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="col-md-4 control-label"><b>Full Name</b><i class="fa fa-check" *ngIf="currentUser.fullName"
+              <label class="col-md-4 control-label"><b>Full Name</b><i class="fa fa-check" *ngIf="currentUser.firstname"
                   aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
               <div class="col-md-8 inputGroupContainer">
                 <div class="input-group"><span class="input-group-addon"><i
-                      class="glyphicon glyphicon-user"></i></span><input id="fullName" placeholder="Full Name"
-                    class="form-control" required="true" type="text" formControlName="fullName"
-                    [value]="currentUser.fullName?currentUser.fullName:null">
+                      class="glyphicon glyphicon-user"></i></span><input id="firstname" placeholder="Full Name"
+                    class="form-control" required="true" type="text" formControlName="firstname"
+                    [value]="currentUser.firstname?currentUser.firstname:null">
                 </div>
               </div>
             </div>
@@ -38,6 +38,23 @@
             </div>
           </div>
         </div>
+        <!-- Last name added -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-md-4 control-label"><b>Last Name</b><i class="fa fa-check" *ngIf="currentUser.lastname"
+                      aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+                  <div class="col-md-8 inputGroupContainer">
+                    <div class="input-group"><span class="input-group-addon"><i
+                          class="glyphicon glyphicon-user"></i></span><input id="lastname" placeholder="Last Name"
+                        class="form-control" required="true" type="text" formControlName="lastname"
+                        [value]="currentUser.lastname?currentUser.lastname:null">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- last name added -->
 
         <div class="row">
           <div class="col-md-6">
@@ -54,13 +71,13 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label class="col-md-4 control-label">Phone Number <i class="fa fa-check" *ngIf="currentUser.phone"
+              <label class="col-md-4 control-label">Mobile <i class="fa fa-check" *ngIf="currentUser.mobile"
                   aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
               <div class="col-md-8 inputGroupContainer">
                 <div class="input-group"><span class="input-group-addon"><i
-                      class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" placeholder="Phone Number"
-                    class="form-control" required="true" formControlName="phone" type="text"
-                    [value]="currentUser.phone?currentUser.phone:null"></div>
+                      class="glyphicon glyphicon-earphone"></i></span><input id="mobile" placeholder="Mobile"
+                    class="form-control" required="true" formControlName="mobile" type="text"
+                    [value]="currentUser.mobile?currentUser.mobile:null"></div>
               </div>
             </div>
           </div>
