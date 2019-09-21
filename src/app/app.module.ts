@@ -43,6 +43,8 @@ import { UserSubscriptionDetailsComponent } from './dashboard/user-dashboard/use
 import { UserFilterPipe } from './user-filter.pipe';
 import { PostFilterPipe } from './post-filter.pipe';
 import { AdminAddEngineerComponent } from './dashboard/admin-dashboard/admin-add-engineer/admin-add-engineer.component';
+import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     UserSubscriptionDetailsComponent,
     UserFilterPipe,
     PostFilterPipe,
-    AdminAddEngineerComponent
+    AdminAddEngineerComponent,
+    PasswordResetFormComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,

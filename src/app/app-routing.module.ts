@@ -1,3 +1,4 @@
+import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 import { AdminAddEngineerComponent } from './dashboard/admin-dashboard/admin-add-engineer/admin-add-engineer.component';
 import { AdminViewAccountComponent } from './dashboard/admin-dashboard/admin-view-account/admin-view-account.component';
 import { AdminEditSubscriptionComponent } from './dashboard/admin-dashboard/admin-edit-subscription/admin-edit-subscription.component';
@@ -22,6 +23,7 @@ import { UserSubscriptionComponent } from './dashboard/user-dashboard/user-subsc
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { UserAccountComponent } from './dashboard/user-dashboard/user-account/user-account.component';
 import { UserSubscriptionDetailsComponent } from './dashboard/user-dashboard/user-subscription-details/user-subscription-details.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 
 const routes: Routes = [
   {path:'',component:PostListComponent},
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'add-post',component:AdminPostComponent},
   {path:'job/details/:id',component:LoginMethodComponent},
+  {path:'password-reset-form',component:PasswordResetFormComponent},
+  {path:'change-password/:id',component:NewPasswordComponent},
   {path:'admin-dashboard',component:AdminDashboardContainerComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/account',component:AdminViewAccountComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'admin-dashboard/add-manager',component:AdminAddManagerComponent,canActivate:[AuthGuard,AdminGuard]},

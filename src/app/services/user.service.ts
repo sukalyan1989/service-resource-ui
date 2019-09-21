@@ -141,7 +141,7 @@ export class UserService {
           
         }
       },(err)=>{
-        console.log(err)
+        alert("Email or password doesn\'t match")
       });
   }
 
@@ -195,7 +195,22 @@ GetAllUsers():Observable<User[]>{
 GetUserById(id:string){
  return this.http.get<User>(this.hostname+"user/"+id)
 }
+//generate and send password reset link to User email
+GetUserPasswordResetLink(email:Object){
+  return this.http.post(this.hostname+"user/check",email).toPromise().then(m=>{
+    alert(m['message'])
+  },err=>{
+    console.log(err);
+  })
+}
 
+UpdatePassword(obj:object){
+  this.http.post(this.hostname+"user/passwordReset",obj).toPromise().then(m=>{
+    alert(m['message'])
+  },err=>{
+    alert(err['message']);
+  })
+}
 
 }
 export interface AuthData {
