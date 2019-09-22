@@ -199,16 +199,20 @@ GetUserById(id:string){
 GetUserPasswordResetLink(email:Object){
   return this.http.post(this.hostname+"user/check",email).toPromise().then(m=>{
     alert(m['message'])
+    this.route.navigate(['/login'])
   },err=>{
-    console.log(err);
+    alert(err['message']);
+    this.route.navigate(['/login'])
   })
 }
 
 UpdatePassword(obj:object){
   this.http.post(this.hostname+"user/passwordReset",obj).toPromise().then(m=>{
     alert(m['message'])
+    this.route.navigate(['/login'])
   },err=>{
     alert(err['message']);
+    this.route.navigate(['/login'])
   })
 }
 

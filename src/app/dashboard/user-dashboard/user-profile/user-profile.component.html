@@ -26,21 +26,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="col-md-4 control-label">Email</label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group"><span class="input-group-addon"><i
-                      class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
-                    class="form-control" required="true" disabled="true" type="text" formControlName="email"
-                    [value]="currentUser.email?currentUser.email:null"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Last name added -->
-        <div class="row">
-            <div class="col-md-6">
+		 <div class="col-md-6">
                 <div class="form-group">
                   <label class="col-md-4 control-label"><b>Last Name</b><i class="fa fa-check" *ngIf="currentUser.lastname"
                       aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
@@ -52,11 +38,25 @@
                     </div>
                   </div>
                 </div>
+              </div>  		  
+		  </div>
+		  
+		   <div class="row">
+		   <!-- Last name added -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Email</label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-envelope"></i></span><input id="email" placeholder="Email"
+                    class="form-control" required="true" disabled="true" type="text" formControlName="email"
+                    [value]="currentUser.email?currentUser.email:null"></div>
               </div>
-        </div>
+            </div>
+          </div>      
+              
         <!-- last name added -->
 
-        <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label class="col-md-4 control-label">Company Name <i class="fa fa-check" *ngIf="currentUser.companyName"
@@ -69,6 +69,10 @@
               </div>
             </div>
           </div>
+		  </div>
+		  
+		  
+		<div class="row">  
           <div class="col-md-6">
             <div class="form-group">
               <label class="col-md-4 control-label">Mobile <i class="fa fa-check" *ngIf="currentUser.mobile"
@@ -81,9 +85,7 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="row">
+               
           <div class="col-md-6">
             <div class="form-group">
               <label class="col-md-4 control-label">City <i class="fa fa-check" *ngIf="currentUser.city"
@@ -94,8 +96,25 @@
                     [value]="currentUser.city?currentUser.city:null"></div>
               </div>
             </div>
-
           </div>
+		  		   </div>
+				   
+			 <div class="row">	   
+				   
+			 <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-12 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address"
+                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
+              <div class="col-md-12 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                      class="glyphicon glyphicon-home"></i></span><input id="addressLine1" placeholder="Address Line 1"
+                    class="form-control" formControlName="address" type="text"
+                    [value]="currentUser.address?currentUser.address:null"></div>
+              </div>
+            </div>
+          </div>	 			   
+				   
+				   
           <div class="col-md-6">
             <div class="form-group">
               <label class="col-md-4 control-label">State <i class="fa fa-check" *ngIf="currentUser.state"
@@ -107,22 +126,9 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-10">
-            <div class="form-group">
-              <label class="col-md-12 control-label">Address <i class="fa fa-check" *ngIf="currentUser.address"
-                  aria-hidden="true" style="color:green;font-size: 20px;"></i></label>
-              <div class="col-md-12 inputGroupContainer">
-                <div class="input-group"><span class="input-group-addon"><i
-                      class="glyphicon glyphicon-home"></i></span><input id="addressLine1" placeholder="Address Line 1"
-                    class="form-control" formControlName="address" type="text"
-                    [value]="currentUser.address?currentUser.address:null"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>   
+         
+     
 
         <div class="row">
           <div class="col-md-6">
@@ -156,7 +162,6 @@
 
         <div class="row">
           <div class="col-md-8" style="text-align: center">
-
             <button class="usebtn" type="submit" (click)="formSubmit(profileForm)">Save</button>
           </div>
         </div>&nbsp;

@@ -34,14 +34,14 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th colspan="2">Email</th>
-        <th>Start Date</th>
+        <th>Mobile</th>
         <th>Action</th>
       </tr>
       <tr>
         <td>{{ sub.User.firstname }}</td>
         <td>{{ sub.User.lastname }}</td>
         <td colspan="2">{{ sub.User.email }}</td>
-        <td>{{ sub.startDate | date }}</td>
+        <td>{{ sub.User.mobile }}</td>
         <td>
           <button class="usebtn btn-active" (click)="viewProfile(sub.User._id)">
             {{ showDetails ? "Hide Profile" : "Show Profile" }}
