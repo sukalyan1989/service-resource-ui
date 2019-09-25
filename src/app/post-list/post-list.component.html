@@ -29,8 +29,10 @@
 <loader></loader>
 <h1 class="text-center"><span class="badge badge-secondary">Subscribe Your Consultant</span> </h1>
 <div class="clearfix"></div>
+
 <ul>
-<li *ngFor="let post of posts$|async|postFilter:{title:searchStr}">
+    <span (click)="Previous()">Previous</span><span (click)="Next()" class="pull-right">Next</span>
+<li *ngFor="let post of posts$|async|postFilter:{title:searchStr}|pagination:{from:from,to:to,itemPerPage:3}">
 <div class="card mb-3">
 <div class="row no-gutters">
  <div class="col-md-4">

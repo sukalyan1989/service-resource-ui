@@ -11,11 +11,38 @@ import { Router } from '@angular/router';
 })
 export class PostListComponent implements OnInit {
 
-  constructor(private post:PostsService,private router :Router) { }
+  from:number;
+  to:number;
+  arrLength:number
+  constructor(private post:PostsService,private router :Router) { 
+    this.from=0;
+    this.to=3;
+   
+  }
   posts$:Observable<Post[]>
   searchStr:string=''
+  //click on next button
+  Next(){
+    console.log(this.arrLength)
+    if(!(this.to>=this.arrLength)){
+      this.from=this.from+3
+      this.to=this.to+3;
+    }
+  }
+  // Click on previous button
+  Previous(){
+    if(!(this.from<=0)){
+      this.to=this.to-3;
+      this.from=this.from-3
+    }
+  }
   ngOnInit() {
    this.posts$ = this.post.getAllPosts() 
+   this.posts$.toPromise().then(m=>{
+     this.arrLength=m.length
+     console.log(this.arrLength)
+    
+    })
   }
   handleClick(post:Post){
 console.log(post)

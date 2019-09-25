@@ -45,6 +45,7 @@ import { PostFilterPipe } from './post-filter.pipe';
 import { AdminAddEngineerComponent } from './dashboard/admin-dashboard/admin-add-engineer/admin-add-engineer.component';
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
+import { PaginationPipe } from './pagination.pipe';
 const RxJS_Services = [HTTPListener, HttpStatus];
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ const RxJS_Services = [HTTPListener, HttpStatus];
     PostFilterPipe,
     AdminAddEngineerComponent,
     PasswordResetFormComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    PaginationPipe
   ],
   imports: [
     BrowserModule,
